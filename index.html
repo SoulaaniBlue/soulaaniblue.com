@@ -478,3 +478,92 @@
     </script>
 <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=SoulaaniBlue/soulaaniblue-com" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
+/* ===== Mobile-First CSS Updates ===== */
+/* Add/update these rules */
+
+/* Viewport meta (ensure this is in HTML <head>) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap');
+
+/* Mobile menu */
+.header {
+  padding: 1rem;
+  position: relative;
+}
+
+.menu {
+  display: none;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.menu.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.hamburger {
+  display: block;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive artwork grid */
+.artwork-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (max-width: 480px) {
+  .artwork-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hero text scaling */
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero .subtitle {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero .subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Contact form */
+.contact-form {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+}
