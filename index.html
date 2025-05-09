@@ -364,14 +364,32 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-16 text-center gold-text slide-up">CONNECT</h2>
-            
-            <div class="max-w-2xl mx-auto slide-up">
-                <div class="bg-black bg-opacity-80 border border-gray-800 rounded-lg p-8 mb-12">
-                    <h3 class="text-2xl font-bold gold-text mb-6 text-center">Get In Touch</h3>
-                    <p class="text-gray-300 mb-6 text-center">For bookings, collaborations, or just to say hello</p>
-                    <div class="text-center mb-8">
-                        <a href="mailto:soulaaniblue@tuta.com" class="text-xl gold-text hover:underline">soulaaniblue@tuta.com</a>
+<div class="text-center">
+    <p class="text-gray-500 mb-4">Sign up for updates on new releases and shows</p>
+    <form 
+        action="https://formspree.io/f/YOUR_FORMSPREE_ID" 
+        method="POST"
+        class="max-w-md mx-auto"
+        id="newsletter-form"
+    >
+        <div class="flex">
+            <input 
+                type="email" 
+                name="email" 
+                placeholder="Your email" 
+                required
+                class="flex-grow px-4 py-2 bg-gray-900 border border-gray-800 rounded-l-lg focus:outline-none focus:border-gold-500 w-full"
+            >
+            <button 
+                type="submit" 
+                class="px-6 py-2 gold-bg text-black font-bold rounded-r-lg hover:bg-yellow-600 transition duration-300"
+            >
+                JOIN
+            </button>
+        </div>
+        <!-- Success/Error Messages -->
+        <div id="form-status" class="mt-4 hidden text-sm"></div>
+    </form>
                     </div>
                     <div class="flex justify-center space-x-6">
                         <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" rel="noopener noreferrer" class="text-2xl gold-text hover:text-red-500 transition duration-300">
