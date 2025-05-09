@@ -1,30 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MusicGroup",
-  "name": "Soulaani Blue",
-  "description": "Soulful recording artist blending R&B, hip-hop, and pop",
-  "url": "https://www.soulaaniblue.com",
-  "logo": "https://i.imgur.com/MyXlQRs.jpg",
-  "sameAs": [
-    "https://audiomack.com/soulaaniblue",
-    "https://www.youtube.com/@SoulaaniBlue"
-  ],
-  "foundingLocation": {
-    "@type": "Place",
-    "name": "Colerain, North Carolina"
-  },
-  "genre": ["Soul", "R&B", "Hip-Hop"],
-  "track": {
-    "@type": "MusicRecording",
-    "name": "Repeat",
-    "duration": "PT3M30S",
-    "url": "https://audiomack.com/soulaaniblue/song/678440e0e5629"
-  }
-}
-</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -196,6 +171,52 @@
             height: 100%;
         }
     </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "@id": "https://www.soulaaniblue.com/#artist",
+  "name": "Soulaani Blue",
+  "description": "North Carolina-born soul artist blending R&B, hip-hop, and pop music",
+  "url": "https://www.soulaaniblue.com",
+  "image": [
+    "https://i.imgur.com/jRZAkH1.jpg",
+    "https://i.imgur.com/MyXlQRs.jpg"
+  ],
+  "sameAs": [
+    "https://audiomack.com/soulaaniblue",
+    "https://www.youtube.com/@SoulaaniBlue",
+    "https://rednote.com/Soulaaniblue"
+  ],
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Colerain, North Carolina"
+  },
+  "genre": ["Soul music", "R&B", "Hip-Hop"],
+  "track": [
+    {
+      "@type": "MusicRecording",
+      "name": "Repeat",
+      "url": "https://audiomack.com/soulaaniblue/song/678440e0e5629",
+      "duration": "PT3M30S",
+      "byArtist": {
+        "@type": "MusicGroup",
+        "name": "Soulaani Blue"
+      }
+    },
+    {
+      "@type": "MusicRecording",
+      "name": "Can't Take It",
+      "url": "https://audiomack.com/lnmgllc/song/cant-take-it",
+      "byArtist": {
+        "@type": "MusicGroup",
+        "name": "N'Shai Iman"
+      },
+      "creditedTo": "Soulaani Blue (co-writer)"
+    }
+  ]
+}
+</script>
 </head>
 <body class="min-h-screen">
     <!-- Navigation -->
