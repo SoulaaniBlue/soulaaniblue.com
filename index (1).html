@@ -3,268 +3,608 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soulaani Blue | Soulful Artist</title>
+    <title>Soulaani Blue | I love you, still - EP</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&family=Raleway:wght@800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --gold: #D4AF37;
+            --deep-red: #8B0000;
+            --soft-blue: #1E90FF;
+            --black: #000;
+            --rich-black: #0A0A0A;
+        }
+        
         body {
             font-family: 'Lato', sans-serif;
-            background-color: #000;
-            color: #D4AF37;
+            background-color: var(--rich-black);
+            color: #fff;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
+        
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+            font-weight: 900;
         }
+        
+        .impact-font {
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: -0.025em;
+        }
+        
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('https://i.imgur.com/MyXlQRs.jpg');
+            background: linear-gradient(rgba(10, 10, 10, 0.65), rgba(10, 10, 10, 0.85)), 
+                        url('https://i.imgur.com/N9CpOdo.jpeg');
             background-size: cover;
-            background-position: center;
+            background-position: center center;
+            background-attachment: fixed;
         }
-        .about-studio {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/sZ5TeHJ.jpg');
-            background-size: cover;
-            background-position: center;
+        
+        .ep-section {
+            background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95));
         }
-        .about-nature {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/nP25MCk.jpg');
-            background-size: cover;
-            background-position: center;
+        
+        .photo-gallery {
+            background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95));
         }
-        .music-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('https://i.imgur.com/RKMTjSk.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        .gold-text {
-            color: #D4AF37;
-        }
-        .red-text {
-            color: #FF3B30;
-        }
-        .terracotta-text {
-            color: #E07A5F;
-        }
-        .olive-text {
-            color: #606C38;
-        }
-        .gold-border {
-            border-color: #D4AF37;
-        }
-        .red-border {
-            border-color: #FF3B30;
-        }
-        .terracotta-border {
-            border-color: #E07A5F;
-        }
-        .olive-border {
-            border-color: #606C38;
-        }
-        .gold-bg {
-            background-color: #D4AF37;
-        }
-        .red-bg {
-            background-color: #FF3B30;
-        }
-        .terracotta-bg {
-            background-color: #E07A5F;
-        }
-        .olive-bg {
-            background-color: #606C38;
-        }
+        
+        .gold-text { color: var(--gold); }
+        .red-text { color: var(--deep-red); }
+        .blue-text { color: var(--soft-blue); }
+        
+        .gold-border { border-color: var(--gold); }
+        .red-border { border-color: var(--deep-red); }
+        .blue-border { border-color: var(--soft-blue); }
+        
+        .gold-bg { background-color: var(--gold); }
+        .red-bg { background-color: var(--deep-red); }
+        .blue-bg { background-color: var(--soft-blue); }
+        
         .nav-link {
             position: relative;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
+        
         .nav-link::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
-            bottom: -2px;
+            height: 3px;
+            bottom: -5px;
             left: 0;
-            background-color: #D4AF37;
-            transition: width 0.3s ease;
+            background: linear-gradient(90deg, var(--gold), var(--deep-red));
+            transition: width 0.4s ease;
         }
+        
         .nav-link:hover::after {
             width: 100%;
         }
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 2rem;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, #D4AF37, #FF3B30);
-            border-radius: 2px;
-        }
-        .timeline-year {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        .timeline-year::after {
-            content: '';
-            position: absolute;
-            left: -2.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background-color: #D4AF37;
-            border: 2px solid #000;
-        }
+        
         .music-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(20, 20, 20, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
+        
         .music-card:hover {
+            transform: translateY(-8px);
+            background: rgba(30, 30, 30, 0.9);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .release-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--deep-red), var(--gold));
+            color: white;
+            font-weight: 800;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .track-listing {
+            border-left: 3px solid var(--gold);
+            padding-left: 1rem;
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1) translateY(-5px);
+            background: var(--gold);
+            color: black;
+        }
+        
+        .ep-card {
+            background: rgba(15, 15, 15, 0.9);
+            border-top: 4px solid var(--deep-red);
+            transition: all 0.4s ease;
+        }
+        
+        .ep-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 25px rgba(139, 0, 0, 0.2);
+            border-top: 4px solid var(--gold);
         }
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .slide-up {
-            animation: slideUp 0.8s ease-out;
-        }
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        .video-container {
+        
+        .btn-pulse {
+            animation: pulse 2s infinite;
             position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
             overflow: hidden;
         }
-        .video-container iframe {
+        
+        .btn-pulse::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        
+        @keyframes shine {
+            100% { transform: translateX(100%); }
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover::before {
+            background: rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .fade-in { animation: fadeIn 1.2s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .slide-up { 
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+        
+        @keyframes slideUp { 
+            from { transform: translateY(30px); opacity: 0; } 
+            to { transform: translateY(0); opacity: 1; } 
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        
+        .audio-player {
+            width: 100%;
+            height: 50px;
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            margin-top: 10px;
+        }
+        
+        .play-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .progress-bar {
+            flex-grow: 1;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: var(--gold);
+            border-radius: 2px;
+            width: 0%;
+        }
+        
+        .time {
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+            margin-left: 15px;
+            min-width: 40px;
+            text-align: right;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 { font-size: 2.5rem; }
+            
+            .hero-section {
+                background-attachment: scroll;
+            }
+            
+            .audio-player {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+            
+            .play-btn {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .progress-bar {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .time {
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--rich-black);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c9a227;
+        }
+        
+        /* Floating music player */
+        .floating-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background: rgba(20, 20, 20, 0.95);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid var(--gold);
+            z-index: 1000;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-player.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .player-title {
+            font-weight: bold;
+            color: var(--gold);
+        }
+        
+        .close-player {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 640px) {
+            .floating-player {
+                width: calc(100% - 40px);
+                left: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
 <body class="min-h-screen">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-black bg-opacity-90 border-b border-gray-800">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold gold-text">SOULAANI BLUE</a>
+    <nav class="fixed w-full z-50 bg-rich-black bg-opacity-95 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gold-text impact-font">SOULAANI BLUE</a>
             <div class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link gold-text hover:text-white transition duration-300">HOME</a>
-                <a href="#about" class="nav-link gold-text hover:text-white transition duration-300">ABOUT</a>
-                <a href="#music" class="nav-link gold-text hover:text-white transition duration-300">MUSIC</a>
-                <a href="#contact" class="nav-link gold-text hover:text-white transition duration-300">CONTACT</a>
+                <a href="#home" class="nav-link text-white hover:text-gold-500">HOME</a>
+                <a href="#ep" class="nav-link text-white hover:text-gold-500">NEW EP</a>
+                <a href="#gallery" class="nav-link text-white hover:text-gold-500">PORTRAITS</a>
+                <a href="#music" class="nav-link text-white hover:text-gold-500">MUSIC</a>
+                <a href="#contact" class="nav-link text-white hover:text-gold-500">CONTACT</a>
             </div>
-            <button class="md:hidden gold-text focus:outline-none" id="menu-toggle">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+            <div class="flex items-center space-x-4">
+                <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text hidden md:flex">
+                    <i class="fas fa-music"></i>
+                </a>
+                <button class="md:hidden gold-text focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
         </div>
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-black bg-opacity-95 border-t border-gray-800" id="mobile-menu">
-            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
-                <a href="#home" class="nav-link gold-text hover:text-white transition duration-300">HOME</a>
-                <a href="#about" class="nav-link gold-text hover:text-white transition duration-300">ABOUT</a>
-                <a href="#music" class="nav-link gold-text hover:text-white transition duration-300">MUSIC</a>
-                <a href="#contact" class="nav-link gold-text hover:text-white transition duration-300">CONTACT</a>
+        <div class="md:hidden hidden bg-rich-black bg-opacity-95 border-t border-gray-800" id="mobile-menu">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#home" class="nav-link gold-text hover:text-white">HOME</a>
+                <a href="#ep" class="nav-link gold-text hover:text-white">NEW EP</a>
+                <a href="#gallery" class="nav-link gold-text hover:text-white">PORTRAITS</a>
+                <a href="#music" class="nav-link gold-text hover:text-white">MUSIC</a>
+                <a href="#contact" class="nav-link gold-text hover:text-white">CONTACT</a>
+                <div class="flex justify-center space-x-4 pt-4">
+                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" class="social-icon gold-text">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text">
+                        <i class="fas fa-music"></i>
+                    </a>
+                    <a href="https://rednote.com/Soulaaniblue" target="_blank" class="social-icon gold-text">
+                        <i class="fas fa-record-vinyl"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="hero-section min-h-screen flex items-center justify-center relative pt-20">
+    <section id="home" class="hero-section min-h-screen flex items-center justify-center relative pt-24 pb-20">
         <div class="container mx-auto px-4 text-center fade-in">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 gold-text slide-up">SOULAANI BLUE</h1>
-            <div class="flex flex-col md:flex-row justify-center gap-4 slide-up">
-                <a href="#music" class="px-8 py-3 bg-transparent border-2 gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold">LISTEN NOW</a>
-                <a href="#about" class="px-8 py-3 bg-transparent border-2 red-border red-text hover:bg-red-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold">MY STORY</a>
-                <a href="#contact" class="px-8 py-3 bg-transparent border-2 olive-border olive-text hover:bg-green-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold">CONNECT</a>
+            <div class="mb-10 slide-up delay-100">
+                <h3 class="text-xl md:text-2xl gold-text mb-4 tracking-wider">NEW EP PRE-ORDER AVAILABLE</h3>
+                <h1 class="text-5xl md:text-8xl font-bold mb-6 text-white impact-font tracking-tight">I LOVE YOU, STILL</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 mt-6">
+                    Soulaani Blue's most vulnerable work yet - a soulful journey through love's complexities
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4 slide-up delay-300 mt-16">
+                <a href="#ep" class="px-8 py-4 bg-transparent border-2 gold-border text-white hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-headphones"></i>
+                    <span>EP DETAILS</span>
+                </a>
+                <a href="#preorder" class="px-8 py-4 bg-transparent border-2 red-border text-white hover:bg-red-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>PRE-ORDER NOW</span>
+                </a>
             </div>
         </div>
         <div class="absolute bottom-10 left-0 right-0 text-center">
-            <a href="#about" class="inline-block animate-bounce">
+            <a href="#ep" class="inline-block animate-bounce">
                 <i class="fas fa-chevron-down text-2xl gold-text"></i>
             </a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-black">
+    <!-- EP Section -->
+    <section id="ep" class="ep-section py-20 bg-rich-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-16 text-center gold-text slide-up">MY STORY</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-white slide-up">I LOVE YOU, STILL</h2>
+            <h3 class="text-xl md:text-2xl gold-text mb-16 text-center slide-up delay-100">THE NEW EP • COMING SOON</h3>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-                <div class="about-studio min-h-96 rounded-lg flex items-end p-8 slide-up">
-                    <div class="bg-black bg-opacity-70 p-6 rounded-lg">
-                        <h3 class="text-2xl font-bold gold-text mb-2">The Artist</h3>
-                        <p class="terracotta-text">Capturing raw emotion in the studio</p>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 slide-up delay-200">
+                <div class="flex justify-center items-center">
+                    <div class="relative">
+                        <div class="bg-gray-800 border-4 border-white shadow-2xl rounded-xl overflow-hidden w-full max-w-md transform rotate-0 hover:rotate-1 transition duration-500">
+                            <img src="https://i.imgur.com/ZMQEBO8.jpg" alt="I love you, still EP Cover" class="w-full h-auto">
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-black py-2 px-4 rounded-full border-2 border-gold-500">
+                            <span class="gold-text font-bold">MIXEDBYSOU</span>
+                        </div>
                     </div>
                 </div>
-                <div class="slide-up">
-                    <h3 class="text-3xl font-bold gold-text mb-6">Biography</h3>
-                    <p class="mb-6 text-gray-300">Soulaani Blue (formerly known as Blue Bynum) is a self-taught recording artist, songwriter, and producer blending soul, hip-hop, R&B, and pop. Born in Colerain, NC, his journey began in a middle school choir, leading to a lifelong passion for music.</p>
-                    <p class="mb-6 text-gray-300">Drawing inspiration from T-Pain, Smino, and SZA, Soulaani's sound is introspective, honest, and deeply rooted in the Black experience. Under his former name, Blue Bynum, he opened for heavyweights like Fabolous, G Herbo, and 21 Savage, released collaborations like 'Peach Gallo' with Travon-Kare and 'You Say' with RAWM, and showcased his versatility long before rebranding as 'BluetheeArtist' in 2023.</p>
-                    <p class="text-gray-300">That pivotal year also saw him co-write 'Can't Take It' for N'Shai Iman (150k+ streams), feature on 2AM Ricky's 'The Get Down,' and release 'Good Vibes' with Nim & Grooveshine under Blaze Unlimited.</p>
+                
+                <div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold gold-text mb-4">The Story</h3>
+                        <p class="text-gray-300 mb-4">
+                            "I love you, still" is my rawest exploration of love's persistence. These tracks navigate the space between 
+                            what was and what remains, honoring love that endures beyond circumstance.
+                        </p>
+                        <p class="text-gray-300">
+                            Recorded, mixed, and mastered entirely by me, this EP represents complete artistic control and vision. 
+                            Every sound, every vocal, every moment is intentionally crafted.
+                        </p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold gold-text mb-4">Track Listing</h3>
+                        <div class="space-y-4 track-listing">
+                            <div class="group">
+                                <h4 class="text-xl font-bold text-white mb-1 group-hover:text-gold-500 transition duration-300">1. Same(Ole Lady)</h4>
+                                <p class="text-gray-400">Produced by ZUUBEK</p>
+                                <button class="play-track-btn mt-2 px-3 py-1 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm" data-track="Same(Ole Lady)">
+                                    <i class="fas fa-play mr-1"></i> Preview
+                                </button>
+                            </div>
+                            <div class="group">
+                                <h4 class="text-xl font-bold text-white mb-1 group-hover:text-gold-500 transition duration-300">2. Rather Be</h4>
+                                <p class="text-gray-400">Produced by BeatsbyEmani</p>
+                                <button class="play-track-btn mt-2 px-3 py-1 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm" data-track="Rather Be">
+                                    <i class="fas fa-play mr-1"></i> Preview
+                                </button>
+                            </div>
+                            <div class="group">
+                                <h4 class="text-xl font-bold text-white mb-1 group-hover:text-gold-500 transition duration-300">3. Repeat</h4>
+                                <p class="text-gray-400">Produced by PLXY</p>
+                                <button class="play-track-btn mt-2 px-3 py-1 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm" data-track="Repeat">
+                                    <i class="fas fa-play mr-1"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold gold-text mb-4">Production Notes</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-xs gold-text mt-2 mr-2"></i>
+                                <span>Recorded, mixed, and mastered by Soulaani Blue (MixedbySou)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-xs gold-text mt-2 mr-2"></i>
+                                <span>All production handled by featured producers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-xs gold-text mt-2 mr-2"></i>
+                                <span>55% of proceeds support RVACommunityFridges & People over Papers</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-                <div class="order-last lg:order-first slide-up">
-                    <div class="bg-black bg-opacity-80 p-8 rounded-lg border-l-4 gold-border">
-                        <h3 class="text-3xl font-bold gold-text mb-6 text-center">Mission Statement</h3>
-                        <p class="text-xl italic text-center terracotta-text">"I create music to unravel the unspoken—the secrets we bury, the love we hide, and the truths we repeat until they set us free. I aim to turn pain into power, silence into revolution, and listeners into allies of their own healing."</p>
+            
+            <div id="preorder" class="max-w-3xl mx-auto mt-20 slide-up delay-300">
+                <div class="ep-card rounded-xl p-8 relative">
+                    <div class="release-badge">Direct Pre-order</div>
+                    <h3 class="text-3xl font-bold text-center text-white mb-6">PRE-ORDER THE EP</h3>
+                    <p class="text-gray-300 text-center mb-8">
+                        Get instant access to a track of your choice plus exclusive content. Only $3 with 55% supporting community initiatives.
+                    </p>
+                    
+                    <div class="bg-rich-black bg-opacity-80 border border-gray-700 rounded-lg p-6 mb-8">
+                        <h4 class="text-xl font-bold gold-text mb-4 text-center">PRE-ORDER INCLUDES</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-music text-2xl gold-text"></i>
+                                </div>
+                                <h5 class="text-lg font-bold text-white mb-2">Instant Track Download</h5>
+                                <p class="text-gray-300">Choose either "Same(Ole Lady)" or "Rather Be"</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-file-alt text-2xl gold-text"></i>
+                                </div>
+                                <h5 class="text-lg font-bold text-white mb-2">Lyric Sheets</h5>
+                                <p class="text-gray-300">Digital booklet with all EP lyrics</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="about-nature min-h-96 rounded-lg flex items-end p-8 order-first lg:order-last slide-up">
-                    <div class="bg-black bg-opacity-70 p-6 rounded-lg">
-                        <h3 class="text-2xl font-bold gold-text mb-2">The Inspiration</h3>
-                        <p class="olive-text">Finding creativity in nature's embrace</p>
+                    
+                    <div class="text-center">
+                        <a href="#contact" class="px-8 py-4 gold-bg text-black font-bold rounded-full text-lg hover:bg-yellow-600 transition duration-300 btn-pulse inline-block">
+                            PRE-ORDER NOW • $3
+                        </a>
+                        <p class="text-gray-400 mt-4 text-sm">
+                            55% of proceeds support RVACommunityFridges & People over Papers
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="max-w-4xl mx-auto slide-up">
-                <h3 class="text-3xl font-bold gold-text mb-8 text-center">Timeline</h3>
-                <div class="space-y-8">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2015</div>
-                        <p class="text-gray-300">Co-founded Troubled Empire at Virginia State University.</p>
-                        <p class="text-gray-300">Released "Sucker 4 Love" with Troubled Empire.</p>
+    <!-- Gallery Section -->
+    <section id="gallery" class="photo-gallery py-20 bg-rich-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-white slide-up">SELF PORTRAITS</h2>
+            <h3 class="text-xl md:text-2xl gold-text mb-16 text-center slide-up delay-100">BY SOULAANI BLUE</h3>
+            
+            
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2018</div>
-                        <p class="text-gray-300">Released "Notice" with Troubled Empire.</p>
+                </div>
+                <div class="gallery-item slide-up delay-300" style="background-image: url('https://i.imgur.com/bIqbDFF.jpg');">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+                        <h4 class="text-white font-bold">Self Portrait #2</h4>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2020</div>
-                        <p class="text-gray-300">Released "Peach Gallo" (feat. Travon-Kare).</p>
-                        <p class="text-gray-300">Released "You Say" with RAWM.</p>
+                </div>
+                <div class="gallery-item slide-up delay-400" style="background-image: url('https://i.imgur.com/Vt1lls6.jpg');">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+                        <h4 class="text-white font-bold">Self Portrait #3</h4>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023</div>
-                        <p class="text-gray-300">Rebranded as "BluetheeArtist".</p>
-                        <p class="text-gray-300">Released "Good Vibes" with Nim & Grooveshine (Blaze Unlimited).</p>
-                        <p class="text-gray-300">Co-wrote "Can't Take It" for N'Shai Iman (150k+ streams).</p>
-                        <p class="text-gray-300">Featured on N'Shai Iman's 'DL' (with Jaye Locke).</p>
-                        <p class="text-gray-300">Featured on 2AM Ricky's "The Get Down".</p>
+                </div>
+                <div class="gallery-item slide-up delay-500" style="background-image: url('https://i.imgur.com/ZMQEBO8.jpg');">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+                        <h4 class="text-white font-bold">Self Portrait #4</h4>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2024</div>
-                        <p class="text-gray-300">Preparing to move abroad while releasing new music.</p>
+                </div>
+                <div class="gallery-item slide-up delay-500" style="background-image: url('https://i.imgur.com/N9CpOdo.jpg');">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+                        <h4 class="text-white font-bold">Self Portrait #5</h4>
                     </div>
                 </div>
             </div>
@@ -272,89 +612,52 @@
     </section>
 
     <!-- Music Section -->
-    <section id="music" class="music-hero py-20 min-h-screen flex items-center">
+    <section id="music" class="py-20 bg-rich-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-16 text-center gold-text slide-up">MUSIC</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-white slide-up">PREVIOUS WORK</h2>
+            <h3 class="text-xl md:text-2xl gold-text mb-16 text-center slide-up delay-100">FROM THE ARCHIVES</h3>
             
-            <div class="max-w-4xl mx-auto mb-20 slide-up">
-                <h3 class="text-2xl font-bold gold-text mb-6 text-center">Featured Tracks</h3>
+            <div class="max-w-4xl mx-auto slide-up delay-200">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="music-card bg-black bg-opacity-80 p-6 rounded-lg border border-gray-800 hover:border-gold-500 transition duration-300">
-                        <h4 class="text-xl font-bold gold-text mb-2">Repeat</h4>
+                    <div class="music-card rounded-lg p-6">
+                        <h4 class="text-xl font-bold text-white mb-2">Repeat</h4>
                         <div class="h-1 w-full bg-gray-800 mb-3">
                             <div class="h-1 bg-red-500 w-1/3"></div>
                         </div>
                         <p class="text-sm text-gray-400 mb-4">Soulaani Blue</p>
-                        <a href="https://audiomack.com/soulaaniblue/song/678440e0e5629" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">PLAY ON AUDIOMACK</a>
+                        <a href="https://audiomack.com/soulaaniblue/song/678440e0e5629" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                            PLAY ON AUDIOMACK
+                        </a>
                     </div>
-                    <div class="music-card bg-black bg-opacity-80 p-6 rounded-lg border border-gray-800 hover:border-gold-500 transition duration-300">
-                        <h4 class="text-xl font-bold gold-text mb-2">Can't Take It</h4>
+                    <div class="music-card rounded-lg p-6">
+                        <h4 class="text-xl font-bold text-white mb-2">Can't Take It</h4>
                         <div class="h-1 w-full bg-gray-800 mb-3">
                             <div class="h-1 bg-red-500 w-2/3"></div>
                         </div>
                         <p class="text-sm text-gray-400 mb-4">N'Shai Iman (co-written by Soulaani Blue)</p>
-                        <a href="https://audiomack.com/lnmgllc/song/cant-take-it" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">PLAY ON AUDIOMACK</a>
+                        <a href="https://audiomack.com/lnmgllc/song/cant-take-it" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                            PLAY ON AUDIOMACK
+                        </a>
                     </div>
-                    <div class="music-card bg-black bg-opacity-80 p-6 rounded-lg border border-gray-800 hover:border-gold-500 transition duration-300">
-                        <h4 class="text-xl font-bold gold-text mb-2">DL</h4>
+                    <div class="music-card rounded-lg p-6">
+                        <h4 class="text-xl font-bold text-white mb-2">DL</h4>
                         <div class="h-1 w-full bg-gray-800 mb-3">
                             <div class="h-1 bg-red-500 w-1/2"></div>
                         </div>
                         <p class="text-sm text-gray-400 mb-4">N'Shai Iman feat. Jaye Locke (feat. Soulaani Blue)</p>
-                        <a href="https://audiomack.com/nshai-iman-1/song/dl" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">PLAY ON AUDIOMACK</a>
+                        <a href="https://audiomack.com/nshai-iman-1/song/dl" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                            PLAY ON AUDIOMACK
+                        </a>
                     </div>
-                    <div class="music-card bg-black bg-opacity-80 p-6 rounded-lg border border-gray-800 hover:border-gold-500 transition duration-300">
-                        <h4 class="text-xl font-bold gold-text mb-2">The Get Down</h4>
+                    <div class="music-card rounded-lg p-6">
+                        <h4 class="text-xl font-bold text-white mb-2">The Get Down</h4>
                         <div class="h-1 w-full bg-gray-800 mb-3">
                             <div class="h-1 bg-red-500 w-3/4"></div>
                         </div>
                         <p class="text-sm text-gray-400 mb-4">2AM Ricky ft. BluetheeArtist</p>
-                        <a href="https://audiomack.com/2amricky/song/the-get-down" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">PLAY ON AUDIOMACK</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-4xl mx-auto slide-up">
-                <h3 class="text-2xl font-bold gold-text mb-6 text-center">Music Videos</h3>
-                <div class="grid grid-cols-1 gap-6">
-                    <div class="music-card bg-black bg-opacity-80 p-6 rounded-lg border border-gray-800 hover:border-gold-500 transition duration-300">
-                        <div class="video-container mb-4">
-                            <iframe src="https://www.youtube.com/embed/ubxTLUSrCs0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <h4 class="text-xl font-bold gold-text mb-2">Peach Gallo</h4>
-                        <p class="text-sm text-gray-400 mb-4">Blue Bynum (feat. Travon-Kare)</p>
-                    </div>
-                    
-                    <div class="music-card bg-black bg-opacity-80 p-6 rounded-lg border border-gray-800 hover:border-gold-500 transition duration-300">
-                        <div class="video-container mb-4">
-                            <iframe src="https://www.youtube.com/embed/av7ppHWMKZo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <h4 class="text-xl font-bold gold-text mb-2">You Say</h4>
-                        <p class="text-sm text-gray-400 mb-4">RAWM & Blue Bynum</p>
-                    </div>
-                    
-                    <div class="music-card bg-black bg-opacity-80 p-6 rounded-lg border border-gray-800 hover:border-gold-500 transition duration-300">
-                        <div class="video-container mb-4">
-                            <iframe src="https://www.youtube.com/embed/yesHbVSzQEU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <h4 class="text-xl font-bold gold-text mb-2">Sucker 4 Love</h4>
-                        <p class="text-sm text-gray-400 mb-4">Troubled Empire</p>
-                    </div>
-                    
-                    <div class="music-card bg-black bg-opacity-80 p-6 rounded-lg border border-gray-800 hover:border-gold-500 transition duration-300">
-                        <div class="video-container mb-4">
-                            <iframe src="https://www.youtube.com/embed/Vo6bLLInJh8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <h4 class="text-xl font-bold gold-text mb-2">The Get Down</h4>
-                        <p class="text-sm text-gray-400 mb-4">2AM Ricky ft. BluetheeArtist</p>
-                    </div>
-                    
-                    <div class="music-card bg-black bg-opacity-80 p-6 rounded-lg border border-gray-800 hover:border-gold-500 transition duration-300">
-                        <div class="video-container mb-4">
-                            <iframe src="https://www.youtube.com/embed/ufWFazw6Rxw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <h4 class="text-xl font-bold gold-text mb-2">Good Vibes</h4>
-                        <p class="text-sm text-gray-400 mb-4">Nim & Grooveshine ft. Blue Bynum</p>
+                        <a href="https://audiomack.com/2amricky/song/the-get-down" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                            PLAY ON AUDIOMACK
+                        </a>
                     </div>
                 </div>
             </div>
@@ -362,62 +665,126 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-black">
+    <section id="contact" class="py-20 bg-rich-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-16 text-center gold-text slide-up">CONNECT</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-white slide-up">PRE-ORDER NOW</h2>
+            <h3 class="text-xl md:text-2xl gold-text mb-16 text-center slide-up delay-100">GET INSTANT ACCESS TO YOUR CHOICE OF TRACK</h3>
             
-            <div class="max-w-2xl mx-auto slide-up">
-                <div class="bg-black bg-opacity-80 border border-gray-800 rounded-lg p-8 mb-12">
-                    <h3 class="text-2xl font-bold gold-text mb-6 text-center">Get In Touch</h3>
-                    <p class="text-gray-300 mb-6 text-center">For bookings, collaborations, or just to say hello</p>
-                    <div class="text-center mb-8">
-                        <a href="mailto:soulaaniblue@tuta.com" class="text-xl gold-text hover:underline">soulaaniblue@tuta.com</a>
-                    </div>
-                    <div class="flex justify-center space-x-6">
-                        <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" rel="noopener noreferrer" class="text-2xl gold-text hover:text-red-500 transition duration-300">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://audiomack.com/soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-2xl gold-text hover:text-red-500 transition duration-300">
-                            <i class="fas fa-music"></i>
-                        </a>
-                        <a href="https://rednote.com/Soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-2xl gold-text hover:text-red-500 transition duration-300">
-                            <i class="fas fa-record-vinyl"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="text-center">
-                    <p class="text-gray-500 mb-4">Sign up for updates on new releases and shows</p>
-                    <form class="max-w-md mx-auto">
-                        <div class="flex">
-                            <input type="email" placeholder="Your email" class="flex-grow px-4 py-2 bg-gray-900 border border-gray-800 rounded-l-lg focus:outline-none focus:border-gold-500">
-                            <button type="submit" class="px-6 py-2 gold-bg text-black font-bold rounded-r-lg hover:bg-yellow-600 transition duration-300">JOIN</button>
+            <div class="max-w-3xl mx-auto slide-up delay-200">
+                <div class="bg-rich-black bg-opacity-90 border border-gray-800 rounded-xl p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-gray-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-headphones text-4xl gold-text"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">Digital Pre-order</h4>
+                            <p class="text-2xl font-bold gold-text mb-4">$3</p>
+                            <ul class="text-gray-300 space-y-2 mb-6">
+                                <li>Instant download of your choice: "Same(Ole Lady)" or "Rather Be"</li>
+                                <li>Digital lyric sheets</li>
+                                <li>55% supports community initiatives</li>
+                            </ul>
+                            <a href="#" class="px-6 py-3 gold-bg text-black font-bold rounded-lg hover:bg-yellow-600 transition duration-300 inline-block">
+                                PRE-ORDER NOW
+                            </a>
                         </div>
-                    </form>
+                        
+                        <div>
+                            <h4 class="text-xl font-bold gold-text mb-4">Community Impact</h4>
+                            <p class="text-gray-300 mb-6">
+                                Your $3 pre-order directly supports:
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0 mr-4">
+                                        <i class="fas fa-utensils text-lg gold-text"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-lg font-bold text-white">RVACommunityFridges</h5>
+                                        <p class="text-gray-300">Mutual aid project fighting food insecurity</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0 mr-4">
+                                        <i class="fas fa-hands-helping text-lg gold-text"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-lg font-bold text-white">People over Papers</h5>
+                                        <p class="text-gray-300">Supporting undocumented communities</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-8 border-t border-gray-800">
+                        <h4 class="text-xl font-bold gold-text mb-4 text-center">Connect Directly</h4>
+                        <div class="flex flex-col md:flex-row justify-between items-center">
+                            <div class="mb-4 md:mb-0 text-center">
+                                <a href="mailto:soulaaniblue@tuta.com" class="text-lg gold-text hover:underline">soulaaniblue@tuta.com</a>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" class="social-icon gold-text">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text">
+                                    <i class="fas fa-music"></i>
+                                </a>
+                                <a href="https://rednote.com/Soulaaniblue" target="_blank" class="social-icon gold-text">
+                                    <i class="fas fa-record-vinyl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 border-t border-gray-800 bg-black bg-opacity-90">
+    <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 mb-4 md:mb-0">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-500">&copy; 2024 Soulaani Blue. All rights reserved.</p>
+                    <p class="text-gray-600 text-sm">"I love you, still" EP • MixedbySou</p>
+                </div>
                 <div class="flex space-x-6">
-                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300">
+                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="https://audiomack.com/soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300">
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-music"></i>
                     </a>
-                    <a href="https://rednote.com/Soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300">
+                    <a href="https://rednote.com/Soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-record-vinyl"></i>
                     </a>
                 </div>
             </div>
+            <div class="mt-6 pt-6 border-t border-gray-800 text-center">
+                <p class="text-gray-600 text-sm">55% of pre-order proceeds support RVACommunityFridges & People over Papers</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Floating Music Player -->
+    <div class="floating-player" id="floating-player">
+        <div class="player-header">
+            <div class="player-title" id="player-track-title">Track Preview</div>
+            <button class="close-player" id="close-player">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="audio-player">
+            <div class="play-btn" id="play-btn">
+                <i class="fas fa-play" id="play-icon"></i>
+            </div>
+            <div class="progress-bar" id="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="time" id="current-time">0:00</div>
+        </div>
+    </div>
 
     <script>
         // Mobile menu toggle
@@ -426,55 +793,153 @@
             menu.classList.toggle('hidden');
         });
 
-        // Smooth scrolling for all links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                     // Close mobile menu if open
                     const mobileMenu = document.getElementById('mobile-menu');
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                     }
-                    
-                    // Scroll to target
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
                 }
             });
         });
 
         // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('slide-up');
-                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.slide-up').forEach(element => {
-            observer.observe(element);
+        document.querySelectorAll('.slide-up').forEach(el => {
+            observer.observe(el);
         });
 
-        // Force all external links to open in new tab
+        // External links
         document.querySelectorAll('a').forEach(link => {
-            if (link.href && !link.href.startsWith(window.location.origin) && !link.hasAttribute('target')) {
+            if (link.href && !link.href.startsWith(window.location.origin) && !link.href.startsWith('#')) {
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
             }
         });
+
+        // Audio player functionality
+        const floatingPlayer = document.getElementById('floating-player');
+        const playBtn = document.getElementById('play-btn');
+        const playIcon = document.getElementById('play-icon');
+        const progressBar = document.getElementById('progress-bar');
+        const progress = document.getElementById('progress');
+        const currentTime = document.getElementById('current-time');
+        const playerTrackTitle = document.getElementById('player-track-title');
+        const closePlayer = document.getElementById('close-player');
+        
+        let isPlaying = false;
+        let audio = new Audio();
+        
+        // Mock audio files (would be replaced with actual previews)
+        const tracks = {
+            "Same(Ole Lady)": "https://example.com/preview1.mp3",
+            "Rather Be": "https://example.com/preview2.mp3",
+            "Repeat": "https://example.com/preview3.mp3"
+        };
+        
+        // Play track buttons
+        document.querySelectorAll('.play-track-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const trackName = this.getAttribute('data-track');
+                playTrack(trackName);
+            });
+        });
+        
+        function playTrack(trackName) {
+            playerTrackTitle.textContent = trackName;
+            audio.src = tracks[trackName];
+            audio.currentTime = 0;
+            audio.play();
+            isPlaying = true;
+            playIcon.classList.remove('fa-play');
+            playIcon.classList.add('fa-pause');
+            floatingPlayer.classList.add('show');
+            
+            // Auto-hide player after 30 seconds
+            setTimeout(() => {
+                if (isPlaying) {
+                    audio.pause();
+                    isPlaying = false;
+                    playIcon.classList.remove('fa-pause');
+                    playIcon.classList.add('fa-play');
+                    floatingPlayer.classList.remove('show');
+                }
+            }, 30000);
+        }
+        
+        // Play/pause button
+        playBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+            } else {
+                audio.play();
+                isPlaying = true;
+                playIcon.classList.remove('fa-play');
+                playIcon.classList.add('fa-pause');
+            }
+        });
+        
+        // Update progress bar
+        audio.addEventListener('timeupdate', function() {
+            const duration = audio.duration;
+            const current = audio.currentTime;
+            const progressPercent = (current / duration) * 100;
+            progress.style.width = `${progressPercent}%`;
+            
+            // Format time
+            let minutes = Math.floor(current / 60);
+            let seconds = Math.floor(current % 60);
+            if (seconds < 10) {
+                seconds = `0${seconds}`;
+            }
+            currentTime.textContent = `${minutes}:${seconds}`;
+        });
+        
+        // Click on progress bar to seek
+        progressBar.addEventListener('click', function(e) {
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+            audio.currentTime = (clickX / width) * duration;
+        });
+        
+        // Close player
+        closePlayer.addEventListener('click', function() {
+            audio.pause();
+            isPlaying = false;
+            playIcon.classList.remove('fa-pause');
+            playIcon.classList.add('fa-play');
+            floatingPlayer.classList.remove('show');
+        });
+        
+        // Auto-hide player when audio ends
+        audio.addEventListener('ended', function() {
+            isPlaying = false;
+            playIcon.classList.remove('fa-pause');
+            playIcon.classList.add('fa-play');
+            setTimeout(() => {
+                floatingPlayer.classList.remove('show');
+            }, 2000);
+        });
     </script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=SoulaaniBlue/soulaaniblue-com" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</body>
 </html>
