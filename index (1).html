@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&family=Raleway:wght@800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css">
     <style>
         :root {
             --gold: #D4AF37;
@@ -444,14 +445,12 @@
             </div>
             
             <div class="flex flex-col md:flex-row justify-center gap-4 slide-up delay-300 mt-16">
-                <a href="#ep" class="px-8 py-4 bg-transparent border-2 gold-border text-white hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2">
-                    <i class="fas fa-headphones"></i>
-                    <span>EP DETAILS</span>
-                </a>
-                <a href="https://soulaaniblue.gumroad.com/" target="_blank" class="px-8 py-4 gold-bg text-black hover:bg-yellow-600 transition duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2 btn-pulse">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>PRE-ORDER NOW</span>
-                </a>
+                <div class="flex flex-col space-y-4 w-full max-w-xs mx-auto">
+                    <a href="https://soulaaniblue.bandcamp.com/" target="_blank" class="px-8 py-4 bg-transparent border-2 gold-border text-white hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2">
+                        <i class="fab fa-bandcamp"></i>
+                        <span>PRE-ORDER ON BANDCAMP</span>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="absolute bottom-10 left-0 right-0 text-center">
@@ -548,9 +547,14 @@
                             <div class="h-1 bg-red-500 w-1/3"></div>
                         </div>
                         <p class="text-sm text-gray-400 mb-4">Soulaani Blue</p>
-                        <a href="https://audiomack.com/soulaaniblue/song/678440e0e5629" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
-                            PLAY ON AUDIOMACK
-                        </a>
+                        <div class="flex flex-col space-y-2">
+                            <a href="https://audiomack.com/soulaaniblue/song/678440e0e5629" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                                PLAY ON AUDIOMACK
+                            </a>
+                            <a href="https://youtu.be/xomkzifaRZA" target="_blank" class="inline-block px-4 py-2 bg-transparent border blue-border blue-text hover:bg-blue-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                                WATCH LYRIC VIDEO
+                            </a>
+                        </div>
                     </div>
                     <div class="music-card rounded-lg p-6">
                         <h4 class="text-xl font-bold text-white mb-2">Can't Take It</h4>
