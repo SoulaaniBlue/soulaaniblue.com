@@ -17,6 +17,10 @@
             --soft-blue: #1E90FF;
             --black: #000;
             --rich-black: #0A0A0A;
+            --color-white: #fff;
+            --color-red: #8B0000;
+            --color-gold: #D4AF37;
+            --color-black: #000;
         }
         
         body {
@@ -333,11 +337,20 @@
             text-align: center;
             padding: 2rem;
             box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .promo-content {
+            width: 100%;
+            max-width: 100%;
         }
 
         .glitch-container {
             position: relative;
             margin-bottom: 2rem;
+            width: 100%;
+            padding: 0 1rem;
+            box-sizing: border-box;
         }
 
         .glitch {
@@ -353,6 +366,10 @@
             letter-spacing: 2px;
             margin: 0;
             animation: glitch-skew 4s infinite linear alternate-reverse;
+            line-height: 1.2;
+            word-wrap: break-word;
+            width: 100%;
+            max-width: 100%;
         }
 
         .glitch::before,
@@ -387,9 +404,9 @@
             25% { clip: rect(53px, 9999px, 82px, 0); }
             30% { clip: rect(43px, 9999px, 75px, 0); }
             35% { clip: rect(8px, 9999px, 2px, 0); }
-            40% { clip: rect(34px, 9999px, 41px, 0); }
+            40% { clip: rect(极客时间 34px, 9999px, 41px, 0); }
             45% { clip: rect(50px, 9999px, 72px, 0); }
-            50% { clip: rect(61px, 9999px, 85px, 0); }
+            50% { clip: rect(61px, 9999px, 85px, 极客时间0); }
             55% { clip: rect(18px, 9999px, 64px, 0); }
             60% { clip: rect(16px, 9999px, 100px, 0); }
             65% { clip: rect(90px, 9999px, 10px, 0); }
@@ -412,7 +429,7 @@
             30% { clip: rect(44px, 9999px, 36px, 0); }
             35% { clip: rect(85px, 9999px, 57px, 0); }
             40% { clip: rect(86px, 9999px, 40px, 0); }
-            45% { clip: rect(22px, 9999px, 97px, 0); }
+            45% {极客时间 clip: rect(22px, 9999px, 97px, 0); }
             50% { clip: rect(71px, 9999px, 85px, 0); }
             55% { clip: rect(12px, 9999px, 46px, 0); }
             60% { clip: rect(35px, 9999px, 73px, 0); }
@@ -437,7 +454,7 @@
             70% { transform: skew(-2deg); }
             80% { transform: skew(0deg); }
             90% { transform: skew(1deg); }
-            100% { transform: skew(0deg); }
+            100%极客时间 { transform: skew(0deg); }
         }
 
         .typewriter {
@@ -450,6 +467,8 @@
             white-space: nowrap;
             letter-spacing: .10em;
             animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         @keyframes typing {
@@ -502,16 +521,70 @@
             left: 0;
         }
 
+        /* Mobile responsiveness for the glitch text */
+        @media (max-width: 1024px) {
+            .glitch {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+        }
+
         @media (max-width: 768px) {
             .glitch {
                 font-size: 1.5rem;
+                letter-spacing: 0.5px;
+                text-shadow: 
+                    1px 1px 0 var(--color-red),
+                    -1px -1px 0 var(--color-gold);
             }
+            
             .typewriter {
                 font-size: 1rem;
+                white-space: normal;
+                border-right: none;
+                animation: none;
+                text-align: center;
             }
+            
             .bmac-button {
                 padding: 0.8rem 1.5rem;
                 font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .glitch {
+                font-size: 1.2rem;
+                line-height: 1.3;
+                word-spacing: -2px;
+            }
+            
+            #event-promo {
+                padding: 1rem;
+            }
+            
+            .glitch-container {
+                margin-bottom: 1.5rem;
+            }
+            
+            .typewriter {
+                font-size: 0.9rem;
+                margin: 1rem 0;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .glitch {
+                font-size: 1rem;
+            }
+            
+            .typewriter {
+                font-size: 0.8rem;
+            }
+            
+            .bmac-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.6rem;
             }
         }
 
@@ -520,7 +593,7 @@
             width: 8px;
         }
         
-        ::-webkit-scrollbar-track {
+        ::-webkit极客时间-scrollbar-track {
             background: var(--rich-black);
         }
         
@@ -542,7 +615,7 @@
             background: rgba(20, 20, 20, 0.95);
             border-radius: 10px;
             padding: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 极客时间0 5px 15px rgba(0,0,0,0.3);
             border: 1px solid var(--gold);
             z-index: 1000;
             transform: translateY(20px);
@@ -562,7 +635,7 @@
             margin-bottom: 10px;
         }
         
-        .player-title {
+极客时间        .player-title {
             font-weight: bold;
             color: var(--gold);
         }
@@ -582,200 +655,6 @@
                 right: 20px;
             }
         }
-
-        /* ===== NEW PROMO SECTION STYLES ===== */
-        #event-promo {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            box-sizing: border-box;
-        }
-
-        .glitch-container {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .glitch {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            position: relative;
-            color: var(--color-white);
-            text-shadow: 
-                2px 2px 0 var(--color-red),
-                -2px -2px 0 var(--color-gold);
-            letter-spacing: 2px;
-            margin: 0;
-            animation: glitch-skew 4s infinite linear alternate-reverse;
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            clip: rect(44px, 450px, 56px, 0);
-        }
-
-        .glitch::before {
-            left: 3px;
-            text-shadow: -2px 0 var(--color-red);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-
-        .glitch::after {
-            left: -3px;
-            text-shadow: -2px 0 var(--color-gold);
-            animation: glitch-anim2 5s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch-anim {
-            0% { clip: rect(32px, 9999px, 34px, 0); }
-            5% { clip: rect(2px, 9999px, 76px, 0); }
-            10% { clip: rect(14px, 9999px, 极客时间 32px, 0); }
-            15% { clip: rect(12px, 9999px, 88px, 0); }
-            20% { clip: rect(38px, 9999px, 22px, 0); }
-            25% { clip: rect(53px极客时间, 9999px, 82px, 0); }
-            30% { clip: rect(43px, 9999px, 75px, 0); }
-            35% { clip: rect(8px, 9999px, 2px, 0); }
-            40% { clip: rect(34px, 9999px, 41px, 0); }
-            45% { clip: rect(50px, 9999px, 72px, 0); }
-            50% { clip: rect(61px, 9999px, 85px, 0); }
-            55% { clip: rect(18px, 9999px, 64px, 0); }
-            60% { clip: rect(16px, 9999px, 100px, 0); }
-            65% { clip: rect(90px, 9999px, 10px极客时间, 0); }
-            70% { clip: rect(86px, 9999px, 80px, 0); }
-            75% { clip: rect(37px, 9999px, 52px, 0); }
-            80% { clip: rect(26px, 9999px, 93px, 0); }
-            85% { clip: rect(77px, 9999px, 78px, 0); }
-            90% { clip: rect(77px, 9999px, 20px, 0); }
-            95% { clip: rect(83px, 9999px, 40px, 0); }
-            100% { clip: rect(11px, 9999px, 20px, 0); }
-        }
-
-        @keyframes glitch-anim2 {
-            0% { clip: rect(12px, 9999px, 59px, 0); }
-            5% { clip: rect(92px, 9999px, 100px, 0); }
-            10% { clip: rect(73px, 9999px, 67px, 0); }
-            15% { clip: rect(64px, 9999px, 65px, 0极客时间); }
-            20% { clip: rect(55px, 9999px, 69px, 0); }
-            25% { clip: rect(32px, 9999px, 100px, 0); }
-            30% { clip: rect(44px, 9999px, 36px, 0); }
-            35% { clip: rect(85px, 9999px, 57px, 0); }
-            40% { clip: rect(86px, 9999px, 40px, 0); }
-            45% { clip: rect(22px, 9999px, 97px, 0); }
-            50% { clip: rect(71px, 9999px, 85px, 0); }
-            55% { clip: rect(12px, 9999px, 46px, 0); }
-            60% { clip: rect(35px, 9999px, 73px, 0); }
-            65% { clip: rect(58px, 9999px, 93px, 0); }
-            70% { clip: rect(9px, 9999px, 100px, 0); }
-            75% { clip: rect(8px, 9999px, 14px, 0); }
-            80% { clip: rect(65px, 9999px, 97px极客时间, 0); }
-            85% { clip极客时间: rect(100px, 9999px, 98px, 0); }
-            90% { clip: rect(82px, 9999px, 63px, 0); }
-            95% { clip: rect(5px, 9999px, 83px, 0); }
-            100% { clip: rect(87px, 9999px, 47px, 0); }
-        }
-
-        @keyframes glitch-skew {
-            0% { transform: skew(0deg); }
-            10% { transform: skew(2deg); }
-            20% { transform: skew(0deg); }
-            30% { transform: skew(-3deg); }
-            40% { transform: skew(0deg); }
-            50% { transform: skew(4deg); }
-            60% { transform: skew(0deg); }
-            70% { transform: skew(-2deg); }
-            80% { transform: skew(0deg); }
-            90% { transform: skew(1deg); }
-            100% { transform: skew(0deg); }
-        }
-
-        .typewriter {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 1.2rem;
-            color: var(--color-gold);
-            margin: 1.5rem 0;
-            overflow: hidden;
-            border-right: .15em solid var(--color-red);
-            white-space: nowrap;
-            letter-spacing: .10em;
-            animation: typing 3.5极客时间s steps(40, end), blink-caret .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--color-red); }
-        }
-
-        .bmac-button {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background-color: transparent;
-            color: var(--color-gold);
-            border: 2px solid var(--color-gold);
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.9rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-            z-index: 1;
-        }
-
-        .bmac-button:hover {
-            color: var(--color-black);
-            border-color: var(--color-red);
-        }
-
-        .bmac-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--color-gold);
-            transition: all 0.5s;
-            z-index: -1;
-        }
-
-        .bmac-button:hover::before {
-            left: 0;
-        }
-
-        @media (max-width: 768px) {
-            .glitch {
-                font-size: 1.5rem;
-            }
-            .typewriter {
-                font-size: 1rem;
-            }
-            .bmac-button {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.7rem;
-            }
-        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -791,13 +670,14 @@
         </div>
     </section>
 
+    <!-- Rest of your HTML remains the same -->
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-rich-black bg-opacity-95 border-b border-gray-800">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold gold-text impact-font">SOULAANI BLUE</a>
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="nav-link text-white hover:text-gold-500">HOME</a>
-                <a href="#ep" class="nav-link text-white hover:text-gold-500">NEW EP</a>
+                <a href="#ep" class="nav-link text-white hover:text-gold极客时间-500">NEW EP</a>
                 <a href="#music" class="nav-link text-white hover:text-gold-500">MUSIC</a>
                 <a href="#contact" class="nav-link text-white hover:text-gold-500">CONTACT</a>
             </div>
@@ -813,12 +693,12 @@
         <!-- Mobile Menu -->
         <div class="md:hidden hidden bg-rich-black bg-opacity-95 border-t border-gray-800" id="mobile-menu">
             <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-                <a href="#home" class="nav-link gold-text hover:text-white">HOME</a>
+                <a href="#home极客时间" class="nav-link gold-text hover:text-white">HOME</a>
                 <a href="#ep" class="nav-link gold-text hover:text-white">NEW EP</a>
                 <a href="#music" class="nav-link gold-text hover:text-white">MUSIC</a>
                 <a href="#contact" class="nav-link gold-text hover:text-white">CONTACT</a>
-                <div class="flex justify-center space-x-4 pt-4">
-                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" class="social-icon gold-text">
+                <div class="flex justify-center space-x-4 pt极客时间-4">
+                    <a href="极客时间https://www.youtube.com/@SoulaaniBlue" target="_blank" class="social-icon gold-text">
                         <i class="fab fa-youtube"></i>
                     </a>
                     <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text">
@@ -844,7 +724,7 @@
             </div>
             
             <div class="flex flex-col md:flex-row justify-center gap-4 slide-up delay-300 mt-16">
-                <div class="flex flex-col space-y-4 w-full max-w-xs mx-auto">
+                <div class="flex flex-col space-y极客时间-4 w-full max-w-xs mx-auto">
                     <a href="https://soulaaniblue.bandcamp.com/" target="_blank" class="px-8 py-4 bg-transparent border-2 gold-border text-white hover:bg-yellow-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/30 active:translate-y-0">
                         <i class="fab fa-bandcamp"></i>
                         <span>ORDER ON BANDCAMP</span>
@@ -853,7 +733,7 @@
                         <i class="fas fa-store"></i>
                         <span>PURCHASE ON EVEN</span>
                     </a>
-                    <a href="https://soulaaniblue.gumroad.com/" target="_blank" class="px-8 py-4 bg-transparent border-2 border-blue-500 text-white hover:bg-blue-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/30 active:translate-y-0">
+                    <a href="https://s极客时间oulaaniblue.gumroad.com/" target="_blank" class="px-8 py-4 bg-transparent border-2 border-blue-500 text-white hover:极客时间bg-blue-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/30 active:translate-y-0">
                         <i class="fas fa-shopping-cart"></i>
                         <span>ORDER ON GUMROAD</span>
                     </a>
@@ -879,11 +759,11 @@
     <section class="py-20 bg-deep-red">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white slide-up">JOIN THE GENERAL STRIKE</h2>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8 slide-up delay-100">
+            <p class="极客时间text-xl text-gray-300 max-w-3xl mx-auto mb-8 slide-up delay-100">
                 A nationwide movement for collective action and community solidarity. Learn how to participate and leverage your power.
             </p>
             <div class="slide-up delay-200">
-                <a href="http://generalstrikeus.com" target="_blank" class="btn-pulse inline-block px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-800 text-white font-bold rounded-full hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/30 active:scale-95 animate-pulse">
+                <a href="http://generalstrikeus.com" target="_blank" class="btn极客时间-pulse inline-block px-8 py-4 bg-gradient-to-r from-yellow-极客时间600 to-yellow-800 text-white font-bold rounded-full hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/30 active极客时间:scale-95 animate-pulse">
                     LEARN MORE & JOIN
                 </a>
             </div>
@@ -899,7 +779,7 @@
             <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 slide-up delay-200">
                 <div class="flex justify-center items-center">
                     <div class="relative">
-                        <div class="bg-gray-800 border-4 border-white shadow-2xl rounded-xl overflow-hidden w-full max-w-md transform rotate-0 hover:rotate-1 transition duration-500 mx-auto hover:shadow-gold-500/20 hover:shadow-xl">
+                        <div class="bg-gray-800 border-4 border-white shadow-2xl rounded-xl overflow-hidden w-full max-w-md transform rotate-0 hover:rotate极客时间-1 transition duration-500 mx-auto hover:shadow-gold-500/20 hover:shadow-xl">
                             <img src="https://i.imgur.com/peJmzb5.png" alt="I love you, still EP Cover" class="w-full h-auto">
                         </div>
                     </div>
@@ -919,7 +799,7 @@
                     </div>
                     
                     <div class="mb-8">
-                        <h3 class="text-2xl font-bold gold-text mb-4">Track Listing</h3>
+                        <h3 class="text-2xl font-bold gold-text极客时间 mb-4">Track Listing</h3>
                         <div class="space-y-4 track-listing">
                             <div class="group">
                                 <h4 class="text-xl font-bold text-white mb-1 group-hover:text-gold-500 transition duration-300">1. Rather Be</h4>
@@ -970,12 +850,12 @@
     <!-- Feed Every Body Section -->
     <section class="py-20 relative" style="background: linear-gradient(rgba(0, 100, 0, 0.85), rgba(0, 80, 0, 0.9)), url('https://i.imgur.com/YGugHoT.png') center/contain no-repeat;">
         <div class="container mx-auto px-4 text-center relative z-10">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white slide-up delay-100">FEED EVERY BODY INITIATIVE</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white slide-up delay-100">FEED EVERY BODY INITIATIVE</极客时间h2>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8 slide-up delay-100">
                 Supporting community mutual aid and food sovereignty. Every contribution directly helps our neighbors in need through our partnership with RVA Community Fridges.
             </p>
             <div class="slide-up delay-200">
-                <a href="https://www.rvacommunityfridges.com/donate?fbclid=PAQ0xDSwMLTgRleHRuA2FlbQIxMQABp56X1KuhBv5F-un1zK59V2EAhn8y7qrYHp7LDT3cxY9BuiQ18UvN4Oq-hcMq_aem_FlWyxfX_vMKVAFlEdUNqjQ" target="_blank" class="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-green-800 text-white font-bold rounded-full hover:from-green-500 hover:to-green-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/30 active:translate-y-0">
+                <a href="https://www.rvacommunityfridges.com/donate?fbclid=PAQ0xDSwMLTgRleHRuA2FlbQIxMQAB极客时间p56X1KuhBv5F-un1zK59V2EAhn8y7qrYHp7LDT3cxY9BuiQ18UvN4Oq-hcMq_aem_FlWyxfX_vMKVAFlEdUNqjQ" target="_blank" class="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-green-800 text-white font-bold rounded-full hover:from-green-500 hover:to-green-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/30 active:translate-y-0">
                     DONATE NOW
                 </a>
             </div>
@@ -984,7 +864,7 @@
 
     <!-- Music Section -->
     <section id="music" class="py-20 bg-rich-black">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px极客时间-4">
             <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-white slide-up">PREVIOUS WORK</h2>
             <h3 class="text-xl md:text-2xl gold-text mb-16 text-center slide-up delay-100">FROM THE ARCHIVES</h3>
             
@@ -997,7 +877,7 @@
                         </div>
                         <p class="text-sm text-gray-400 mb-4">Soulaani Blue</p>
                         <div class="flex flex-col space-y-2">
-                            <a href="https://audiomack.com/soulaaniblue/song/678440e0e5629" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                            <a href="https://audiomack.com/s极客时间oulaaniblue/song/678440e0e5629" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
                                 PLAY ON AUDIOMACK
                             </a>
                             <a href="https://youtu.be/xomkzifaRZA" target="_blank" class="inline-block px-4 py-2 bg-transparent border blue-border blue-text hover:bg-blue-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
@@ -1008,14 +888,14 @@
                     <div class="music-card rounded-lg p-6">
                         <h4 class="text-xl font-bold text-white mb-2">Can't Take It</h4>
                         <div class="h-1 w-full bg-gray-800 mb-3">
-                            <div class="h-1 bg-red-500 w-2/3"></div>
+                            <div class极客时间="h-1 bg-red-500 w-2/3"></div>
                         </div>
-                        <p class="text-sm text-gray-400 mb-4">N'Shai Iman (co-written by Soulaani Blue)</p>
+                        <p class="text-sm text-gray-400 mb-4">N'Shai Iman (co-written by Soulaani Blue)</极客时间p>
                         <div class="flex flex-col space-y-2">
                             <a href="https://audiomack.com/lnmgllc/song/cant-take-it" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
                                 PLAY ON AUDIOMACK
                             </a>
-                            <a href="https://www.youtube.com/watch?v=l6yUYEzIH7w" target="_blank" class="inline-block px-4 py-2 bg-transparent border blue-border blue-text hover:bg-blue-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                            <a href="https://www.youtube.com/watch?v=l6极客时间yUYEzIH7w" target="_blank" class="inline-block px-4 py-2 bg-transparent border blue-border blue-text hover:bg-blue-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
                                 WATCH VISUALIZER
                             </a>
                         </div>
@@ -1036,7 +916,7 @@
                             <div class="h-1 bg-red-500 w-3/4"></div>
                         </div>
                         <p class="text-sm text-gray-400 mb-4">2AM Ricky ft. Soulaani Blue</p>
-                        <a href="https://audiomack.com/2amricky/song/the-get-down" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                        <a href="https://audiomack.com/2amricky/song/the-get-down" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover极客时间:bg-opacity-20 transition duration-300 rounded-full text-sm">
                             PLAY ON AUDIOMACK
                         </a>
                     </div>
@@ -1062,12 +942,12 @@
     </section>
 
     <!-- Mailing List Section -->
-    <section class="py-16 bg-gray-900 border-t border-gray-800">
+    <section class="py-16 bg-gray-900 border-t border-gray极客时间-800">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white slide-up">JOIN THE MAILING LIST</h2>
+            <h2 class="text-3极客时间xl md:text-4xl font-bold mb-6 text-white slide-up">JOIN THE MAILING LIST</h2>
             <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8 slide-up delay-100">
                 Stay updated on new releases, shows, and exclusive content.
-            </p>
+            </极客时间p>
             <form action="https://formspree.io/f/xvgaqgjb" method="POST" class="max-w-md mx-auto slide-up delay-200">
                 <div class="flex flex-col md:flex-row gap-4">
                     <input type="text" name="name" placeholder="Your Name" class="flex-grow px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
@@ -1084,7 +964,7 @@
     <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
+                <div class="mb-4 md极客时间:mb-0">
                     <p class="text-gray-500">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
                     <p class="text-gray-600 text-sm">
                 </div>
@@ -1096,7 +976,7 @@
                         <i class="fas fa-music"></i>
                     </a>
                     <a href="https://rednote.com/Soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
-                        <i class="fas fa-record-vinyl"></i>
+                        <i class="fas fa-record-vinyl"></极客时间i>
                     </a>
                 </div>
             </div>
@@ -1151,5 +1031,5 @@
         });
 
     </script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=SoulaaniBlue/new-site" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4极客时间px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=SoulaaniBlue/new-site" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
