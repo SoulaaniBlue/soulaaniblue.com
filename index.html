@@ -538,6 +538,21 @@
             display: block;
         }
 
+        /* Video Section Styles */
+        .video-section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            box-sizing: border-box;
+            background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95));
+        }
+
         /* Mobile responsiveness for the glitch text */
         @media (max-width: 1024px) {
             .glitch {
@@ -571,6 +586,11 @@
             .video-container {
                 margin: 1rem auto;
                 border-width: 2px;
+            }
+
+            .video-section {
+                padding: 2rem 1rem;
+                min-height: 80vh;
             }
         }
 
@@ -681,13 +701,24 @@
 </head>
 <body class="min-h-screen">
 
-    <!-- UPDATED EVENT PROMO SECTION WITH STREAMABLE VIDEO -->
+    <!-- UPDATED EVENT PROMO SECTION -->
     <section id="event-promo">
         <div class="promo-content">
             <div class="glitch-container">
                 <h1 class="glitch" data-text="Broadcast from the Brink">Broadcast from the Brink</h1>
             </div>
             <p class="typewriter">A final Transmission. Gain Access</p>
+            
+            <a href="https://buymeacoffee.com/soulaaniblue" class="bmac-button" target="_blank">Support the Project</a>
+        </div>
+    </section>
+
+    <!-- NEW VIDEO SECTION -->
+    <section id="video-transmission" class="video-section">
+        <div class="promo-content">
+            <div class="glitch-container">
+                <h2 class="glitch" data-text="Final Transmission">Final Transmission</h2>
+            </div>
             
             <!-- STREAMABLE VIDEO EMBED -->
             <div class="video-container">
@@ -1058,13 +1089,3 @@
     </script>
 <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=SoulaaniBlue/new-site" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
-```
-
-The key change is in the "UPDATED EVENT PROMO SECTION" where I've replaced the placeholder video code with your actual Streamable embed. The video will now:
-
-· Autoplay when the page loads
-· Be fully responsive on all devices
-· Maintain the gold border styling that matches your site's theme
-· Display properly within the existing layout
-
-All other sections of your site remain exactly the same. Just copy and paste this entire code into your index.html file on GitHub and your video should be live!
