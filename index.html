@@ -22,7 +22,6 @@
             --color-gold: #D4AF37;
             --color-black: #000;
         }
-        
         body {
             font-family: 'Lato', sans-serif;
             background-color: var(--rich-black);
@@ -30,17 +29,14 @@
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
-        
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
         }
-        
         .impact-font {
             font-family: 'Raleway', sans-serif;
             letter-spacing: -0.025em;
         }
-        
         .hero-section {
             background: linear-gradient(rgba(10, 10, 10, 0.65), rgba(10, 10, 10, 0.85)), 
                         url('https://i.imgur.com/N9CpOdo.jpeg');
@@ -48,33 +44,26 @@
             background-position: center center;
             background-attachment: fixed;
         }
-        
         .ep-section {
             background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95));
         }
-        
         .photo-gallery {
             background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95));
         }
-        
         .gold-text { color: var(--gold); }
         .red-text { color: var(--deep-red); }
         .blue-text { color: var(--soft-blue); }
-        
         .gold-border { border-color: var(--gold); }
         .red-border { border-color: var(--deep-red); }
         .blue-border { border-color: var(--soft-blue); }
-        
         .gold-bg { background-color: var(--gold); }
         .red-bg { background-color: var(--deep-red); }
         .blue-bg { background-color: var(--soft-blue); }
-        
         .nav-link {
             position: relative;
             font-weight: 700;
             letter-spacing: 0.5px;
         }
-        
         .nav-link::after {
             content: '';
             position: absolute;
@@ -85,24 +74,20 @@
             background: linear-gradient(90deg, var(--gold), var(--deep-red));
             transition: width 0.4s ease;
         }
-        
         .nav-link:hover::after {
             width: 100%;
         }
-        
         .music-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             background: rgba(20, 20, 20, 0.7);
             border: 1px solid rgba(212, 175, 55, 0.1);
         }
-        
         .music-card:hover {
             transform: translateY(-8px);
             background: rgba(30, 30, 30, 0.9);
             box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
-        
         .release-badge {
             position: absolute;
             top: -12px;
@@ -117,12 +102,10 @@
             letter-spacing: 1px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-        
         .track-listing {
             border-left: 3px solid var(--gold);
             padding-left: 1rem;
         }
-        
         .social-icon {
             transition: all 0.3s ease;
             width: 45px;
@@ -133,31 +116,26 @@
             border-radius: 50%;
             border: 2px solid var(--gold);
         }
-        
         .social-icon:hover {
             transform: scale(1.1) translateY(-5px);
             background: var(--gold);
             color: black;
         }
-        
         .ep-card {
             background: rgba(15, 15, 15, 0.9);
             border-top: 4px solid var(--deep-red);
             transition: all 0.4s ease;
         }
-        
         .ep-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(139, 0, 0, 0.2);
             border-top: 4px solid var(--gold);
         }
-        
         .btn-pulse {
             animation: pulse 2s infinite;
             position: relative;
             overflow: hidden;
         }
-        
         .btn-pulse::before {
             content: '';
             position: absolute;
@@ -169,23 +147,19 @@
             transform: translateX(-100%);
             animation: shine 3s infinite;
         }
-        
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
             100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
-        
         @keyframes shine {
             100% { transform: translateX(100%); }
         }
-        
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
-        
         .gallery-item {
             border-radius: 8px;
             overflow: hidden;
@@ -196,7 +170,6 @@
             background-position: center;
             position: relative;
         }
-        
         .gallery-item::before {
             content: '';
             position: absolute;
@@ -207,35 +180,28 @@
             background: rgba(0,0,0,0.3);
             transition: all 0.3s ease;
         }
-        
         .gallery-item:hover::before {
             background: rgba(0,0,0,0.1);
         }
-        
         .gallery-item:hover {
             transform: scale(1.03);
         }
-        
         .fade-in { animation: fadeIn 1.2s ease-out forwards; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        
         .slide-up { 
             opacity: 0;
             transform: translateY(30px);
             animation: slideUp 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
         }
-        
         @keyframes slideUp { 
             from { transform: translateY(30px); opacity: 0; } 
             to { transform: translateY(0); opacity: 1; } 
         }
-        
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
         .delay-300 { animation-delay: 300ms; }
         .delay-400 { animation-delay: 400ms; }
         .delay-500 { animation-delay: 500ms; }
-        
         .audio-player {
             width: 100%;
             height: 50px;
@@ -246,7 +212,6 @@
             padding: 0 15px;
             margin-top: 10px;
         }
-        
         .play-btn {
             width: 35px;
             height: 35px;
@@ -260,11 +225,9 @@
             margin-right: 15px;
             transition: all 0.3s ease;
         }
-        
         .play-btn:hover {
             transform: scale(1.1);
         }
-        
         .progress-bar {
             flex-grow: 1;
             height: 4px;
@@ -273,7 +236,6 @@
             position: relative;
             cursor: pointer;
         }
-        
         .progress {
             position: absolute;
             top: 0;
@@ -283,7 +245,6 @@
             border-radius: 2px;
             width: 0%;
         }
-        
         .time {
             font-size: 12px;
             color: rgba(255,255,255,0.7);
@@ -291,40 +252,32 @@
             min-width: 40px;
             text-align: right;
         }
-        
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
-            
             h1 { font-size: 2.5rem; }
-            
             .hero-section {
                 background-attachment: scroll;
             }
-            
             .audio-player {
                 flex-direction: column;
                 height: auto;
                 padding: 15px;
             }
-            
             .play-btn {
                 margin-right: 0;
                 margin-bottom: 10px;
             }
-            
             .progress-bar {
                 width: 100%;
                 margin-bottom: 10px;
             }
-            
             .time {
                 margin-left: 0;
                 text-align: center;
             }
         }
-        
         /* ===== NEW PROMO SECTION STYLES ===== */
         #event-promo {
             position: relative;
@@ -339,12 +292,10 @@
             box-sizing: border-box;
             overflow: hidden;
         }
-
         .promo-content {
             width: 100%;
             max-width: 100%;
         }
-
         .glitch-container {
             position: relative;
             margin-bottom: 2rem;
@@ -352,7 +303,6 @@
             padding: 0 1rem;
             box-sizing: border-box;
         }
-
         .glitch {
             font-family: 'Press Start 2P', cursive;
             font-size: 2.5rem;
@@ -371,7 +321,6 @@
             width: 100%;
             max-width: 100%;
         }
-
         .glitch::before,
         .glitch::after {
             content: attr(data-text);
@@ -382,19 +331,16 @@
             height: 100%;
             clip: rect(44px, 450px, 56px, 0);
         }
-
         .glitch::before {
             left: 3px;
             text-shadow: -2px 0 var(--color-red);
             animation: glitch-anim 5s infinite linear alternate-reverse;
         }
-
         .glitch::after {
             left: -3px;
             text-shadow: -2px 0 var(--color-gold);
             animation: glitch-anim2 5s infinite linear alternate-reverse;
         }
-
         @keyframes glitch-anim {
             0% { clip: rect(32px, 9999px, 34px, 0); }
             5% { clip: rect(2px, 9999px, 76px, 0); }
@@ -418,7 +364,6 @@
             95% { clip: rect(83px, 9999px, 40px, 0); }
             100% { clip: rect(11px, 9999px, 20px, 0); }
         }
-
         @keyframes glitch-anim2 {
             0% { clip: rect(12px, 9999px, 59px, 0); }
             5% { clip: rect(92px, 9999px, 100px, 0); }
@@ -442,7 +387,6 @@
             95% { clip: rect(5px, 9999px, 83px, 0); }
             100% { clip: rect(87px, 9999px, 47px, 0); }
         }
-
         @keyframes glitch-skew {
             0% { transform: skew(0deg); }
             10% { transform: skew(2deg); }
@@ -456,7 +400,6 @@
             90% { transform: skew(1deg); }
             100% { transform: skew(0deg); }
         }
-
         .typewriter {
             font-family: 'Roboto Mono', monospace;
             font-size: 1.2rem;
@@ -470,17 +413,14 @@
             max-width: 100%;
             box-sizing: border-box;
         }
-
         @keyframes typing {
             from { width: 0 }
             to { width: 100% }
         }
-
         @keyframes blink-caret {
             from, to { border-color: transparent }
             50% { border-color: var(--color-red); }
         }
-
         .bmac-button {
             display: inline-block;
             margin-top: 2rem;
@@ -499,12 +439,10 @@
             transition: all 0.3s;
             z-index: 1;
         }
-
         .bmac-button:hover {
             color: var(--color-black);
             border-color: var(--color-red);
         }
-
         .bmac-button::before {
             content: '';
             position: absolute;
@@ -516,11 +454,9 @@
             transition: all 0.5s;
             z-index: -1;
         }
-
         .bmac-button:hover::before {
             left: 0;
         }
-
         /* Video player styles */
         .video-container {
             width: 100%;
@@ -531,13 +467,11 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-
         .video-player {
             width: 100%;
             height: auto;
             display: block;
         }
-
         /* Video Section Styles */
         .video-section {
             position: relative;
@@ -552,7 +486,6 @@
             box-sizing: border-box;
             background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95));
         }
-
         /* Mobile responsiveness for the glitch text */
         @media (max-width: 1024px) {
             .glitch {
@@ -560,7 +493,6 @@
                 letter-spacing: 1px;
             }
         }
-
         @media (max-width: 768px) {
             .glitch {
                 font-size: 1.5rem;
@@ -569,7 +501,6 @@
                     1px 1px 0 var(--color-red),
                     -1px -1px 0 var(--color-gold);
             }
-            
             .typewriter {
                 font-size: 1rem;
                 white-space: normal;
@@ -577,77 +508,62 @@
                 animation: none;
                 text-align: center;
             }
-            
             .bmac-button {
                 padding: 0.8rem 1.5rem;
                 font-size: 0.7rem;
             }
-
             .video-container {
                 margin: 1rem auto;
                 border-width: 2px;
             }
-
             .video-section {
                 padding: 2rem 1rem;
                 min-height: 80vh;
             }
         }
-
         @media (max-width: 480px) {
             .glitch {
                 font-size: 1.2rem;
                 line-height: 1.3;
                 word-spacing: -2px;
             }
-            
             #event-promo {
                 padding: 1rem;
             }
-            
             .glitch-container {
                 margin-bottom: 1.5rem;
             }
-            
             .typewriter {
                 font-size: 0.9rem;
                 margin: 1rem 0;
             }
         }
-
         @media (max-width: 360px) {
             .glitch {
                 font-size: 1rem;
             }
-            
             .typewriter {
                 font-size: 0.8rem;
             }
-            
             .bmac-button {
                 padding: 0.6rem 1.2rem;
                 font-size: 0.6rem;
             }
         }
-
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
-        
         ::-webkit-scrollbar-track {
             background: var(--rich-black);
         }
-        
         ::-webkit-scrollbar-thumb {
             background: var(--gold);
             border-radius: 4px;
         }
-        
         ::-webkit-scrollbar-thumb:hover {
             background: #c9a227;
         }
-        
         /* Floating music player */
         .floating-player {
             position: fixed;
@@ -664,24 +580,20 @@
             opacity: 0;
             transition: all 0.3s ease;
         }
-        
         .floating-player.show {
             transform: translateY(0);
             opacity: 1;
         }
-        
         .player-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
         }
-        
         .player-title {
             font-weight: bold;
             color: var(--gold);
         }
-        
         .close-player {
             background: none;
             border: none;
@@ -689,7 +601,6 @@
             cursor: pointer;
             font-size: 1.2rem;
         }
-        
         @media (max-width: 640px) {
             .floating-player {
                 width: calc(100% - 40px);
@@ -700,56 +611,36 @@
     </style>
 </head>
 <body class="min-h-screen">
-
-    <!-- UPDATED EVENT PROMO SECTION -->
-    <section id="event-promo">
-        <div class="promo-content">
-            <div class="glitch-container">
-                <h1 class="glitch" data-text="Broadcast from the Brink">Broadcast from the Brink</h1>
-            </div>
-            <p class="typewriter">A final Transmission. Buy Me Tea To Gain Access</p>
-            
-            <a href="https://buymeacoffee.com/soulaaniblue" class="bmac-button" target="_blank">Support Here</a>
-        </div>
-    </section>
-
     <!-- OPERATOR VISUALIZER SECTION -->
     <section id="operator-visualizer" class="video-section">
         <div class="promo-content">
             <div class="glitch-container">
                 <h2 class="glitch" data-text="Operator">Operator Visualizer</h2>
             </div>
-            
             <!-- STREAMABLE VIDEO EMBED -->
             <div class="video-container">
                 <div style="position:relative; width:100%; height:0px; padding-bottom:56.250%">
                     <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/s44fhy?loop=0" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
                 </div>
             </div>
-            
             <a href="https://buymeacoffee.com/soulaaniblue" class="bmac-button" target="_blank">Support the Project</a>
         </div>
     </section>
-
     <!-- RATHER BE VISUALIZER SECTION -->
     <section id="video-transmission" class="video-section">
         <div class="promo-content">
             <div class="glitch-container">
                 <h2 class="glitch" data-text="Rather Be">Rather Be Visualizer</h2>
             </div>
-            
             <!-- STREAMABLE VIDEO EMBED -->
             <div class="video-container">
                 <div style="position:relative; width:100%; height:0px; padding-bottom:56.250%">
                     <iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/yuuk0x?autoplay=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
                 </div>
             </div>
-            
             <a href="https://buymeacoffee.com/soulaaniblue" class="bmac-button" target="_blank">Support the Project</a>
         </div>
     </section>
-
-    <!-- Rest of your HTML remains exactly the same -->
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-rich-black bg-opacity-95 border-b border-gray-800">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -790,7 +681,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Home Section -->
     <section id="home" class="hero-section min-h-screen flex items-center justify-center relative pt-24 pb-20">
         <div class="container mx-auto px-4 text-center fade-in">
@@ -801,7 +691,6 @@
                     Soulaani Blue's most vulnerable work yet - a soulful journey through love's complexities
                 </p>
             </div>
-            
             <div class="flex flex-col md:flex-row justify-center gap-4 slide-up delay-300 mt-16">
                 <div class="flex flex-col space-y-4 w-full max-w-xs mx-auto">
                     <a href="https://soulaaniblue.bandcamp.com/" target="_blank" class="px-8 py-4 bg-transparent border-2 gold-border text-white hover:bg-yellow-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/30 active:translate-y-0">
@@ -829,7 +718,6 @@
             </a>
         </div>
     </section>
-
     <!-- The General Strike Section -->
     <section class="py-20 bg-deep-red">
         <div class="container mx-auto px-4 text-center">
@@ -844,13 +732,11 @@
             </div>
         </div>
     </section>
-
     <!-- EP Section -->
     <section id="ep" class="ep-section py-20 bg-rich-black">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-white slide-up">I LOVE YOU, STILL</h2>
             <h3 class="text-xl md:text-2xl gold-text mb-16 text-center slide-up delay-100">SEPTEMBER 4, 2025</h3>
-            
             <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 slide-up delay-200">
                 <div class="flex justify-center items-center">
                     <div class="relative">
@@ -859,7 +745,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div>
                     <div class="mb-8 text-center max-w-3xl mx-auto">
                         <h3 class="text-2xl font-bold gold-text mb-4">The Story</h3>
@@ -872,7 +757,6 @@
                             Every sound, every vocal, every moment is intentionally crafted.
                         </p>
                     </div>
-                    
                     <div class="mb-8">
     <h3 class="text-2xl font-bold gold-text mb-4">Track Listing</h3>
     <div class="space-y-4 track-listing">
@@ -894,7 +778,6 @@
         </div>
     </div>
 </div>
-                    
                     <div>
                         <h3 class="text-2xl font-bold gold-text mb-4">Production Notes</h3>
                         <ul class="text-gray-300 space-y-2">
@@ -916,16 +799,22 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="mt-12">
                         <iframe src="https://audiomack.com//embed/soulaaniblue/album/i-love-you-still-ep" scrolling="no" width="100%" height="400" frameborder="0" title="I love you, still"></iframe>
+                        
+                        <!-- NEW AUDIOMACK FOLLOW BUTTON -->
+                        <div class="mt-6 text-center">
+                            <a href="https://audiomack.com/soulaaniBlue" target="_blank" rel="noopener noreferrer"
+                               class="px-6 py-3 bg-transparent border-2 border-orange-500 text-orange-300 font-bold rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/30 inline-flex items-center space-x-2">
+                                <i class="fas fa-user-plus"></i>
+                                <span>FOLLOW SOULAANI BLUE ON AUDIOMACK</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
         </div>
     </section>
-
     <!-- Feed Every Body Section -->
     <section class="py-20 relative" style="background: linear-gradient(rgba(0, 100, 0, 0.85), rgba(0, 80, 0, 0.9)), url('https://i.imgur.com/YGugHoT.png') center/contain no-repeat;">
         <div class="container mx-auto px-4 text-center relative z-10">
@@ -940,13 +829,11 @@
             </div>
         </div>
     </section>
-
     <!-- Music Section -->
     <section id="music" class="py-20 bg-rich-black">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-white slide-up">PREVIOUS WORK</h2>
             <h3 class="text-xl md:text-2xl gold-text mb-16 text-center slide-up delay-100">FROM THE ARCHIVES</h3>
-            
             <div class="max-w-4xl mx-auto slide-up delay-200">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="music-card rounded-lg p-6">
@@ -1003,7 +890,6 @@
             </div>
         </div>
     </section>
-
     <!-- People Over Papers Section -->
     <section class="py-20 bg-deep-red">
         <div class="container mx-auto px-4 text-center">
@@ -1018,7 +904,6 @@
             </div>
         </div>
     </section>
-
     <!-- Mailing List Section -->
     <section class="py-16 bg-gray-900 border-t border-gray-800">
         <div class="container mx-auto px-4 text-center">
@@ -1037,37 +922,38 @@
             </form>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p class="text-gray-500">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
-                    <p class="text-gray-600 text-sm">
+                <div class="mb-4 md:mb-0 text-center md:text-left">
+                    <p class="text-gray-500 mb-2">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
+                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300">
+                        <i class="fas fa-coffee mr-2"></i>
+                        <span>SUPPORT MY ART</span>
+                    </a>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300 transform hover:scale-110">
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300 transform hover:scale-110">
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-music"></i>
                     </a>
-                    <a href="https://rednote.com/Soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
+                    <a href="https://rednote.com/Soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-record-vinyl"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
-
     <script>
         // Mobile menu toggle
         document.getElementById('menu-toggle').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
-
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1086,7 +972,6 @@
                 }
             });
         });
-
         // Animation on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1095,11 +980,9 @@
                 }
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.slide-up').forEach(el => {
             observer.observe(el);
         });
-
         // External links
         document.querySelectorAll('a').forEach(link => {
             if (link.href && !link.href.startsWith(window.location.origin) && !link.href.startsWith('#')) {
@@ -1107,7 +990,6 @@
                 link.setAttribute('rel', 'noopener noreferrer');
             }
         });
-
     </script>
 <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=SoulaaniBlue/new-site" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
