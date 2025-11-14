@@ -759,9 +759,9 @@
     <!-- BLOG NAVIGATION MENU -->
 <div class="fixed top-20 w-full z-40 bg-rich-black bg-opacity-95 border-b border-gray-800 hidden md:block" id="blog-nav">
     <div class="container mx-auto px-4 py-2 flex justify-center space-x-6">
-        <a href="#repeat-post" class="text-white hover:text-gold-500 font-medium transition-colors">The Flower That Grew Into a Song</a>
-        <a href="#operator-post" class="text-white hover:text-gold-500 font-medium transition-colors">How Anita Baker Taught Me to Apologize</a>
-        <a href="#rather-be-post" class="text-white hover:text-gold-500 font-medium transition-colors">Rather Be/Hey Bunnie: The Song That Chose Me</a>
+        <a href="#repeat-post" class="text-white hover:text-gold-500 font-medium transition-colors">Repeat: The Flower That Grew Into a Song</a>
+        <a href="#operator-post" class="text-white hover:text-gold-500 font-medium transition-colors">Operator: How Anita Baker Taught Me to Apologize</a>
+        <a href="#rather-be-post" class="text-white hover:text-gold-500 font-medium transition-colors">Rather Be: The Song That Chose Me</a>
     </div>
 </div>
 
@@ -780,12 +780,15 @@
         </div>
     </div>
 </div>
-
 <style>
-    /* Blog navigation styles */
+    /* Blog navigation styles - ensure hidden by default */
     #blog-nav {
         transform: translateY(-100%);
         transition: transform 0.3s ease;
+        position: fixed;
+        top: 20px;
+        width: 100%;
+        z-index: 40;
     }
     #blog-nav.active {
         transform: translateY(0);
@@ -796,9 +799,9 @@
         left: 50%;
         transform: translateX(-50%);
         box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+        z-index: 50;
     }
 </style>
-
 <script>
     // Show/hide blog nav when scrolling on blog sections
     document.addEventListener('DOMContentLoaded', function() {
@@ -807,9 +810,11 @@
         const mobileBlogMenu = document.getElementById('mobile-blog-menu');
         
         // Mobile blog menu toggle
-        blogMenuToggle.addEventListener('click', function() {
-            mobileBlogMenu.classList.toggle('hidden');
-        });
+        if (blogMenuToggle) {
+            blogMenuToggle.addEventListener('click', function() {
+                mobileBlogMenu.classList.toggle('hidden');
+            });
+        }
         
         // Close mobile menu when clicking a link
         document.querySelectorAll('#mobile-blog-menu a').forEach(link => {
@@ -838,7 +843,7 @@
                         }
                         
                         // Close mobile blog menu if open
-                        if (!mobileBlogMenu.classList.contains('hidden')) {
+                        if (mobileBlogMenu && !mobileBlogMenu.classList.contains('hidden')) {
                             mobileBlogMenu.classList.add('hidden');
                         }
                         
@@ -847,9 +852,6 @@
                             top: targetElement.offsetTop - 100,
                             behavior: 'smooth'
                         });
-                        
-                        // Show/hide blog nav based on position
-                        setTimeout(updateBlogNavVisibility, 300);
                     }
                 }
             });
@@ -858,15 +860,36 @@
         // Update blog nav visibility based on scroll position
         function updateBlogNavVisibility() {
             const currentScroll = window.scrollY;
-            const homeSection = document.getElementById('home');
-            const repeatSection = document.getElementById('repeat-post');
-            const operatorSection = document.getElementById('operator-post');
-            const ratherBeSection = document.getElementById('rather-be-post');
+            const windowHeight = window.innerHeight;
             
-            // If we're in any blog section, show the blog nav
-            if ((repeatSection && currentScroll > repeatSection.offsetTop - 200) ||
-                (operatorSection && currentScroll > operatorSection.offsetTop - 200) ||
-                (ratherBeSection && currentScroll > ratherBeSection.offsetTop - 200)) {
+            // Get all blog section positions
+            const blogSections = [
+                {id: 'repeat-post', show: false},
+                {id: 'operator-post', show: false},
+                {id: 'rather-be-post', show: false}
+            ];
+            
+            let anyBlogSectionVisible = false;
+            
+            // Check if any blog section is in view
+            blogSections.forEach(section => {
+                const element = document.getElementById(section.id);
+                if (element) {
+                    const elementTop = element.offsetTop;
+                    const elementBottom = elementTop + element.offsetHeight;
+                    
+                    // Check if section is in viewport
+                    if (elementTop < currentScroll + windowHeight && elementBottom > currentScroll) {
+                        section.show = true;
+                        anyBlogSectionVisible = true;
+                    } else {
+                        section.show = false;
+                    }
+                }
+            });
+            
+            // Show/hide blog nav based on visibility of blog sections
+            if (anyBlogSectionVisible) {
                 blogNav.classList.add('active');
             } else {
                 blogNav.classList.remove('active');
@@ -879,7 +902,9 @@
         
         // Hide mobile blog menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (!blogMenuToggle.contains(e.target) && !mobileBlogMenu.contains(e.target)) {
+            if (blogMenuToggle && mobileBlogMenu && 
+                !blogMenuToggle.contains(e.target) && 
+                !mobileBlogMenu.contains(e.target)) {
                 mobileBlogMenu.classList.add('hidden');
             }
         });
@@ -1060,7 +1085,7 @@
     </div>
 </section>
     </div>
-    <section id="blog" class="blog-section">
+    <section id="operator-post" class="blog-section">
     <div class="blog-post">
         <h1>From Classroom Cover to Healing Anthem<h1>
 
@@ -1137,7 +1162,7 @@
     </div>
 </section>
 
-    <section id="blog" class="blog-section">
+    <section id="rather be-post" class="blog-section">
         <div class="blog-post">
             <h1>The Song That Chose Me</h1>
             
