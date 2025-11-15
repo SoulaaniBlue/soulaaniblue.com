@@ -756,160 +756,6 @@
             </div>
         </div>
     </nav>
-    <!-- BLOG NAVIGATION MENU -->
-<div class="fixed top-20 w-full z-40 bg-rich-black bg-opacity-95 border-b border-gray-800 hidden md:block" id="blog-nav">
-    <div class="container mx-auto px-4 py-2 flex justify-center space-x-6">
-        <a href="#repeat-post" class="text-white hover:text-gold-500 font-medium transition-colors">Repeat: The Flower That Grew Into a Song</a>
-        <a href="#operator-post" class="text-white hover:text-gold-500 font-medium transition-colors">Operator: How Anita Baker Taught Me to Apologize</a>
-        <a href="#rather-be-post" class="text-white hover:text-gold-500 font-medium transition-colors">Rather Be: The Song That Chose Me</a>
-    </div>
-</div>
-
-<!-- MOBILE BLOG NAVIGATION (hamburger menu style) -->
-<div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 md:hidden" id="mobile-blog-nav">
-    <button id="blog-menu-toggle" class="bg-rich-black bg-opacity-90 border-2 border-gold-500 text-gold-500 px-4 py-2 rounded-full font-bold flex items-center space-x-2">
-        <i class="fas fa-book-open"></i>
-        <span>Blog Menu</span>
-    </button>
-    
-    <div class="hidden bg-rich-black bg-opacity-95 border-2 border-gold-500 rounded-lg mt-2 p-4 w-64" id="mobile-blog-menu">
-        <div class="flex flex-col space-y-3">
-            <a href="#repeat-post" class="text-white hover:text-gold-500 transition-colors">The Flower That Grew Into a Song</a>
-            <a href="#operator-post" class="text-white hover:text-gold-500 transition-colors">How Anita Baker Taught Me to Apologize</a>
-            <a href="#rather-be-post" class="text-white hover:text-gold-500 transition-colors">Rather Be/Hey Bunnie: The Song That Chose Me</a>
-        </div>
-    </div>
-</div>
-<style>
-    /* Blog navigation styles - ensure hidden by default */
-    #blog-nav {
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-        position: fixed;
-        top: 20px;
-        width: 100%;
-        z-index: 40;
-    }
-    #blog-nav.active {
-        transform: translateY(0);
-    }
-    #mobile-blog-menu {
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        box-shadow: 0 10px 15px rgba(0,0,0,0.3);
-        z-index: 50;
-    }
-</style>
-<script>
-    // Show/hide blog nav when scrolling on blog sections
-    document.addEventListener('DOMContentLoaded', function() {
-        const blogNav = document.getElementById('blog-nav');
-        const blogMenuToggle = document.getElementById('blog-menu-toggle');
-        const mobileBlogMenu = document.getElementById('mobile-blog-menu');
-        
-        // Mobile blog menu toggle
-        if (blogMenuToggle) {
-            blogMenuToggle.addEventListener('click', function() {
-                mobileBlogMenu.classList.toggle('hidden');
-            });
-        }
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobile-blog-menu a').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileBlogMenu.classList.add('hidden');
-            });
-        });
-        
-        // Smooth scroll for blog links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href').startsWith('#blog') || 
-                    this.getAttribute('href').startsWith('#repeat') ||
-                    this.getAttribute('href').startsWith('#operator') ||
-                    this.getAttribute('href').startsWith('#rather')) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        // First close mobile menu if open
-                        const mobileMenu = document.getElementById('mobile-menu');
-                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                        }
-                        
-                        // Close mobile blog menu if open
-                        if (mobileBlogMenu && !mobileBlogMenu.classList.contains('hidden')) {
-                            mobileBlogMenu.classList.add('hidden');
-                        }
-                        
-                        // Scroll to target
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-        
-        // Update blog nav visibility based on scroll position
-        function updateBlogNavVisibility() {
-            const currentScroll = window.scrollY;
-            const windowHeight = window.innerHeight;
-            
-            // Get all blog section positions
-            const blogSections = [
-                {id: 'repeat-post', show: false},
-                {id: 'operator-post', show: false},
-                {id: 'rather-be-post', show: false}
-            ];
-            
-            let anyBlogSectionVisible = false;
-            
-            // Check if any blog section is in view
-            blogSections.forEach(section => {
-                const element = document.getElementById(section.id);
-                if (element) {
-                    const elementTop = element.offsetTop;
-                    const elementBottom = elementTop + element.offsetHeight;
-                    
-                    // Check if section is in viewport
-                    if (elementTop < currentScroll + windowHeight && elementBottom > currentScroll) {
-                        section.show = true;
-                        anyBlogSectionVisible = true;
-                    } else {
-                        section.show = false;
-                    }
-                }
-            });
-            
-            // Show/hide blog nav based on visibility of blog sections
-            if (anyBlogSectionVisible) {
-                blogNav.classList.add('active');
-            } else {
-                blogNav.classList.remove('active');
-            }
-        }
-        
-        // Initial check and scroll event listener
-        updateBlogNavVisibility();
-        window.addEventListener('scroll', updateBlogNavVisibility);
-        
-        // Hide mobile blog menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (blogMenuToggle && mobileBlogMenu && 
-                !blogMenuToggle.contains(e.target) && 
-                !mobileBlogMenu.contains(e.target)) {
-                mobileBlogMenu.classList.add('hidden');
-            }
-        });
-    });
-</script>
     <!-- Home Section -->
     <section id="home" class="hero-section min-h-screen flex items-center justify-center relative pt-24 pb-20">
         <div class="container mx-auto px-4 text-center fade-in">
@@ -1047,161 +893,112 @@
     <section id="repeat-post" class="blog-section">
     <div class="blog-post">
         <h1>The Flower That Grew Into a Song</h1>
-        
         <p>I wrote the first lines of "Repeat" in 2023, sitting on a friend's couch with nowhere else to go. Back then, all I had was a few words, a feeling, and a melody humming in my head during sleepless nights. Creating art in crisis feels impossible sometimes—but that fragment of song became my lifeline when everything else felt like it was falling apart.</p>
-
         <p>For months, those words lived only in my phone's notes app and in the quiet moments between survival. I carried them with me like seeds waiting for soil.</p>
-
         <div class="blog-video" style="max-width: 700px; margin: 2rem auto;">
             <div style="position:relative; width:100%; height:0px; padding-bottom:178.218%;">
                 <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/cg6ufq?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
             </div>
             <p class="text-center text-gray-400 mt-2 italic" style="margin-top: 8px;">The single flower bud that grew from a dead bush—the moment that unlocked "Repeat" and taught me beauty persists.</p>
         </div>
-
         <p>Then in April 2024, everything shifted. PLXY sent me a beat pack that included a track that immediately felt like home. By then, I had a small room of my own in Colonial Heights, thanks to Ms. Debbie's kindness. Every morning and evening, I'd sit by the creek behind her house, listening to the water flow while scrolling through that beat pack.</p>
-
         <p>One afternoon, I noticed something that stopped me cold: a bush that looked completely dead, brown and brittle in the Virginia sun. But right in the center, pushing through the decay, was a single flower bud. Small. Determined. Defiantly alive.</p>
-
         <p>I recorded a video of it on my phone. Something about that stubborn flower unlocked everything inside me. I went inside, loaded PLXY's beat into my session, and recorded "Repeat" right there in Ms. Debbie's living room—no professional studio, no perfect conditions, just truth flowing out after months of holding it.</p>
-
         <p>When I first released the song in July 2024, it felt wrong almost immediately. The platforms were tracking my listeners, slicing up their attention, and treating my art like content. So I pulled it down. That decision cost me momentum, but it preserved my integrity.</p>
-
         <p>This January, I relaunched "Repeat" exclusively on Audiomack—the only streaming platform that respects independent artists enough to let us monetize our work directly. No middlemen. No surveillance. Just music and the people who need it.</p>
-
         <p>The response has been humbling: 21,500 streams across 17 countries. Messages from strangers who heard their own stories in my words. That flower by the creek taught me something essential: beauty persists even when systems try to bury it. So do we.</p>
-
         <p>Sometimes our most broken moments become the soil where our strongest art grows. That dead bush didn't know it was nurturing a flower. And I didn't know those desperate lines scribbled on a friend's couch would someday reach thousands of ears across the globe.</p>
-
         <p>Art doesn't require perfect conditions. It requires only that we keep showing up—even when we're barely holding on.</p>
-
         <div class="audiomack-embed" style="margin: 2rem auto; max-width: 600px;">
             <iframe src="https://audiomack.com//embed/soulaaniblue/song/678440e0e5629" scrolling="no" width="100%" height="180" frameborder="0" title="Repeat - Soulaani Blue"></iframe>
         </div>
-
         <p class="text-center">
             <a href="https://audiomack.com/soulaaniblue/song/678440e0e5629" target="_blank" rel="noopener">Stream "Repeat" on Audiomack</a>
         </p>
     </div>
 </section>
-    </div>
     <section id="operator-post" class="blog-section">
     <div class="blog-post">
-        <h1>From Classroom Cover to Healing Anthem<h1>
-
-        <h2>The First Note: A Moment of Honesty</h2>
+        <h1>How Anita Baker Taught Me to Apologize</h1>
+        <h2>From Classroom Cover to Healing Anthem</h2>
+        <p>There are songs we choose to write. And then there are songs that choose us—songs that arrive fully formed from some deeper place inside us that knows what our hearts need to say before our minds catch up. "Operator" was one of those songs for me.</p>
+        <h2>The First Note: A Moment of Raw Honesty</h2>
         <p>In late August 2024, between teaching elementary music classes, I found myself recording a cover of Anita Baker's "I Apologize" on my phone. I just needed to sing those words—<em>"I apologize, oh believe me I do"</em>—because they'd been living in my chest for months.</p>
-        
         <div style="position:relative; width:100%; height:0px; padding-bottom:100.000%">
             <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/w67clk?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
         </div>
-        
-        <p>Anita Baker was one of the first women I remember hearing truly apologize on wax—not out of weakness, but out of strength. Her voice taught me that apologies aren't transactions meant to get something back; they're transformations meant to create something new within ourselves.</p>
-
+        <p>This wasn't just about technique or musicality. Anita Baker was one of the first women I remember hearing truly apologize on wax—not out of weakness, but out of strength. Her voice taught me that apologies aren't transactions meant to get something back; they're transformations meant to create something new within ourselves.</p>
         <h2>A Year of Holding Space</h2>
         <p>After that classroom recording, I tried to make the track into something more. I produced my own beat for it—a decent effort, but something was missing. For months, I couldn't finish it. I had the first verse and hook sitting on an unfinished canvas while I worked through my own healing.</p>
-        
         <p>This period taught me patience. Sometimes the words we need to say aren't ready to be heard—not by others, and especially not by ourselves. I was learning to see my own worth when I felt like I had nothing to offer. I was learning that love isn't about "fixing" someone—it's about showing up for them when they can't show up for themselves.</p>
-
         <h2>The Moment Everything Shifted</h2>
         <p>A day after I released "I love you, still," PLXY sent me the beat that would become "Operator." I fell in love with it immediately. When I listened to that old classroom recording of "I Apologize," the rest of the song poured out of me. I finished the second verse that same night. Recorded it the next day. Sent it to PLXY the day after that.</p>
-        
         <p>Like a flower breaking through concrete, the right art finds you when you're ready to receive it.</p>
-        
         <div style="position:relative; width:100%; height:0px; padding-bottom:100.000%">
             <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/53oef6?loop=0" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
         </div>
-
         <h2>The Meaning in the Words</h2>
         <p>I intentionally used the "Re" prefix throughout "Operator" because when I started writing it, "Repeat" had just been re-released on Audiomack. This wasn't just wordplay—it was the sound of a man relearning how to be human:</p>
-        
         <ul class="space-y-2 pl-4">
             <li><strong>Regretful, Remorseful, Reflecting</strong> → The emotional state I was in</li>
             <li><strong>Rewrite, Recite, Recital</strong> → The performer trying to find the right words</li>
             <li><strong>Reguided missile, React, Regulated</strong> → The transformation through force</li>
             <li><strong>Recognized, Realize, Recreate, Reconsider</strong> → The desire to rebuild what was lost</li>
         </ul>
-        
-        <p>I say "Sous Chef" because of my name, Soulaani [Soo-Lah-knee] Blue. I sometimes refer to myself as Big Sou(an homage to my late grandmother, Susan Bynum, the REAL Big Sue). As a writer, when I get going, it's like a chef in the zone—creating something new from the ingredients life has given me.</p>
-        
-        <p>When I say "I ain't get this out no book," I mean I learned my lessons the hard way through many trials and a WHOLE LOT of error. I didn't read about healing in a manual. I lived it. I burned my hands on the stove of my own mistakes. I tasted the bitterness of my own pride. I measured the ingredients of growth in tears and time.</p>
-        
+        <p>I say "Sous Chef" because of my name, Soulaani [Soo-Lah-knee] Blue. I sometimes refer to myself as Big Sou. As a writer, when I get going, it's like a chef in the zone—creating something new from the ingredients life has given me.</p>
+        <p>When I say "I ain't get this out no book," I mean I learned my lessons the hard way through many trials and a whole lot of error. I didn't read about healing in a manual. I lived it. I burned my hands on the stove of my own mistakes. I tasted the bitterness of my own pride. I measured the ingredients of growth in tears and time.</p>
         <p>For those who truly know Anita's catalog: yes, I wove references to more than just "I Apologize" throughout the second verse. "Sweet lovin', sweet nothings" is a direct echo of "Sweet Love," and "from beginning to the end and on repeat" reimagines "Same Ole Love (365 Days a Year)" where she sings "from beginning to end 365 days of the year I want the same ole love."</p>
-        
         <p>But there's the heartbreaking twist: Anita's songs are about love that endures—mine is about love that ended, even though I now <em>understand</em> what enduring love requires.</p>
-
         <h2>The Lesson in the Song</h2>
         <p>"Operator" isn't just asking for a second chance with someone else. It's about becoming the person who deserves that chance in the first place. It's about the painful realization that sometimes we become who we needed to be only after losing what made us need to change.</p>
-        
         <p>The growth has happened. But the person who mattered most is gone.</p>
-        
         <p>I sing "I apologize" now not to get back what I lost, but because I finally understand why I needed to say it. I finally understand that an apology isn't about fixing the past—it's about becoming the person who can face it.</p>
-
         <h2>Why This Song Matters</h2>
         <p>If you're holding onto words you don't know what to do with—keep them.</p>
-        
         <p>If you're working through something that feels too heavy to carry—keep going.</p>
-        
         <p>The right canvas will find you. The right beat will come. And when it does, you'll finally understand why you had to wait.</p>
-        
         <p>The most transformative art is born from the most unexpected places—from classrooms between teaching duties, from unfinished songs that sit in your notes for a year, from the moments when we're not sure if we can ever say the right words.</p>
-        
         <p>I'm still learning to apologize to myself. I'm still learning to love from a distance while I work on becoming who I need to be.</p>
-        
         <p>Thank you for listening to the journey.</p>
-        
         <p class="italic mt-1"><em>P.S. If you've ever felt like you had the words but not the right place to put them, this song is for you.</em></p>
-        
         <div class="audiomack-embed mt-8">
             <iframe src="https://audiomack.com//embed/soulaaniblue/song/operator-two-master" scrolling="no" width="100%" height="180" frameborder="0" title="Operator - Soulaani Blue"></iframe>
         </div>
-        
         <p class="text-center mt-4">
             <a href="https://audiomack.com/soulaaniblue/song/operator-two-master?share-user-id=151992693" target="_blank" rel="noopener">Stream "Operator" on Audiomack</a>
         </p>
     </div>
 </section>
-
-    <section id="rather be-post" class="blog-section">
+    <section id="rather-be-post" class="blog-section">
         <div class="blog-post">
-            <h1>The Song That Chose Me</h1>
-            
+            <h1>Rather Be/Hey Bunnie: The Song That Chose Me</h1>
             <p>There are songs we write. And then there are songs that write us.</p>
-
-            <p>This song didn't start as a plan. It emerged when my reality became too heavy to carry silently. Between surviving housing instability, advocating for my students in an underfunded and exploitative system, and watching my country shift in ways that felt increasingly unfamiliar, I found myself with little energy left for new relationships. When people asked, "Are you going to find yourself a girl from Asia?" I'd smile politely(and uncomfortably) and answer the question without answering it. They didn't know I was still processing the ghost of someone who felt more real to me in my dreams than anyone I might meet in waking life.</p>
-            
+            <p>This song didn't start as a plan. It emerged when my reality became too heavy to carry silently. Between surviving housing instability, advocating for my students in an underfunded and exploitative system, and watching my country shift in ways that felt increasingly unfamiliar, I found myself with little energy left for new relationships. When people asked, "Are you going to find yourself a girl from Asia?" I'd smile politely and say nah. They didn't know I was still processing the ghost of someone who felt more real to me in my dreams than anyone I might meet in waking life.</p>
             <!-- FIRST PHOTO - BEDROOM SETUP -->
             <div class="blog-image">
                 <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/main/IMG_5537.jpeg" 
                      alt="My recording setup at Ms. Caldwell's house - where I recorded Rather Be" 
                      loading="lazy">
-                <p>The rented room where I recorded "Rather Be" at Ms. Caldwell's house.</p>
+                <p>The rented room where I recorded "Rather Be" at Ms. Caldwell's house. My mirror, notebook, and iPhone were my only tools.</p>
             </div>
-
             <p>The first verse of "Rather Be" was born in a rented room at Ms. Caldwell's house after I was forced to move out of my previous apartment. I'd spend nights staring at the ceiling, wondering if the only place I'd ever truly connect with her again was in my sleep. Writing became my therapy when traditional healing felt financially and logistically impossible.</p>
-
             <p>The outro—"Hey Bunnie"—remained unfinished for months. I carried those lyrics with me across oceans. I finally completed them sitting alone in a hotel room in a foreign country, the words flowing as if they'd been waiting for this moment of displacement to reveal themselves. That's when I realized something: sometimes our most honest art comes not when we're comfortable, but when we're in transition—when we're between worlds, between homes, between versions of ourselves.</p>
-            
-            <!-- SECOND PHOTO - BEDROOM -->
+            <!-- SECOND PHOTO - FLOWER -->
             <div class="blog-image">
                 <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/main/IMG_4054.jpeg" 
-                     alt="The flower bud that inspired Repeat and taught me about resilience" 
+                     alt="The flower bud that inspired Repeat" 
                      loading="lazy">
+                <p>The single flower bud that grew from a dead bush—the moment that unlocked "Repeat" and taught me beauty persists.</p>
             </div>
-
-            <p>When I say "I ain't know that I was so unsafe" it echoes beyond my relationship failure—it speaks to the political climate, to the broken family dynamics I grew up in, to educational systems that value compliance over care, to the invisible threats that follow us even when we try to build something beautiful.</p>
-
-            <p>When I recorded "Rather Be," I had a small room, a mirror, and the conviction that my truth deserved to be heard—even if only by the four walls around me.</p>
-
+            <p>When I say "I ain't know that I was so unsafe" echoes beyond my relationship—it speaks to the political climate, to the broken family dynamics I grew up in, to educational systems that value compliance over care, to the invisible threats that follow us even when we try to build something beautiful.</p>
+            <p>When I recorded "Rather Be," I had a small room, a mirror on the wall, and the conviction that my truth deserved to be heard—even if only by the four walls around me.</p>
             <p>I don't know if I'll ever meet someone who sees me as clearly as I see myself now. But I do know this: I'd rather be alone than compromise the vision I'm fighting so hard to build. And if I can't be with who I want—meaning the version of myself that's free from inherited trauma and systemic constraints—I'll stay faithful to my solitude until the world catches up to what I'm creating.</p>
-
             <div class="audiomack-embed">
-    <iframe src="https://audiomack.com//embed/soulaaniblue/song/rather-be-master" scrolling="no" width="100%" height="180" frameborder="0" title="Rather Be - Soulaani Blue"></iframe>
-</div>
-
-<p class="text-center">
-    <a href="https://audiomack.com/soulaaniblue/song/rather-be-master?share-user-id=151992693" target="_blank" rel="noopener">Stream "Rather Be" on Audiomack</a><br>
-</p>
+                <iframe src="https://audiomack.com//embed/soulaaniblue/song/rather-be-master" scrolling="no" width="100%" height="180" frameborder="0" title="Rather Be/Hey Bunnie - Soulaani Blue"></iframe>
+            </div>
+            <p class="text-center">
+                <a href="https://audiomack.com/soulaaniblue/song/rather-be-master?share-user-id=151992693" target="_blank" rel="noopener">Stream "Rather Be/Hey Bunnie" on Audiomack</a>
+            </p>
         </div>
     </section>
     <!-- Feed Every Body Section -->
