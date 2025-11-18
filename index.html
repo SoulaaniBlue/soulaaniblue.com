@@ -778,8 +778,8 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-rich-black bg-opacity-95 border-t border-gray-800" id="mobile-menu" aria-label="Mobile navigation menu">
+        <!-- Mobile Menu - FIXED: Removed extra "hidden" class -->
+        <div class="md:hidden bg-rich-black bg-opacity-95 border-t border-gray-800 hidden" id="mobile-menu" aria-label="Mobile navigation menu">
             <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
                 <a href="#home" class="nav-link gold-text hover:text-white" aria-label="Go to home section">HOME</a>
                 <a href="#ep" class="nav-link gold-text hover:text-white" aria-label="Go to EP section">NEW EP</a>
@@ -1166,13 +1166,33 @@
         </div>
     </footer>
     <script>
-        // Mobile menu toggle
+        // Mobile menu toggle - FIXED: Improved functionality
         document.getElementById('menu-toggle').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             menu.classList.toggle('hidden');
             this.setAttribute('aria-expanded', !isExpanded);
+            
+            // Change icon based on state
+            const icon = this.querySelector('i');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars text-2xl';
+            } else {
+                icon.className = 'fas fa-times text-2xl';
+            }
         });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                const menu = document.getElementById('mobile-menu');
+                const toggle = document.getElementById('menu-toggle');
+                menu.classList.add('hidden');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.querySelector('i').className = 'fas fa-bars text-2xl';
+            });
+        });
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1183,15 +1203,10 @@
                         top: target.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                        document.getElementById('menu-toggle').setAttribute('aria-expanded', 'false');
-                    }
                 }
             });
         });
+
         // Animation on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1200,9 +1215,11 @@
                 }
             });
         }, { threshold: 0.1 });
+
         document.querySelectorAll('.slide-up').forEach(el => {
             observer.observe(el);
         });
+
         // External links
         document.querySelectorAll('a').forEach(link => {
             if (link.href && !link.href.startsWith(window.location.origin) && !link.href.startsWith('#')) {
