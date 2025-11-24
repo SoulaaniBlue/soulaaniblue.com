@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soulaani Blue | I love you, still - EP</title>
+    
+    <!-- 🔍 SEO IMPROVEMENTS -->
+    <meta name="description" content="Soulaani Blue: Independent recording artist from Colerain, North Carolina. Stream 'I Love You, Still' EP exclusively on Audiomack with 55% of proceeds funding community fridges & mutual aid.">
+    <link rel="canonical" href="https://www.soulaaniblue.com" />
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Soulaani Blue | I Love You, Still EP">
+    <meta property="og:description" content="Independent recording artist from Colerain, North Carolina. 55% of proceeds fund community fridges & mutual aid.">
+    <meta property="og:image" content="https://i.imgur.com/peJmzb5.png">
+    <meta property="og:url" content="https://www.soulaaniblue.com">
+    <meta property="og:type" content="music.musician">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Soulaani Blue | I Love You, Still EP">
+    <meta name="twitter:description" content="Independent artist creating music that funds mutual aid. 55% of proceeds support community fridges.">
+    <meta name="twitter:image" content="https://i.imgur.com/peJmzb5.png">
+    <meta name="twitter:creator" content="@SoulaaniBlue">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&family=Raleway:wght@800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Grunge Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css">
+    
+    <!-- 🔍 SEO Schema Markup: Official Artist Identity -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Soulaani Blue",
+      "url": "https://www.soulaaniblue.com",
+      "sameAs": [
+        "https://audiomack.com/soulaaniblue",
+        "https://rednote.com/Soulaaniblue",
+        "https://soulaaniblue.bandcamp.com",
+        "https://www.even.biz/r/i-love-you-still-0bd194c2-5d75,4747,95b3,02a71223f704",
+        "https://soulaaniblue.gumroad.com"
+      ],
+      "description": "Independent recording artist and engineer from Colerain, North Carolina. Creator of the EP 'I Love You, Still.' Music streams exclusively on Audiomack. Official site: www.soulaaniblue.com",
+      "genre": ["R&B", "Soul", "Alternative", "Hip-Hop"]
+    }
+    </script>
+    
+    <style>
+        /* Keep all your existing CSS styles here */
+        :root {
+            --gold: #D4AF37;
+            --deep-red: #8B0000;
+            --soft-blue: #1E90FF;
+            --black: #000;
+            --rich-black: #0A0A0A;
+            --color-white: #fff;
+            --color-red: #8B0000;
+            --color-gold: #D4AF37;
+            --color-black: #000;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--rich-black);
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        /* ... include ALL your existing CSS styles ... */
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- 🔍 ACCESSIBILITY: Skip Navigation -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-rich-black bg-opacity-95 border-b border-gray-800" aria-label="Main navigation">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- 🔍 TRADEMARK: Added &trade; to site title -->
+            <a href="index.html" class="text-2xl font-bold gold-text impact-font" aria-label="Soulaani Blue - Home">SOULAANI BLUE&trade;</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-white hover:text-gold-500" aria-label="Go to home page">HOME</a>
+                <a href="ep.html" class="nav-link text-white hover:text-gold-500" aria-label="Go to EP page">NEW EP</a>
+                <a href="music.html" class="nav-link text-white hover:text-gold-500" aria-label="Go to music page">MUSIC</a>
+                <a href="blog.html" class="nav-link text-white hover:text-gold-500" aria-label="Go to blog page">BLOG</a>
+                <a href="visualizers.html" class="nav-link text-white hover:text-gold-500" aria-label="Go to visualizers page">VISUALIZERS</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text hidden md:flex" aria-label="Listen to Soulaani Blue on Audiomack">
+                    <i class="fas fa-music"></i>
+                </a>
+                <button class="md:hidden gold-text focus:outline-none" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden bg-rich-black bg-opacity-95 border-t border-gray-800 hidden" id="mobile-menu" aria-label="Mobile navigation menu">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="nav-link gold-text hover:text-white" aria-label="Go to home page">HOME</a>
+                <a href="ep.html" class="nav-link gold-text hover:text-white" aria-label="Go to EP page">NEW EP</a>
+                <a href="music.html" class="nav-link gold-text hover:text-white" aria-label="Go to music page">MUSIC</a>
+                <a href="blog.html" class="nav-link gold-text hover:text-white" aria-label="Go to blog page">BLOG</a>
+                <a href="visualizers.html" class="nav-link gold-text hover:text-white" aria-label="Go to visualizers page">VISUALIZERS</a>
+                <div class="flex justify-center space-x-4 pt-4">
+                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" class="social-icon gold-text" aria-label="Visit Soulaani Blue's YouTube channel">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text" aria-label="Listen to Soulaani Blue on Audiomack">
+                        <i class="fas fa-music"></i>
+                    </a>
+                    <a href="https://rednote.com/Soulaaniblue" target="_blank" class="social-icon gold-text" aria-label="Find Soulaani Blue on Rednote">
+                        <i class="fas fa-record-vinyl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section (Main Content) -->
+    <section id="main-content" class="hero-section min-h-screen flex items-center justify-center relative pt-24 pb-20">
+        <div class="container mx-auto px-4 text-center fade-in">
+            <div class="mb-10 slide-up delay-100">
+                <h3 class="text-xl md:text-2xl gold-text mb-4 tracking-wider">OUT NOW</h3>
+                <h1 class="text-5xl md:text-8xl font-bold mb-6 text-white impact-font tracking-tight">I LOVE YOU, STILL</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 mt-6">
+                    Soulaani Blue's most vulnerable work yet - a soulful journey through love's complexities
+                </p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center gap-4 slide-up delay-300 mt-16">
+                <div class="flex flex-col space-y-4 w-full max-w-xs mx-auto">
+                    <a href="https://soulaaniblue.bandcamp.com/" target="_blank" class="px-8 py-4 bg-transparent border-2 gold-border text-white hover:bg-yellow-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/30 active:translate-y-0" aria-label="Order I Love You, Still EP on Bandcamp">
+                        <i class="fab fa-bandcamp"></i>
+                        <span>ORDER ON BANDCAMP</span>
+                    </a>
+                    <a href="https://www.even.biz/r/i-love-you-still-0bd194c2-5d75,4747,95b3,02a71223f704" target="_blank" class="px-8 py-4 bg-transparent border-2 border-purple-500 text-white hover:bg-purple-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30 active:translate-y-0" aria-label="Purchase I Love You, Still EP on Even">
+                        <i class="fas fa-store"></i>
+                        <span>PURCHASE ON EVEN</span>
+                    </a>
+                    <a href="https://soulaaniblue.gumroad.com/" target="_blank" class="px-8 py-4 bg-transparent border-2 border-blue-500 text-white hover:bg-blue-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/30 active:translate-y-0" aria-label="Order I Love You, Still EP on Gumroad">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>ORDER ON GUMROAD</span>
+                    </a>
+                    <a href="https://audiomack.com/soulaaniblue/album/i-love-you-still-ep" target="_blank" class="px-8 py-4 bg-transparent border-2 border-orange-500 text-white hover:bg-purple-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold text-lg flex items-center justify-center space-x-2 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/30 active:translate-y-0" aria-label="Stream I Love You, Still EP on Audiomack">
+                        <i class="fas fa-headphones"></i>
+                        <span>STREAM ON AUDIOMACK</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 text-center">
+            <a href="#quick-links" class="inline-block animate-bounce hover:animate-pulse" aria-label="Scroll down to learn more">
+                <i class="fas fa-chevron-down text-2xl gold-text"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section id="quick-links" class="py-20 bg-rich-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center text-white">EXPLORE</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- EP Card -->
+                <a href="ep.html" class="ep-card rounded-lg p-8 text-center hover:no-underline group">
+                    <div class="text-5xl gold-text mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-compact-disc"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">THE EP</h3>
+                    <p class="text-gray-300 mb-6">Discover the story behind "I Love You, Still" - track listings, production notes, and exclusive content.</p>
+                    <span class="gold-text font-bold group-hover:underline">Explore EP →</span>
+                </a>
+
+                <!-- Music Card -->
+                <a href="music.html" class="ep-card rounded-lg p-8 text-center hover:no-underline group">
+                    <div class="text-5xl gold-text mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">MUSIC</h3>
+                    <p class="text-gray-300 mb-6">Listen to previous work, collaborations, and discover Soulaani Blue's musical journey.</p>
+                    <span class="gold-text font-bold group-hover:underline">Explore Music →</span>
+                </a>
+
+                <!-- Blog Card -->
+                <a href="blog.html" class="ep-card rounded-lg p-8 text-center hover:no-underline group">
+                    <div class="text-5xl gold-text mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">BLOG</h3>
+                    <p class="text-gray-300 mb-6">Read behind-the-scenes stories, inspiration, and personal insights from the artist.</p>
+                    <span class="gold-text font-bold group-hover:underline">Read Blog →</span>
+                </a>
+
+                <!-- Visualizers Card -->
+                <a href="visualizers.html" class="ep-card rounded-lg p-8 text-center hover:no-underline group">
+                    <div class="text-5xl gold-text mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">VISUALIZERS</h3>
+                    <p class="text-gray-300 mb-6">Experience the visual journey with music videos and visualizers for each track.</p>
+                    <span class="gold-text font-bold group-hover:underline">Watch Visualizers →</span>
+                </a>
+
+                <!-- Community Card -->
+                <div class="ep-card rounded-lg p-8 text-center">
+                    <div class="text-5xl gold-text mb-4">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">COMMUNITY</h3>
+                    <p class="text-gray-300 mb-6">Learn about our initiatives supporting mutual aid, community fridges, and social justice.</p>
+                    <div class="space-y-3">
+                        <a href="#general-strike" class="block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">General Strike</a>
+                        <a href="#feed-every-body" class="block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">Feed Every Body</a>
+                        <a href="#people-over-papers" class="block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">People Over Papers</a>
+                    </div>
+                </div>
+
+                <!-- Support Card -->
+                <div class="ep-card rounded-lg p-8 text-center">
+                    <div class="text-5xl gold-text mb-4">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">SUPPORT</h3>
+                    <p class="text-gray-300 mb-6">Join the mailing list and support independent art that gives back to the community.</p>
+                    <a href="#mailing-list" class="block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm mb-3">Join Mailing List</a>
+                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" class="block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">Buy Me a Coffee</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include the community sections from your original code -->
+    <!-- The General Strike Section -->
+    <section id="general-strike" class="py-20 bg-deep-red" aria-labelledby="general-strike-heading">
+        <div class="container mx-auto px-4 text-center">
+            <h2 id="general-strike-heading" class="text-4xl md:text-5xl font-bold mb-6 text-white slide-up">JOIN THE GENERAL STRIKE</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8 slide-up delay-100">
+                A nationwide movement for collective action and community solidarity. Learn how to participate and leverage your power.
+            </p>
+            <div class="slide-up delay-200">
+                <a href="http://generalstrikeus.com" target="_blank" class="btn-pulse inline-block px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-800 text-white font-bold rounded-full hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/30 active:scale-95 animate-pulse" aria-label="Learn more about the General Strike movement">
+                    LEARN MORE & JOIN
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feed Every Body Section -->
+    <section id="feed-every-body" class="py-20 relative" style="background: linear-gradient(rgba(0, 100, 0, 0.85), rgba(0, 80, 0, 0.9)), url('https://i.imgur.com/YGugHoT.png') center/contain no-repeat;" aria-labelledby="feed-every-body-heading">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 id="feed-every-body-heading" class="text-4xl md:text-5xl font-bold mb-6 text-white slide-up delay-100">FEED EVERY BODY INITIATIVE</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8 slide-up delay-100">
+                Supporting community mutual aid and food sovereignty. Every contribution directly helps our neighbors in need through our partnership with RVA Community Fridges.
+            </p>
+            <div class="slide-up delay-200">
+                <a href="https://www.rvacommunityfridges.com/donate?fbclid=PAQ0xDSwMLTgRleHRuA2FlbQIxMQABp56X1KuhBv5F-un1zK59V2EAhn8y7qrYHp7LDT3cxY9BuiQ18UvN4Oq-hcMq_aem_FlWyxfX_vMKVAFlEdUNqjQ" target="_blank" class="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-green-800 text-white font-bold rounded-full hover:from-green-500 hover:to-green-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/30 active:translate-y-0" aria-label="Donate to Feed Every Body initiative">
+                    DONATE NOW
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- People Over Papers Section -->
+    <section id="people-over-papers" class="py-20 bg-deep-red" aria-labelledby="people-over-papers-heading">
+        <div class="container mx-auto px-4 text-center">
+            <h2 id="people-over-papers-heading" class="text-4xl md:text-5xl font-bold mb-6 gold-text slide-up">PEOPLE OVER PAPERS</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8 slide-up delay-100">
+                Dedicated to abolishing systems that criminalize poverty. Your support helps provide relief from court fines and fees for our community members, in partnership with The Pueblo Project.
+            </p>
+            <div class="slide-up delay-200">
+                <a href="https://www.zeffy.com/en-US/donation-form/50-states-50-days-dollar50k-for-the-people-a-pueblo-project-campaign-by-people-over-papers" target="_blank" class="inline-block px-8 py-4 bg-gradient-to-r from-red-800 to-red-900 text-white font-bold rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-red-500/30 active:translate-y-0" aria-label="Support People Over Papers initiative">
+                    SUPPORT THE CAUSE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mailing List Section -->
+    <section id="mailing-list" class="py-16 bg-gray-900 border-t border-gray-800" aria-labelledby="mailing-list-heading">
+        <div class="container mx-auto px-4 text-center">
+            <h2 id="mailing-list-heading" class="text-3xl md:text-4xl font-bold mb-6 text-white slide-up">JOIN THE MAILING LIST</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8 slide-up delay-100">
+                Stay updated on new releases, shows, and exclusive content.
+            </p>
+            <form action="https://formspree.io/f/xvgaqgjb" method="POST" class="max-w-md mx-auto slide-up delay-200">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="text" name="name" placeholder="Your Name" class="flex-grow px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" aria-label="Your Name">
+                    <input type="email" name="email" placeholder="Your Email" required class="flex-grow px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" aria-label="Your Email">
+                </div>
+                <button type="submit" class="mt-4 w-full md:w-auto px-8 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/30 active:translate-y-0" aria-label="Subscribe to mailing list">
+                    SUBSCRIBE
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95" aria-label="Site footer">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 text-center md:text-left">
+                    <p class="text-gray-500 mb-2">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
+                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300" aria-label="Support Soulaani Blue's art on Buy Me a Coffee">
+                        <i class="fas fa-coffee mr-2"></i>
+                        <span>SUPPORT MY ART</span>
+                    </a>
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300 transform hover:scale-110" aria-label="Visit Soulaani Blue's YouTube channel">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Listen to Soulaani Blue on Audiomack">
+                        <i class="fas fa-music"></i>
+                    </a>
+                    <a href="https://rednote.com/Soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Find Soulaani Blue on Rednote">
+                        <i class="fas fa-record-vinyl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            menu.classList.toggle('hidden');
+            this.setAttribute('aria-expanded', !isExpanded);
+            
+            // Change icon based on state
+            const icon = this.querySelector('i');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars text-2xl';
+            } else {
+                icon.className = 'fas fa-times text-2xl';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                const menu = document.getElementById('mobile-menu');
+                const toggle = document.getElementById('menu-toggle');
+                menu.classList.add('hidden');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.querySelector('i').className = 'fas fa-bars text-2xl';
+            });
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.slide-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // External links
+        document.querySelectorAll('a').forEach(link => {
+            if (link.href && !link.href.startsWith(window.location.origin) && !link.href.startsWith('#') && !link.href.includes('index.html')) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+    </script>
+</body>
+</html>
