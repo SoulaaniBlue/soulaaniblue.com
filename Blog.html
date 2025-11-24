@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Soulaani Blue</title>
+    
+    <!-- SEO and Social Meta Tags -->
+    <meta name="description" content="Behind-the-scenes stories and personal insights from Soulaani Blue - the stories behind the music.">
+    
+    <!-- Include all the same CSS and fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&family=Raleway:wght@800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Include the same CSS styles from index.html -->
+    <style>
+        /* COPY ALL THE SAME CSS STYLES FROM YOUR INDEX.HTML FILE */
+        :root {
+            --gold: #D4AF37;
+            --deep-red: #8B0000;
+            --soft-blue: #1E90FF;
+            --black: #000;
+            --rich-black: #0A0A0A;
+            --color-white: #fff;
+            --color-red: #8B0000;
+            --color-gold: #D4AF37;
+            --color-black: #000;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--rich-black);
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        /* ... include ALL your existing CSS styles ... */
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation (Same as index.html) -->
+    <nav class="fixed w-full z-50 bg-rich-black bg-opacity-95 border-b border-gray-800" aria-label="Main navigation">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold gold-text impact-font">SOULAANI BLUE&trade;</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-white hover:text-gold-500">HOME</a>
+                <a href="ep.html" class="nav-link text-white hover:text-gold-500">NEW EP</a>
+                <a href="music.html" class="nav-link text-white hover:text-gold-500">MUSIC</a>
+                <a href="blog.html" class="nav-link text-white hover:text-gold-500">BLOG</a>
+                <a href="visualizers.html" class="nav-link text-white hover:text-gold-500">VISUALIZERS</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text hidden md:flex">
+                    <i class="fas fa-music"></i>
+                </a>
+                <button class="md:hidden gold-text focus:outline-none" id="menu-toggle" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden bg-rich-black bg-opacity-95 border-t border-gray-800 hidden" id="mobile-menu">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="nav-link gold-text hover:text-white">HOME</a>
+                <a href="ep.html" class="nav-link gold-text hover:text-white">NEW EP</a>
+                <a href="music.html" class="nav-link gold-text hover:text-white">MUSIC</a>
+                <a href="blog.html" class="nav-link gold-text hover:text-white">BLOG</a>
+                <a href="visualizers.html" class="nav-link gold-text hover:text-white">VISUALIZERS</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-rich-black to-gray-900">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">THE BLOG</h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+                Stories behind the music, personal insights, and the journey of creating art that matters.
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="py-16 bg-rich-black">
+        <div class="container mx-auto px-4">
+            <!-- Blog Post Cards -->
+            <div class="max-w-4xl mx-auto space-y-12">
+                <!-- Repeat Post -->
+                <article class="ep-card rounded-lg p-8">
+                    <h2 class="text-3xl font-bold gold-text mb-4">The Flower That Grew Into a Song</h2>
+                    <p class="text-gray-300 mb-4">I wrote the first lines of "Repeat" in 2023, sitting on a friend's couch with nowhere else to go. Back then, all I had was a few words, a feeling, and a melody humming in my head during sleepless nights...</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gold-500 font-bold">Read More →</span>
+                        <span class="text-gray-500 text-sm">Posted on January 15, 2024</span>
+                    </div>
+                </article>
+
+                <!-- Operator Post -->
+                <article class="ep-card rounded-lg p-8">
+                    <h2 class="text-3xl font-bold gold-text mb-4">From Classroom Cover to Healing Anthem</h2>
+                    <p class="text-gray-300 mb-4">In late August 2024, between teaching elementary music classes, I found myself recording a cover of Anita Baker's "I Apologize" on my phone. I just needed to sing those words...</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gold-500 font-bold">Read More →</span>
+                        <span class="text-gray-500 text-sm">Posted on December 10, 2024</span>
+                    </div>
+                </article>
+
+                <!-- Rather Be Post -->
+                <article class="ep-card rounded-lg p-8">
+                    <h2 class="text-3xl font-bold gold-text mb-4">The Song That Chose Me</h2>
+                    <p class="text-gray-300 mb-4">There are songs we write. And then there are songs that write us. This song didn't start as a plan. It emerged when my reality became too heavy to carry silently...</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gold-500 font-bold">Read More →</span>
+                        <span class="text-gray-500 text-sm">Posted on November 22, 2024</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Blog Posts (Initially Hidden) -->
+    <div id="blog-content" class="hidden">
+        <!-- Individual blog posts would go here, similar to your original sections -->
+        <!-- You can copy the blog sections from your original code and add show/hide functionality -->
+    </div>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 text-center md:text-left">
+                    <p class="text-gray-500 mb-2">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
+                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300">
+                        <i class="fas fa-coffee mr-2"></i>
+                        <span>SUPPORT MY ART</span>
+                    </a>
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300 transform hover:scale-110">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
+                        <i class="fas fa-music"></i>
+                    </a>
+                    <a href="https://rednote.com/Soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
+                        <i class="fas fa-record-vinyl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            menu.classList.toggle('hidden');
+            this.setAttribute('aria-expanded', !isExpanded);
+            
+            const icon = this.querySelector('i');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars text-2xl';
+            } else {
+                icon.className = 'fas fa-times text-2xl';
+            }
+        });
+
+        // Blog post expansion (you can enhance this to show full posts)
+        document.querySelectorAll('.ep-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('h2').textContent;
+                // You can implement logic to show the full blog post here
+                alert('Full blog post for: ' + title + ' would open here');
+            });
+        });
+    </script>
+</body>
+</html>
