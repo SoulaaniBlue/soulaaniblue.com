@@ -48,6 +48,7 @@
                 <a href="music.html" class="nav-link text-white hover:text-gold-500">MUSIC</a>
                 <a href="blog.html" class="nav-link text-white hover:text-gold-500">BLOG</a>
                 <a href="visualizers.html" class="nav-link text-white hover:text-gold-500">VISUALIZERS</a>
+                <a href="initiatives.html" class="nav-link text-white hover:text-gold-500">INITIATIVES</a>
             </div>
             <div class="flex items-center space-x-4">
                 <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text hidden md:flex">
@@ -66,6 +67,7 @@
                 <a href="music.html" class="nav-link gold-text hover:text-white">MUSIC</a>
                 <a href="blog.html" class="nav-link gold-text hover:text-white">BLOG</a>
                 <a href="visualizers.html" class="nav-link gold-text hover:text-white">VISUALIZERS</a>
+                <a href="initiatives.html" class="nav-link gold-text hover:text-white">INITIATIVES</a>
             </div>
         </div>
     </nav>
@@ -86,31 +88,31 @@
             <!-- Blog Post Cards -->
             <div class="max-w-4xl mx-auto space-y-12">
                 <!-- Repeat Post -->
-                <article class="ep-card rounded-lg p-8">
+                <article class="ep-card rounded-lg p-8 cursor-pointer group" onclick="showBlogPost('repeat')">
                     <h2 class="text-3xl font-bold gold-text mb-4">The Flower That Grew Into a Song</h2>
                     <p class="text-gray-300 mb-4">I wrote the first lines of "Repeat" in 2023, sitting on a friend's couch with nowhere else to go. Back then, all I had was a few words, a feeling, and a melody humming in my head during sleepless nights...</p>
                     <div class="flex items-center justify-between">
-                        <span class="text-gold-500 font-bold">Read More →</span>
+                        <span class="gold-text font-bold group-hover:underline">Read More →</span>
                         <span class="text-gray-500 text-sm">Posted on January 15, 2024</span>
                     </div>
                 </article>
 
                 <!-- Operator Post -->
-                <article class="ep-card rounded-lg p-8">
+                <article class="ep-card rounded-lg p-8 cursor-pointer group" onclick="showBlogPost('operator')">
                     <h2 class="text-3xl font-bold gold-text mb-4">From Classroom Cover to Healing Anthem</h2>
                     <p class="text-gray-300 mb-4">In late August 2024, between teaching elementary music classes, I found myself recording a cover of Anita Baker's "I Apologize" on my phone. I just needed to sing those words...</p>
                     <div class="flex items-center justify-between">
-                        <span class="text-gold-500 font-bold">Read More →</span>
+                        <span class="gold-text font-bold group-hover:underline">Read More →</span>
                         <span class="text-gray-500 text-sm">Posted on December 10, 2024</span>
                     </div>
                 </article>
 
                 <!-- Rather Be Post -->
-                <article class="ep-card rounded-lg p-8">
+                <article class="ep-card rounded-lg p-8 cursor-pointer group" onclick="showBlogPost('rather-be')">
                     <h2 class="text-3xl font-bold gold-text mb-4">The Song That Chose Me</h2>
                     <p class="text-gray-300 mb-4">There are songs we write. And then there are songs that write us. This song didn't start as a plan. It emerged when my reality became too heavy to carry silently...</p>
                     <div class="flex items-center justify-between">
-                        <span class="text-gold-500 font-bold">Read More →</span>
+                        <span class="gold-text font-bold group-hover:underline">Read More →</span>
                         <span class="text-gray-500 text-sm">Posted on November 22, 2024</span>
                     </div>
                 </article>
@@ -118,10 +120,9 @@
         </div>
     </section>
 
-    <!-- Full Blog Posts (Initially Hidden) -->
+    <!-- Full Blog Posts (Hidden by default) -->
     <div id="blog-content" class="hidden">
-        <!-- Individual blog posts would go here, similar to your original sections -->
-        <!-- You can copy the blog sections from your original code and add show/hide functionality -->
+        <!-- Individual blog posts will be loaded here -->
     </div>
 
     <!-- Footer (Same as index.html) -->
@@ -167,14 +168,180 @@
             }
         });
 
-        // Blog post expansion (you can enhance this to show full posts)
-        document.querySelectorAll('.ep-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const title = this.querySelector('h2').textContent;
-                // You can implement logic to show the full blog post here
-                alert('Full blog post for: ' + title + ' would open here');
+        // Blog post functionality
+        function showBlogPost(postId) {
+            // Hide all blog cards
+            document.querySelectorAll('.ep-card').forEach(card => {
+                card.style.display = 'none';
             });
-        });
+            
+            // Show the blog content area
+            const blogContent = document.getElementById('blog-content');
+            blogContent.classList.remove('hidden');
+            
+            // Load the specific blog post content
+            let postContent = '';
+            
+            switch(postId) {
+                case 'repeat':
+                    postContent = `
+                        <section class="blog-section pt-24">
+                            <div class="blog-post">
+                                <button onclick="goBackToBlogList()" class="mb-8 px-6 py-3 bg-transparent border-2 gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold flex items-center space-x-2">
+                                    <i class="fas fa-arrow-left"></i>
+                                    <span>BACK TO BLOG</span>
+                                </button>
+                                <h1>The Flower That Grew Into a Song</h1>
+                                <p>I wrote the first lines of "Repeat" in 2023, sitting on a friend's couch with nowhere else to go. Back then, all I had was a few words, a feeling, and a melody humming in my head during sleepless nights. Creating art in crisis feels impossible sometimes—but that fragment of song became my lifeline when everything else felt like it was falling apart.</p>
+                                <p>For months, those words lived only in my phone's notes app and in the quiet moments between survival. I carried them with me like seeds waiting for soil.</p>
+                                <div class="blog-video" style="max-width: 700px; margin: 2rem auto;">
+                                    <div style="position:relative; width:100%; height:0px; padding-bottom:178.218%;">
+                                        <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/cg6ufq?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;" title="Video showing the flower that inspired the song Repeat"></iframe>
+                                    </div>
+                                    <p class="text-center text-gray-400 mt-2 italic" style="margin-top: 8px;">The single flower bud that grew from a dead bush—the moment that unlocked "Repeat" and taught me beauty persists.</p>
+                                </div>
+                                <p>Then in April 2024, everything shifted. PLXY sent me a beat pack that included a track that immediately felt like home. By then, I had a small room of my own in Colonial Heights, thanks to Ms. Debbie's kindness. Every morning and evening, I'd sit by the creek behind her house, listening to the water flow while scrolling through that beat pack.</p>
+                                <p>One afternoon, I noticed something that stopped me cold: a bush that looked completely dead, brown and brittle in the Virginia sun. But right in the center, pushing through the decay, was a single flower bud. Small. Determined. Defiantly alive.</p>
+                                <p>I recorded a video of it on my phone. Something about that stubborn flower unlocked everything inside me. I went inside, loaded PLXY's beat into my session, and recorded "Repeat" right there in Ms. Debbie's living room—no professional studio, no perfect conditions, just truth flowing out after months of holding it.</p>
+                                <p>When I first released the song in July 2024, it felt wrong almost immediately. The platforms were tracking my listeners, slicing up their attention, and treating my art like content. So I pulled it down. That decision cost me momentum, but it preserved my integrity.</p>
+                                <p>This January, I relaunched "Repeat" exclusively on Audiomack—the only streaming platform that respects independent artists enough to let us monetize our work directly. No middlemen. No surveillance. Just music and the people who need it.</p>
+                                <p>The response has been humbling: 21,500 streams across 17 countries. Messages from strangers who heard their own stories in my words. That flower by the creek taught me something essential: beauty persists even when systems try to bury it. So do we.</p>
+                                <p>Sometimes our most broken moments become the soil where our strongest art grows. That dead bush didn't know it was nurturing a flower. And I didn't know those desperate lines scribbled on a friend's couch would someday reach thousands of ears across the globe.</p>
+                                <p>Art doesn't require perfect conditions. It requires only that we keep showing up—even when we're barely holding on.</p>
+                                <div class="audiomack-embed" style="margin: 2rem auto; max-width: 600px;">
+                                    <iframe src="https://audiomack.com//embed/soulaaniblue/song/678440e0e5629" scrolling="no" width="100%" height="180" frameborder="0" title="Repeat by Soulaani Blue"></iframe>
+                                </div>
+                                <p class="text-center">
+                                    <a href="https://audiomack.com/soulaaniblue/song/678440e0e5629" target="_blank" rel="noopener" aria-label="Stream Repeat by Soulaani Blue on Audiomack">Stream "Repeat" on Audiomack</a>
+                                </p>
+                            </div>
+                        </section>
+                    `;
+                    break;
+                    
+                case 'operator':
+                    postContent = `
+                        <section class="blog-section pt-24">
+                            <div class="blog-post">
+                                <button onclick="goBackToBlogList()" class="mb-8 px-6 py-3 bg-transparent border-2 gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold flex items-center space-x-2">
+                                    <i class="fas fa-arrow-left"></i>
+                                    <span>BACK TO BLOG</span>
+                                </button>
+                                <h1>From Classroom Cover to Healing Anthem</h1>
+                                <h2>The First Note: A Moment of Raw Honesty</h2>
+                                <p>In late August 2024, between teaching elementary music classes, I found myself recording a cover of Anita Baker's "I Apologize" on my phone. I just needed to sing those words—<em>"I apologize, oh believe me I do"</em>—because they'd been living in my chest for months.</p>
+                                <div style="position:relative; width:100%; height:0px; padding-bottom:100.000%">
+                                    <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/w67clk?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;" title="Classroom recording of I Apologize cover"></iframe>
+                                </div>
+                                <p>Anita Baker was one of the first women I remember hearing truly apologize on wax—not out of weakness, but out of strength. Her voice taught me that apologies aren't transactions meant to get something back; they're transformations meant to create something new within ourselves.</p>
+                                <h2>A Year of Holding Space</h2>
+                                <p>After that classroom recording, I tried to make the track into something more. I produced my own beat for it—a decent effort, but something was missing. For months, I couldn't finish it. I had the first verse and hook sitting on an unfinished canvas while I worked through my own healing.</p>
+                                <p>This period taught me patience. Sometimes the words we need to say aren't ready to be heard—not by others, and especially not by ourselves. I was learning to see my own worth when I felt like I had nothing to offer. I was learning that love isn't about "fixing" someone—it's about showing up for them when they can't show up for themselves.</p>
+                                <h2>The Moment Everything Shifted</h2>
+                                <p>A day after I released "I love you, still," PLXY sent me the beat that would become "Operator." I fell in love with it immediately. When I listened to that old classroom recording of "I Apologize," the rest of the song poured out of me. I finished the second verse that same night. Recorded it the next day. Sent it to PLXY the day after that.</p>
+                                <p>Like a flower breaking through concrete, the right art finds you when you're ready to receive it.</p>
+                                <div style="position:relative; width:100%; height:0px; padding-bottom:100.000%">
+                                    <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/53oef6?loop=0" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;" title="Operator music visualizer"></iframe>
+                                </div>
+                                <h2>The Meaning in the Words</h2>
+                                <p>I intentionally used the "Re" prefix throughout "Operator" because when I started writing it, "Repeat" had just been re-released on Audiomack. This wasn't just wordplay—it was the sound of a man relearning how to be human:</p>
+                                <ul class="space-y-2 pl-4">
+                                    <li><strong>Regretful, Remorseful, Reflecting</strong> → The emotional state I was in</li>
+                                    <li><strong>Rewrite, Recite, Recital</strong> → The performer trying to find the right words</li>
+                                    <li><strong>Reguided missile, React, Regulated</strong> → The transformation through force</li>
+                                    <li><strong>Recognized, Realize, Recreate, Reconsider</strong> → The desire to rebuild what was lost</li>
+                                </ul>
+                                <p>I say "Sous Chef" because of my name, Soulaani [Soo-Lah-knee] Blue. I sometimes refer to myself as Big Sou(an homage to my late grandmother, Susan Bynum, the REAL Big Sue). As a writer, when I get going, it's like a chef in the zone—creating something new from the ingredients life has given me.</p>
+                                <p>When I say "I ain't get this out no book," I mean I learned my lessons the hard way through many trials and a whole lot of error. I didn't read about healing in a manual. I lived it. I burned my hands on the stove of my own mistakes. I tasted the bitterness of my own pride. I measured the ingredients of growth in tears and time.</p>
+                                <p>For those who truly know Anita's catalog: yes, I wove references to more than just "I Apologize" throughout the second verse. "Sweet lovin', sweet nothings" is a direct echo of "Sweet Love," and "from beginning to the end and on repeat" reimagines "Same Ole Love (365 Days a Year)" where she sings "from beginning to end 365 days of the year I want the same ole love."</p>
+                                <p>But there's the heartbreaking twist: Anita's songs are about love that endures—mine is about love that ended, even though I now <em>understand</em> what enduring love requires.</p>
+                                <h2>The Lesson in the Song</h2>
+                                <p>"Operator" isn't just asking for a second chance with someone else. It's about becoming the person who deserves that chance in the first place. It's about the painful realization that sometimes we become who we needed to be only after losing what made us need to change.</p>
+                                <p>The growth has happened. But the person who mattered most is gone.</p>
+                                <p>I sing "I apologize" now not to get back what I lost, but because I finally understand why I needed to say it. I finally understand that an apology isn't about fixing the past—it's about becoming the person who can face it.</p>
+                                <h2>Why This Song Matters</h2>
+                                <p>If you're holding onto words you don't know what to do with—keep them.</p>
+                                <p>If you're working through something that feels too heavy to carry—keep going.</p>
+                                <p>The right canvas will find you. The right beat will come. And when it does, you'll finally understand why you had to wait.</p>
+                                <p>The most transformative art is born from the most unexpected places—from classrooms between teaching duties, from unfinished songs that sit in your notes for a year, from the moments when we're not sure if we can ever say the right words.</p>
+                                <p>I'm still learning to apologize to myself. I'm still learning to love from a distance while I work on becoming who I need to be.</p>
+                                <p>Thank you for listening to the journey.</p>
+                                <p class="italic mt-1"><em>P.S. If you've ever felt like you had the words but not the right place to put them, this song is for you.</em></p>
+                                <div class="audiomack-embed mt-8">
+                                    <iframe src="https://audiomack.com//embed/soulaaniblue/song/operator-two-master" scrolling="no" width="100%" height="180" frameborder="0" title="Operator by Soulaani Blue"></iframe>
+                                </div>
+                                <p class="text-center mt-4">
+                                    <a href="https://audiomack.com/soulaaniblue/song/operator-two-master?share-user-id=151992693" target="_blank" rel="noopener" aria-label="Stream Operator by Soulaani Blue on Audiomack">Stream "Operator" on Audiomack</a>
+                                </p>
+                            </div>
+                        </section>
+                    `;
+                    break;
+                    
+                case 'rather-be':
+                    postContent = `
+                        <section class="blog-section pt-24">
+                            <div class="blog-post">
+                                <button onclick="goBackToBlogList()" class="mb-8 px-6 py-3 bg-transparent border-2 gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold flex items-center space-x-2">
+                                    <i class="fas fa-arrow-left"></i>
+                                    <span>BACK TO BLOG</span>
+                                </button>
+                                <h1>The Song That Chose Me</h1>
+                                <p>There are songs we write. And then there are songs that write us.</p>
+                                <p>This song didn't start as a plan. It emerged when my reality became too heavy to carry silently. Between surviving housing instability, advocating for my students in an underfunded and exploitative system, and watching my country shift in ways that felt increasingly unfamiliar, I found myself with little energy left for new relationships. When people asked, "Are you going to find yourself a girl from Asia?" I'd smile politely and say nah. They didn't know I was still processing the ghost of someone who felt more real to me in my dreams than anyone I might meet in waking life.</p>
+                                <!-- FIRST PHOTO - BEDROOM SETUP -->
+                                <div class="blog-image">
+                                    <!-- 🔍 SEO: Added alt text to blog images -->
+                                    <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/main/IMG_5537.jpeg" 
+                                         alt="Soulaani Blue's recording setup at Ms. Caldwell's house - bedroom studio where Rather Be was recorded" 
+                                         loading="lazy">
+                                    <p>The recording set up for "Rather Be" at Ms. Caldwell's house.</p>
+                                </div>
+                                <p>The first verse of "Rather Be" was born in a rented room at Ms. Caldwell's house after I was forced to move out of my previous apartment because of an unresolved rat infestation. I'd spend nights staring at the ceiling, wondering if the only place I'd ever truly connect with her again was in my sleep. Writing became my therapy when traditional healing felt financially and logistically impossible.</p>
+                                <p>The outro—"Hey Bunnie"—remained unfinished for months. I carried those lyrics with me across oceans. I finally completed them sitting alone in a hotel room in a foreign country, the words flowing as if they'd been waiting for this moment of displacement to reveal themselves. That's when I realized something: sometimes our most honest art comes not when we're comfortable, but when we're in transition—when we're between worlds, between homes, between versions of ourselves.</p>
+                                <!-- SECOND PHOTO - THE BEDROOM -->
+                                <div class="blog-image">
+                                    <!-- 🔍 SEO: Added alt text to blog images -->
+                                    <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/main/IMG_4054.jpeg" 
+                                         alt="Bedroom where Soulaani Blue wrote and recorded Rather Be - personal creative space" 
+                                         loading="lazy">
+                                    <p>The bedroom I rented at Ms Caldwell's house</p>
+                                </div>
+                                <p>When I say "I ain't know that I was so unsafe" echoes beyond my relationship—it speaks to the political climate, to the broken family dynamics I grew up in, to educational systems that value compliance over care, to the invisible threats that follow us even when we try to build something beautiful.</p>
+                                <p>When I recorded "Rather Be," I had a small room, a mirror on the wall, and the conviction that my truth deserved to be heard—even if only by the four walls around me.</p>
+                                <p>I don't know if I'll ever meet someone who sees me as clearly as I see myself now. But I do know this: I'd rather be alone than compromise the vision I'm fighting so hard to build. And if I can't be with who I want—meaning the version of myself that's free from inherited trauma and systemic constraints—I'll stay faithful to my solitude until the world catches up to what I'm creating.</p>
+                                <div class="audiomack-embed">
+                                    <iframe src="https://audiomack.com//embed/soulaaniblue/song/rather-be-master" scrolling="no" width="100%" height="180" frameborder="0" title="Rather Be by Soulaani Blue"></iframe>
+                                </div>
+                                <p class="text-center">
+                                    <a href="https://audiomack.com/soulaaniblue/song/rather-be-master?share-user-id=151992693" target="_blank" rel="noopener" aria-label="Stream Rather Be by Soulaani Blue on Audiomack">Stream "Rather Be" on Audiomack</a>
+                                </p>
+                            </div>
+                        </section>
+                    `;
+                    break;
+            }
+            
+            blogContent.innerHTML = postContent;
+            
+            // Scroll to the top of the blog content
+            blogContent.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function goBackToBlogList() {
+            // Hide the blog content
+            const blogContent = document.getElementById('blog-content');
+            blogContent.classList.add('hidden');
+            blogContent.innerHTML = '';
+            
+            // Show all blog cards
+            document.querySelectorAll('.ep-card').forEach(card => {
+                card.style.display = 'block';
+            });
+            
+            // Scroll back to the blog section
+            document.querySelector('section.py-16').scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
