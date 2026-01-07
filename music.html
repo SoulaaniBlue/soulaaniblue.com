@@ -1,3 +1,6 @@
+I'll update your music.html to add "THE WORK" to the navigation and remove all YouTube references. Here's the complete updated file:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +41,7 @@
     </style>
 </head>
 <body class="min-h-screen">
-    <!-- Navigation (Same as index.html) -->
+    <!-- Navigation (Updated with THE WORK) -->
     <nav class="fixed w-full z-50 bg-rich-black bg-opacity-95 border-b border-gray-800" aria-label="Main navigation">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold gold-text impact-font">SOULAANI BLUE&trade;</a>
@@ -48,6 +51,7 @@
                 <a href="music.html" class="nav-link text-white hover:text-gold-500">MUSIC</a>
                 <a href="blog.html" class="nav-link text-white hover:text-gold-500">BLOG</a>
                 <a href="visualizers.html" class="nav-link text-white hover:text-gold-500">VISUALIZERS</a>
+                <a href="work.html" class="nav-link text-white hover:text-gold-500">THE WORK</a>
             </div>
             <div class="flex items-center space-x-4">
                 <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text hidden md:flex">
@@ -58,7 +62,7 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
+        <!-- Mobile Menu (Updated with THE WORK) -->
         <div class="md:hidden bg-rich-black bg-opacity-95 border-t border-gray-800 hidden" id="mobile-menu">
             <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
                 <a href="index.html" class="nav-link gold-text hover:text-white">HOME</a>
@@ -66,6 +70,7 @@
                 <a href="music.html" class="nav-link gold-text hover:text-white">MUSIC</a>
                 <a href="blog.html" class="nav-link gold-text hover:text-white">BLOG</a>
                 <a href="visualizers.html" class="nav-link gold-text hover:text-white">VISUALIZERS</a>
+                <a href="work.html" class="nav-link gold-text hover:text-white">THE WORK</a>
             </div>
         </div>
     </nav>
@@ -87,9 +92,7 @@
                             <a href="https://audiomack.com/lnmgllc/song/cant-take-it" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
                                 PLAY ON AUDIOMACK
                             </a>
-                            <a href="https://www.youtube.com/watch?v=l6yUYEzIH7w" target="_blank" class="inline-block px-4 py-2 bg-transparent border blue-border blue-text hover:bg-blue-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
-                                WATCH VISUALIZER
-                            </a>
+                            <!-- Removed YouTube visualizer link -->
                         </div>
                     </div>
                     <div class="music-card rounded-lg p-6">
@@ -117,7 +120,7 @@
         </div>
     </section>
 
-    <!-- Streaming Platforms -->
+    <!-- Streaming Platforms (Updated - No YouTube) -->
     <section class="py-16 bg-gray-900">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">STREAM EVERYWHERE</h2>
@@ -126,9 +129,9 @@
                     <i class="fas fa-music text-orange-500 text-2xl"></i>
                     <span class="text-white font-bold">Audiomack</span>
                 </a>
-                <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" class="flex items-center space-x-3 px-6 py-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300">
-                    <i class="fab fa-youtube text-red-500 text-2xl"></i>
-                    <span class="text-white font-bold">YouTube</span>
+                <a href="https://odysee.com/@soulaaniblue:f" target="_blank" class="flex items-center space-x-3 px-6 py-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <i class="fas fa-video text-purple-500 text-2xl"></i>
+                    <span class="text-white font-bold">Odysee</span>
                 </a>
                 <a href="https://soulaaniblue.bandcamp.com/" target="_blank" class="flex items-center space-x-3 px-6 py-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300">
                     <i class="fab fa-bandcamp text-teal-500 text-2xl"></i>
@@ -138,7 +141,7 @@
         </div>
     </section>
 
-    <!-- Footer (Same as index.html) -->
+    <!-- Footer (Updated - No YouTube) -->
     <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
@@ -151,14 +154,15 @@
                     </a>
                 </div>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300 transform hover:scale-110">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <!-- Removed YouTube -->
                     <a href="https://audiomack.com/soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-music"></i>
                     </a>
                     <a href="https://rednote.com/Soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-record-vinyl"></i>
+                    </a>
+                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
+                        <i class="fas fa-video"></i>
                     </a>
                 </div>
             </div>
@@ -194,3 +198,40 @@
     </script>
 </body>
 </html>
+```
+
+Key Changes Made:
+
+1. Added "THE WORK" to Navigation:
+
+· Added <a href="work.html" class="nav-link text-white hover:text-gold-500">THE WORK</a> to desktop navigation
+· Added <a href="work.html" class="nav-link gold-text hover:text-white">THE WORK</a> to mobile navigation
+
+2. Removed YouTube References:
+
+· ❌ Removed YouTube visualizer link for "Can't Take It"
+· ❌ Removed YouTube from streaming platforms section
+· ❌ Removed YouTube from footer
+
+3. Added Odysee:
+
+· ✅ Added Odysee to streaming platforms (purple video icon)
+· ✅ Added Odysee to footer (video icon)
+
+4. Updated Streaming Platforms:
+
+· Audiomack (orange music icon)
+· Odysee (purple video icon - replaces YouTube)
+· Bandcamp (teal bandcamp icon)
+
+Note About the YouTube Visualizer Link:
+
+I removed the YouTube visualizer link for "Can't Take It" since you mentioned deleting your YouTube channel. If you have this visualizer on Odysee or another platform, you can add it back. For now, there's just the Audiomack link.
+
+To Implement:
+
+1. Replace your current music.html with this updated version
+2. Make sure to copy ALL your CSS styles into the <style> section
+3. Test the page to ensure all links work properly
+
+Your music page now has "THE WORK" in navigation and is free of YouTube references!
