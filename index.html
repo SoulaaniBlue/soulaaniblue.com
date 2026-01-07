@@ -301,7 +301,7 @@
     <!-- 🔍 ACCESSIBILITY: Skip Navigation -->
     <a href="#main-content" class="skip-nav">Skip to main content</a>
 
-    <!-- Navigation -->
+    <!-- Navigation - UPDATED -->
     <nav class="fixed w-full z-50 bg-rich-black bg-opacity-95 border-b border-gray-800" aria-label="Main navigation">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <!-- 🔍 TRADEMARK: Added &trade; to site title -->
@@ -312,6 +312,7 @@
                 <a href="music.html" class="nav-link text-white hover:text-gold-500" aria-label="Go to music page">MUSIC</a>
                 <a href="blog.html" class="nav-link text-white hover:text-gold-500" aria-label="Go to blog page">BLOG</a>
                 <a href="visualizers.html" class="nav-link text-white hover:text-gold-500" aria-label="Go to visualizers page">VISUALIZERS</a>
+                <a href="work.html" class="nav-link text-white hover:text-gold-500" aria-label="Learn about the work">THE WORK</a>
             </div>
             <div class="flex items-center space-x-4">
                 <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text hidden md:flex" aria-label="Listen to Soulaani Blue on Audiomack">
@@ -322,7 +323,7 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
+        <!-- Mobile Menu - UPDATED -->
         <div class="md:hidden bg-rich-black bg-opacity-95 border-t border-gray-800 hidden" id="mobile-menu" aria-label="Mobile navigation menu">
             <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
                 <a href="index.html" class="nav-link gold-text hover:text-white" aria-label="Go to home page">HOME</a>
@@ -330,15 +331,17 @@
                 <a href="music.html" class="nav-link gold-text hover:text-white" aria-label="Go to music page">MUSIC</a>
                 <a href="blog.html" class="nav-link gold-text hover:text-white" aria-label="Go to blog page">BLOG</a>
                 <a href="visualizers.html" class="nav-link gold-text hover:text-white" aria-label="Go to visualizers page">VISUALIZERS</a>
+                <a href="work.html" class="nav-link gold-text hover:text-white" aria-label="Learn about the work">THE WORK</a>
                 <div class="flex justify-center space-x-4 pt-4">
-                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" class="social-icon gold-text" aria-label="Visit Soulaani Blue's YouTube channel">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <!-- Removed YouTube -->
                     <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text" aria-label="Listen to Soulaani Blue on Audiomack">
                         <i class="fas fa-music"></i>
                     </a>
                     <a href="https://rednote.com/Soulaaniblue" target="_blank" class="social-icon gold-text" aria-label="Find Soulaani Blue on Rednote">
                         <i class="fas fa-record-vinyl"></i>
+                    </a>
+                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" class="social-icon gold-text" aria-label="Find Soulaani Blue on Odysee">
+                        <i class="fas fa-video"></i>
                     </a>
                 </div>
             </div>
@@ -383,7 +386,7 @@
         </div>
     </section>
 
-    <!-- Quick Links Section -->
+    <!-- Quick Links Section - UPDATED -->
     <section id="quick-links" class="py-20 bg-rich-black">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center text-white">EXPLORE</h2>
@@ -428,19 +431,15 @@
                     <span class="gold-text font-bold group-hover:underline">Watch Visualizers →</span>
                 </a>
 
-                <!-- Community Card -->
-                <div class="ep-card rounded-lg p-8 text-center">
-                    <div class="text-5xl gold-text mb-4">
-                        <i class="fas fa-hands-helping"></i>
+                <!-- The Work Card (REPLACED Community Card) -->
+                <a href="work.html" class="ep-card rounded-lg p-8 text-center hover:no-underline group">
+                    <div class="text-5xl gold-text mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-seedling"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">COMMUNITY</h3>
-                    <p class="text-gray-300 mb-6">Learn about our initiatives supporting mutual aid, community fridges, and social justice.</p>
-                    <div class="space-y-3">
-                        <a href="#general-strike" class="block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">General Strike</a>
-                        <a href="#feed-every-body" class="block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">Feed Every Body</a>
-                        <a href="#people-over-papers" class="block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">People Over Papers</a>
-                    </div>
-                </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">THE WORK</h3>
+                    <p class="text-gray-300 mb-6">Discover how music fuels mutual aid, food sovereignty, and community building through Feed Every Body.</p>
+                    <span class="gold-text font-bold group-hover:underline">Learn More →</span>
+                </a>
 
                 <!-- Support Card -->
                 <div class="ep-card rounded-lg p-8 text-center">
@@ -456,7 +455,6 @@
         </div>
     </section>
 
-    <!-- Include the community sections from your original code -->
     <!-- The General Strike Section -->
     <section id="general-strike" class="py-20 bg-deep-red" aria-labelledby="general-strike-heading">
         <div class="container mx-auto px-4 text-center">
@@ -472,7 +470,7 @@
         </div>
     </section>
 
-    <!-- Feed Every Body Section - EXPANDED VERSION -->
+    <!-- Feed Every Body Section - UPDATED -->
     <section id="feed-every-body" class="py-20 relative" style="background: linear-gradient(rgba(0, 100, 0, 0.85), rgba(0, 80, 0, 0.9)), url('https://i.imgur.com/YGugHoT.png') center/contain no-repeat;" aria-labelledby="feed-every-body-heading">
         <div class="container mx-auto px-4 text-center relative z-10">
             <h2 id="feed-every-body-heading" class="text-4xl md:text-5xl font-bold mb-6 text-white slide-up delay-100">FEED EVERY BODY</h2>
@@ -503,6 +501,7 @@
             </div>
         </div>
     </section>
+
     <!-- People Over Papers Section -->
     <section id="people-over-papers" class="py-20 bg-deep-red" aria-labelledby="people-over-papers-heading">
         <div class="container mx-auto px-4 text-center">
@@ -537,7 +536,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - UPDATED -->
     <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95" aria-label="Site footer">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
@@ -550,14 +549,15 @@
                     </a>
                 </div>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="https://www.youtube.com/@SoulaaniBlue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300 transform hover:scale-110" aria-label="Visit Soulaani Blue's YouTube channel">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <!-- Removed YouTube -->
                     <a href="https://audiomack.com/soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Listen to Soulaani Blue on Audiomack">
                         <i class="fas fa-music"></i>
                     </a>
                     <a href="https://rednote.com/Soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Find Soulaani Blue on Rednote">
                         <i class="fas fa-record-vinyl"></i>
+                    </a>
+                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Find Soulaani Blue on Odysee">
+                        <i class="fas fa-video"></i>
                     </a>
                 </div>
             </div>
