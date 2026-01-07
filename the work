@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Work - Soulaani Blue</title>
+    
+    <!-- SEO and Social Meta Tags -->
+    <meta name="description" content="Feed Every Body: A mutual aid project for food sovereignty. Turning music into a direct line to community fridges and local farms.">
+    
+    <!-- Include all the same CSS and fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&family=Raleway:wght@800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --deep-red: #8B0000;
+            --soft-blue: #1E90FF;
+            --black: #000;
+            --rich-black: #0A0A0A;
+            --color-white: #fff;
+            --color-red: #8B0000;
+            --color-gold: #D4AF37;
+            --color-black: #000;
+            --earth-brown: #8B7355;
+            --warm-cream: #F5F1E6;
+            --soft-green: #3A5F49;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--warm-cream);
+            color: #333;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--earth-brown);
+            letter-spacing: -0.025em;
+        }
+        
+        .nav-link {
+            position: relative;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--earth-brown);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--earth-brown), var(--soft-green));
+            transition: width 0.4s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .page-section {
+            padding: 5rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--soft-green);
+            line-height: 1.2;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin: 4rem 0 2rem;
+            color: var(--soft-green);
+            border-bottom: 2px solid rgba(139, 115, 85, 0.1);
+            padding-bottom: 0.5rem;
+        }
+        
+        .content-block {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .quote {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--earth-brown);
+            border-left: 3px solid var(--soft-green);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .action-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+        
+        .btn-music {
+            background: linear-gradient(135deg, var(--earth-brown), #A68A64);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1.1rem;
+        }
+        
+        .btn-music:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 115, 85, 0.2);
+        }
+        
+        .btn-donate {
+            background: linear-gradient(135deg, var(--soft-green), #4A7D5E);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1.1rem;
+        }
+        
+        .btn-donate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(58, 95, 73, 0.2);
+        }
+        
+        .bridge-icon {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .bridge-icon i {
+            font-size: 3rem;
+            color: var(--earth-brown);
+            opacity: 0.7;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .value-item i {
+            font-size: 2.5rem;
+            color: var(--soft-green);
+            margin-bottom: 1rem;
+        }
+        
+        .value-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--earth-brown);
+        }
+        
+        footer {
+            background: var(--earth-brown);
+            color: var(--warm-cream);
+            padding: 3rem 1rem;
+            margin-top: 5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .page-section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-warm-cream bg-opacity-95 border-b border-gray-200" aria-label="Main navigation">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-earth-brown impact-font">SOULAANI BLUE</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="ep.html" class="nav-link">NEW EP</a>
+                <a href="music.html" class="nav-link">MUSIC</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="visualizers.html" class="nav-link">VISUALIZERS</a>
+                <a href="work.html" class="nav-link">THE WORK</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text hidden md:flex">
+                    <i class="fas fa-music"></i>
+                </a>
+                <button class="md:hidden text-earth-brown focus:outline-none" id="menu-toggle" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden bg-warm-cream bg-opacity-95 border-t border-gray-200 hidden" id="mobile-menu">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="ep.html" class="nav-link">NEW EP</a>
+                <a href="music.html" class="nav-link">MUSIC</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="visualizers.html" class="nav-link">VISUALIZERS</a>
+                <a href="work.html" class="nav-link">THE WORK</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <!-- Page Title -->
+        <section class="page-section">
+            <h1 class="page-title">The Work</h1>
+            
+            <!-- Core Philosophy -->
+            <div class="content-block">
+                <p>My name is Soulaani Blue. My art is not just sound. It is a tool for building.</p>
+                
+                <p>I come from a line of sharecroppers. I know that food is where freedom starts. My project, Feed Every Body, turns music into a direct line to community fridges and local farms. This is not charity. It is mutual aid. It is us feeding us.</p>
+                
+                <p>I use platforms that align with my values. The money moves from the music to the people, simply. I am building a system that I hope will one day run without me. A generative, lasting thing.</p>
+                
+                <p class="quote">This work is my reflection of these times. Not just a reflection, but an answer.</p>
+            </div>
+            
+            <!-- How It Works -->
+            <h2 class="section-title">How It Works</h2>
+            
+            <div class="content-block">
+                <p>I see this as building two bridges to the same place.</p>
+                
+                <p>One bridge is built with my own hands. From my salary as a teacher in Thailand and from the streams of my songs, I set aside money. That money becomes rice, vegetables, fruit for community fridges back home.</p>
+                
+                <p>The other bridge is for you. I don't want your money to pass through my hands. I want it to go straight to the source. So on my site, you'll find a link to give directly to RVA Community Fridges. They are neighbors helping neighbors. That is the purest form.</p>
+                
+                <div class="bridge-icon">
+                    <i class="fas fa-bridge"></i>
+                </div>
+                
+                <p class="quote">My bridge and your bridge. They both lead to a place where no one is hungry.</p>
+            </div>
+            
+            <!-- Why This Way -->
+            <h2 class="section-title">Why This Way</h2>
+            
+            <div class="content-block">
+                <p>I am building a system I hope will outlive me.</p>
+                
+                <p>That means it cannot depend on me. It has to be simple, clear, and rooted in the community itself. That's why the money should go straight to the groups on the ground.</p>
+                
+                <p>My role is to use my art to point to them. To tell their story. To feed their work with my own energy and funds.</p>
+                
+                <p class="quote">This is not a brand. It is a blueprint. For a world where we take care of each other because we understand, deeply, that our freedom is tied together.</p>
+            </div>
+            
+            <!-- Values -->
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-seedling"></i>
+                    <h4>Community Control</h4>
+                    <p>Food systems led by the people they serve</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Mutual Aid</h4>
+                    <p>Solidarity, not charity. We all have something to give</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-people-carry"></i>
+                    <h4>Food Sovereignty</h4>
+                    <p>Communities determining their own food futures</p>
+                </div>
+            </div>
+            
+            <!-- Final Call to Action -->
+            <div class="content-block text-center">
+                <h2 class="section-title">Here is how we build.</h2>
+                
+                <div class="action-buttons">
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="btn-music">
+                        <i class="fas fa-music mr-2"></i>
+                        Listen to the Music
+                    </a>
+                    
+                    <a href="https://www.rvacommunityfridges.com/donate?fbclid=PAQ0xDSwMLTgRleHRuA2FlbQIxMQABp56X1KuhBv5F-un1zK59V2EAhn8y7qrYHp7LDT3cxY9BuiQ18UvN4Oq-hcMq_aem_FlWyxfX_vMKVAFlEdUNqjQ" target="_blank" class="btn-donate">
+                        <i class="fas fa-heart mr-2"></i>
+                        Donate to RVA Community Fridges
+                    </a>
+                </div>
+                
+                <p class="mt-4 text-gray-600">
+                    This is the fuel for my bridge.<br>
+                    This is the direct path to feeding people now.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 text-center md:text-left">
+                    <p class="mb-2">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
+                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-300 text-orange-200 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300">
+                        <i class="fas fa-coffee mr-2"></i>
+                        <span>SUPPORT MY ART</span>
+                    </a>
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="text-warm-cream hover:text-white transition duration-300">
+                        <i class="fas fa-music"></i>
+                    </a>
+                    <a href="https://rednote.com/Soulaaniblue" target="_blank" class="text-warm-cream hover:text-white transition duration-300">
+                        <i class="fas fa-record-vinyl"></i>
+                    </a>
+                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" class="text-warm-cream hover:text-white transition duration-300">
+                        <i class="fas fa-video"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            menu.classList.toggle('hidden');
+            this.setAttribute('aria-expanded', !isExpanded);
+            
+            const icon = this.querySelector('i');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars text-2xl';
+            } else {
+                icon.className = 'fas fa-times text-2xl';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                const menu = document.getElementById('mobile-menu');
+                const toggle = document.getElementById('menu-toggle');
+                menu.classList.add('hidden');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.querySelector('i').className = 'fas fa-bars text-2xl';
+            });
+        });
+    </script>
+</body>
+</html>
