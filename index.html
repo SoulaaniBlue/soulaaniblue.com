@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soulaani Blue | I love you, still - EP</title>
+    <title>Soulaani Blue | I love you, still - EP + Dead Man Walkin'</title>
     
     <!-- 🔍 SEO IMPROVEMENTS -->
-    <meta name="description" content="Soulaani Blue: Independent recording artist from Colerain, North Carolina. Stream 'I Love You, Still' EP exclusively on Audiomack with 55% of proceeds funding community fridges & mutual aid.">
+    <meta name="description" content="Soulaani Blue: Independent recording artist from Colerain, North Carolina. Stream new single 'Dead Man Walkin'' and 'I Love You, Still' EP exclusively on Audiomack with 55% of proceeds funding community fridges & mutual aid.">
     <link rel="canonical" href="https://www.soulaaniblue.com" />
     
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Soulaani Blue | I Love You, Still EP">
-    <meta property="og:description" content="Independent recording artist from Colerain, North Carolina. 55% of proceeds fund community fridges & mutual aid.">
-    <meta property="og:image" content="https://i.imgur.com/peJmzb5.png">
+    <meta property="og:title" content="Soulaani Blue | Dead Man Walkin' + I Love You, Still EP">
+    <meta property="og:description" content="Independent recording artist from Colerain, North Carolina. New single out now. 55% of proceeds fund community fridges & mutual aid.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/1771728470529.218.jpeg">
     <meta property="og:url" content="https://www.soulaaniblue.com">
     <meta property="og:type" content="music.musician">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Soulaani Blue | I Love You, Still EP">
-    <meta name="twitter:description" content="Independent artist creating music that funds mutual aid. 55% of proceeds support community fridges.">
-    <meta name="twitter:image" content="https://i.imgur.com/peJmzb5.png">
+    <meta name="twitter:title" content="Soulaani Blue | Dead Man Walkin' + I Love You, Still EP">
+    <meta name="twitter:description" content="Independent artist creating music that funds mutual aid. New single out now. 55% of proceeds support community fridges.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/1771728470529.218.jpeg">
     <meta name="twitter:creator" content="@SoulaaniBlue">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -42,7 +42,7 @@
         "https://www.even.biz/r/i-love-you-still-0bd194c2-5d75,4747,95b3,02a71223f704",
         "https://soulaaniblue.gumroad.com"
       ],
-      "description": "Independent recording artist and engineer from Colerain, North Carolina. Creator of the EP 'I Love You, Still.' Music streams exclusively on Audiomack. Official site: www.soulaaniblue.com",
+      "description": "Independent recording artist and engineer from Colerain, North Carolina. Creator of the single 'Dead Man Walkin'' and EP 'I Love You, Still.' Music streams exclusively on Audiomack. Official site: www.soulaaniblue.com",
       "genre": ["R&B", "Soul", "Alternative", "Hip-Hop"]
     }
     </script>
@@ -295,6 +295,28 @@
             .blog-post p { font-size: 1rem; }
             .blog-image, .audiomack-embed { max-width: 100%; }
         }
+
+        /* Button styles for new single */
+        .button.audiomack {
+            background-color: #ff6900;
+            color: white;
+        }
+        .button.audiomack:hover {
+            background-color: #e65c00;
+        }
+        .button.bandcamp {
+            background-color: #629aa9;
+            color: white;
+        }
+        .button.bandcamp:hover {
+            background-color: #4f7e8a;
+        }
+        .music-cover {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -380,9 +402,44 @@
             </div>
         </div>
         <div class="absolute bottom-10 left-0 right-0 text-center">
-            <a href="#quick-links" class="inline-block animate-bounce hover:animate-pulse" aria-label="Scroll down to learn more">
+            <a href="#new-single" class="inline-block animate-bounce hover:animate-pulse" aria-label="Scroll down to new single">
                 <i class="fas fa-chevron-down text-2xl gold-text"></i>
             </a>
+        </div>
+    </section>
+
+    <!-- NEW: Dead Man Walkin' Single Section -->
+    <section id="new-single" class="py-20 bg-gradient-to-b from-rich-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1 bg-gold-500 text-black text-sm font-bold rounded-full mb-4">JUST RELEASED</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Dead Man Walkin'</h2>
+                <p class="text-xl gold-text">New Single Out Now</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="music-card p-8 flex flex-col md:flex-row gap-8 items-center">
+                    <div class="md:w-1/3">
+                        <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/1771728470529.218.jpeg" alt="Dead Man Walkin' cover art" class="music-cover w-full rounded-lg shadow-2xl">
+                    </div>
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <p class="text-gray-300 text-lg mb-4 leading-relaxed">
+                            "When you're at war, you use whatever the hell you can."
+                        </p>
+                        <p class="text-gray-400 mb-6">
+                            Released February 22, 2026 • 55% of proceeds go to mutual aid
+                        </p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                            <a href="https://audiomack.com/soulaaniblue/song/deadmanwalkin" target="_blank" rel="noopener" class="button audiomack px-6 py-3 text-lg rounded-full">
+                                <i class="fas fa-headphones mr-2"></i>Stream on Audiomack
+                            </a>
+                            <a href="https://soulaaniblue.bandcamp.com/track/dead-man-walkin" target="_blank" rel="noopener" class="button bandcamp px-6 py-3 text-lg rounded-full">
+                                <i class="fab fa-bandcamp mr-2"></i>Buy on Bandcamp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
