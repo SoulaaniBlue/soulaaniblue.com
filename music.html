@@ -8,13 +8,14 @@
     <!-- SEO and Social Meta Tags -->
     <meta name="description" content="Discover Soulaani Blue's music - previous work, collaborations, and musical journey.">
     
-    <!-- Include all the same CSS and fonts -->
+    <!-- Fonts: Bebas Neue + Roboto Condensed + Press Start 2P -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
+    
+    <!-- Tailwind & Font Awesome -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&family=Raleway:wght@800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* COMPLETE CSS STYLES (copied from index.html) */
         :root {
             --gold: #D4AF37;
             --deep-red: #8B0000;
@@ -33,39 +34,52 @@
             box-sizing: border-box;
         }
 
+        /* ===== NEW TYPOGRAPHY ===== */
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Roboto Condensed', 'Lato', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
             background-color: var(--rich-black);
             color: #fff;
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
 
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-        }
-
+        /* Headings, nav, buttons – Bebas Neue for impact */
+        h1, h2, h3, h4, h5, h6,
+        .impact-font,
+        .nav-link,
+        button,
         .gold-text {
-            color: var(--gold);
+            font-family: 'Bebas Neue', 'Montserrat', sans-serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 400;
         }
 
-        .red-text {
-            color: var(--deep-red);
-        }
+        /* Adjust heading sizes */
+        h1 { font-size: 5rem; }
+        h2 { font-size: 3.5rem; }
+        h3 { font-size: 2.5rem; }
+        h4 { font-size: 1.8rem; }
 
-        .impact-font {
-            font-family: 'Raleway', sans-serif;
-            font-weight: 800;
-            letter-spacing: 0.1em;
+        /* Pixel font for accents */
+        .pixel-font,
+        .release-badge,
+        .new-badge,
+        .blog-meta {
+            font-family: 'Press Start 2P', cursive;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 0.7rem;
+            line-height: 1.4;
         }
 
         /* Navigation */
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
+            font-weight: 400; /* Bebas is heavy enough */
         }
 
         .nav-link::after {
@@ -197,6 +211,8 @@
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -237,7 +253,7 @@
 
     <!-- Main Content -->
     <main class="pt-24">
-        <!-- New Single Section -->
+        <!-- New Single Section (updated cover art) -->
         <section class="py-16 bg-gradient-to-b from-rich-black to-gray-900">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-12">
@@ -249,7 +265,7 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="music-card p-8 flex flex-col md:flex-row gap-8 items-center">
                         <div class="md:w-1/3">
-                            <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/1771728470529.218.jpeg" alt="Dead Man Walkin' cover art" class="music-cover w-full rounded-lg shadow-2xl">
+                            <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Dead%20Man%20Walkin%20Cover%20Art.jpeg" alt="Dead Man Walkin' cover art" class="music-cover w-full rounded-lg shadow-2xl">
                         </div>
                         <div class="md:w-2/3 text-center md:text-left">
                             <p class="text-gray-300 text-lg mb-4 leading-relaxed">
@@ -288,7 +304,7 @@
                             </div>
                             <p class="text-sm text-gray-400 mb-4">N'Shai Iman (co-written by Soulaani Blue)</p>
                             <div class="flex flex-col space-y-2">
-                                <a href="https://audiomack.com/lnmgllc/song/cant-take-it" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                                <a href="https://audiomack.com/lnmgllc/song/cant-take-it" target="_blank" class="block w-full px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm text-center">
                                     PLAY ON AUDIOMACK
                                 </a>
                             </div>
@@ -301,7 +317,7 @@
                                 <div class="h-1 bg-red-500 w-1/2"></div>
                             </div>
                             <p class="text-sm text-gray-400 mb-4">N'Shai Iman feat. Jaye Locke (feat. Soulaani Blue)</p>
-                            <a href="https://audiomack.com/nshai-iman-1/song/dl" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                            <a href="https://audiomack.com/nshai-iman-1/song/dl" target="_blank" class="block w-full px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm text-center">
                                 PLAY ON AUDIOMACK
                             </a>
                         </div>
@@ -313,7 +329,7 @@
                                 <div class="h-1 bg-red-500 w-3/4"></div>
                             </div>
                             <p class="text-sm text-gray-400 mb-4">2AM Ricky ft. Soulaani Blue</p>
-                            <a href="https://audiomack.com/2amricky/song/the-get-down" target="_blank" class="inline-block px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm">
+                            <a href="https://audiomack.com/2amricky/song/the-get-down" target="_blank" class="block w-full px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm text-center">
                                 PLAY ON AUDIOMACK
                             </a>
                         </div>
