@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Soulaani Blue</title>
     
-    <!-- SEO and Social Meta Tags -->
-    <meta name="description" content="Behind-the-scenes stories and personal insights from Soulaani Blue - the stories behind the music.">
+    <!-- SEO -->
+    <meta name="description" content="Stories, updates, and insights from Soulaani Blue's journey.">
     
-    <!-- Include all the same CSS and fonts -->
+    <!-- Fonts: Bebas Neue + Roboto Condensed + Press Start 2P -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
+    
+    <!-- Tailwind & Font Awesome -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&family=Raleway:wght@800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Include the same CSS styles from index.html -->
     <style>
-        /* COPY ALL THE SAME CSS STYLES FROM YOUR INDEX.HTML FILE */
         :root {
             --gold: #D4AF37;
             --deep-red: #8B0000;
@@ -27,18 +27,197 @@
             --color-gold: #D4AF37;
             --color-black: #000;
         }
+
+        /* ===== NEW TYPOGRAPHY ===== */
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Roboto Condensed', 'Lato', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
             background-color: var(--rich-black);
             color: #fff;
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
-        /* ... include ALL your existing CSS styles ... */
+
+        /* Headings, nav, buttons – Bebas Neue for impact */
+        h1, h2, h3, h4, h5, h6,
+        .impact-font,
+        .nav-link,
+        button,
+        .gold-text {
+            font-family: 'Bebas Neue', 'Montserrat', sans-serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        /* Adjust heading sizes */
+        h1 { font-size: 5rem; }
+        h2 { font-size: 3.5rem; }
+        h3 { font-size: 2.5rem; }
+        h4 { font-size: 1.8rem; }
+
+        /* Pixel font for accents */
+        .pixel-font,
+        .release-badge,
+        .new-badge,
+        .blog-meta {
+            font-family: 'Press Start 2P', cursive;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 0.7rem;
+            line-height: 1.4;
+        }
+
+        /* Navigation */
+        .nav-link {
+            font-size: 1.2rem;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--gold), var(--deep-red));
+            transition: width 0.4s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .bg-rich-black {
+            background-color: var(--rich-black);
+        }
+        .gold-text {
+            color: var(--gold);
+        }
+        .gold-border {
+            border-color: var(--gold);
+        }
+
+        /* Blog cards */
+        .blog-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+            border-color: var(--gold);
+        }
+        .blog-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .blog-content {
+            padding: 1.5rem;
+        }
+        .blog-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .blog-meta {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .blog-excerpt {
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+        .read-more {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* Modal for full post */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .modal-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem;
+            background: var(--rich-black);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            position: relative;
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--gold);
+            cursor: pointer;
+        }
+        .blog-full-post p {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        .blog-full-post .lead {
+            font-size: 1.4rem;
+            font-weight: 300;
+            border-left: 4px solid var(--gold);
+            padding-left: 1.5rem;
+        }
+        .blog-full-post img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .blog-full-post .image-caption {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: -1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Animations */
+        .slide-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 0.8s ease forwards;
+        }
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
+            .modal-content {
+                margin: 60px 1rem;
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
-<body class="min-h-screen">
-    <!-- Navigation (Updated with THE WORK, no INITIATIVES) -->
+<body>
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-rich-black bg-opacity-95 border-b border-gray-800" aria-label="Main navigation">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold gold-text impact-font">SOULAANI BLUE&trade;</a>
@@ -59,7 +238,7 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu (Updated with THE WORK, no INITIATIVES) -->
+        <!-- Mobile Menu -->
         <div class="md:hidden bg-rich-black bg-opacity-95 border-t border-gray-800 hidden" id="mobile-menu">
             <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
                 <a href="index.html" class="nav-link gold-text hover:text-white">HOME</a>
@@ -68,72 +247,24 @@
                 <a href="blog.html" class="nav-link gold-text hover:text-white">BLOG</a>
                 <a href="visualizers.html" class="nav-link gold-text hover:text-white">VISUALIZERS</a>
                 <a href="work.html" class="nav-link gold-text hover:text-white">THE WORK</a>
-                <div class="flex justify-center space-x-4 pt-4">
-                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text" aria-label="Listen to Soulaani Blue on Audiomack">
-                        <i class="fas fa-music"></i>
-                    </a>
-                    <a href="https://rednote.com/Soulaaniblue" target="_blank" class="social-icon gold-text" aria-label="Find Soulaani Blue on Rednote">
-                        <i class="fas fa-record-vinyl"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Blog Header -->
-    <section class="pt-32 pb-20 bg-gradient-to-b from-rich-black to-gray-900">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">THE BLOG</h1>
-            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                Stories behind the music, personal insights, and the journey of creating art that matters.
-            </p>
-        </div>
-    </section>
-
-    <!-- Blog Posts -->
-    <section class="py-16 bg-rich-black">
+    <!-- Main Content -->
+    <main class="pt-24 pb-20">
         <div class="container mx-auto px-4">
-            <!-- Blog Post Cards -->
-            <div class="max-w-4xl mx-auto space-y-12">
-                <!-- Repeat Post -->
-                <article class="ep-card rounded-lg p-8 cursor-pointer group" onclick="showBlogPost('repeat')">
-                    <h2 class="text-3xl font-bold gold-text mb-4">The Flower That Grew Into a Song</h2>
-                    <p class="text-gray-300 mb-4">I wrote the first lines of "Repeat" in 2023, sitting on Indy's couch with nowhere else to go. Back then, all I had was a few words, a feeling, and a melody humming in my head during sleepless nights...</p>
-                    <div class="flex items-center justify-between">
-                        <span class="gold-text font-bold group-hover:underline">Read More →</span>
-                        <span class="text-gray-500 text-sm">Posted on November 15, 2025</span>
-                    </div>
-                </article>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-center gold-text slide-up">BLOG</h1>
+            <h2 class="text-xl md:text-2xl text-gray-300 mb-16 text-center slide-up delay-100">STORIES, UPDATES, REFLECTIONS</h2>
 
-                <!-- Operator Post -->
-                <article class="ep-card rounded-lg p-8 cursor-pointer group" onclick="showBlogPost('operator')">
-                    <h2 class="text-3xl font-bold gold-text mb-4">From Classroom Cover to Healing Anthem</h2>
-                    <p class="text-gray-300 mb-4">In late August 2024, between teaching elementary music classes, I found myself recording a cover of Anita Baker's "I Apologize" on my phone. I just needed to sing those words...</p>
-                    <div class="flex items-center justify-between">
-                        <span class="gold-text font-bold group-hover:underline">Read More →</span>
-                        <span class="text-gray-500 text-sm">Posted on November 18, 2025</span>
-                    </div>
-                </article>
-
-                <!-- Rather Be Post -->
-                <article class="ep-card rounded-lg p-8 cursor-pointer group" onclick="showBlogPost('rather-be')">
-                    <h2 class="text-3xl font-bold gold-text mb-4">The Song That Chose Me</h2>
-                    <p class="text-gray-300 mb-4">There are songs we write. And then there are songs that write us. This song didn't start as a plan. It emerged when my reality became too heavy to carry silently...</p>
-                    <div class="flex items-center justify-between">
-                        <span class="gold-text font-bold group-hover:underline">Read More →</span>
-                        <span class="text-gray-500 text-sm">Posted on November 20, 2025</span>
-                    </div>
-                </article>
+            <!-- Blog Posts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto slide-up delay-200" id="blog-grid">
+                <!-- Posts will be inserted by JavaScript -->
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Full Blog Posts (Hidden by default) -->
-    <div id="blog-content" class="hidden">
-        <!-- Individual blog posts will be loaded here -->
-    </div>
-
-    <!-- Footer (Updated with Odysee, no YouTube) -->
+    <!-- Footer -->
     <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
@@ -160,14 +291,21 @@
         </div>
     </footer>
 
+    <!-- Modal for Full Post -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
     <script>
-        // Mobile menu toggle
+        // Mobile menu toggle (same as before)
         document.getElementById('menu-toggle').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             menu.classList.toggle('hidden');
             this.setAttribute('aria-expanded', !isExpanded);
-            
             const icon = this.querySelector('i');
             if (menu.classList.contains('hidden')) {
                 icon.className = 'fas fa-bars text-2xl';
@@ -176,179 +314,168 @@
             }
         });
 
-        // Blog post functionality
-        function showBlogPost(postId) {
-            // Hide all blog cards
-            document.querySelectorAll('.ep-card').forEach(card => {
-                card.style.display = 'none';
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+                document.getElementById('menu-toggle').setAttribute('aria-expanded', 'false');
+                document.getElementById('menu-toggle').querySelector('i').className = 'fas fa-bars text-2xl';
             });
-            
-            // Show the blog content area
-            const blogContent = document.getElementById('blog-content');
-            blogContent.classList.remove('hidden');
-            
-            // Load the specific blog post content
-            let postContent = '';
-            
-            switch(postId) {
-                case 'repeat':
-                    postContent = `
-                        <section class="blog-section pt-24">
-                            <div class="blog-post">
-                                <button onclick="goBackToBlogList()" class="mb-8 px-6 py-3 bg-transparent border-2 gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold flex items-center space-x-2">
-                                    <i class="fas fa-arrow-left"></i>
-                                    <span>BACK TO BLOG</span>
-                                </button>
-                                <h1>The Flower That Grew Into a Song</h1>
-                                <p>I wrote the first lines of "Repeat" in 2023, sitting on Indy's couch with nowhere else to go. Back then, all I had was a few words, a feeling, and a melody humming in my head during sleepless nights. Creating art in crisis feels impossible sometimes—but that fragment of song became my lifeline when everything else felt like it was falling apart.</p>
-                                <p>For months, those words lived only in my phone's notes app and in the quiet moments between survival. I carried them with me like seeds waiting for soil.</p>
-                                <div class="blog-video" style="max-width: 700px; margin: 2rem auto;">
-                                    <div style="position:relative; width:100%; height:0px; padding-bottom:178.218%;">
-                                        <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/cg6ufq?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;" title="Video showing the flower that inspired the song Repeat"></iframe>
-                                    </div>
-                                    <p class="text-center text-gray-400 mt-2 italic" style="margin-top: 8px;">The single flower bud that grew from a dead bush—the moment that unlocked "Repeat" and taught me beauty persists.</p>
-                                </div>
-                                <p>Then in April 2024, everything shifted. PLXY sent me a beat pack that included a track that immediately felt like home. By then, I had a small room of my own in Colonial Heights, thanks to Ms. Debbie's kindness. Every morning and evening, I'd sit by the creek behind her house, listening to the water flow while scrolling through that beat pack.</p>
-                                <p>One afternoon, I noticed something that stopped me cold: a bush that looked completely dead, brown and brittle in the Virginia sun. But right in the center, pushing through the decay, was a single flower bud. Small. Determined. Defiantly alive.</p>
-                                <p>I recorded a video of it on my phone. Something about that stubborn flower unlocked everything inside me. I went inside, loaded PLXY's beat into my session, and recorded "Repeat" right there in Ms. Debbie's living room—no professional studio, no perfect conditions, just truth flowing out after months of holding it.</p>
-                                <p>When I first released the song in July 2024, it felt wrong almost immediately. The platforms were tracking my listeners, slicing up their attention, and treating my art like content. So I pulled it down. That decision cost me momentum, but it preserved my integrity.</p>
-                                <p>This January, I relaunched "Repeat" exclusively on Audiomack—the only streaming platform that respects independent artists enough to let us monetize our work directly. No middlemen. No surveillance. Just music and the people who need it.</p>
-                                <p>The response has been humbling: 21,500 streams across 17 countries. Messages from strangers who heard their own stories in my words. That flower by the creek taught me something essential: beauty persists even when systems try to bury it. So do we.</p>
-                                <p>Sometimes our most broken moments become the soil where our strongest art grows. That dead bush didn't know it was nurturing a flower. And I didn't know those desperate lines scribbled on a friend's couch would someday reach thousands of ears across the globe.</p>
-                                <p>Art doesn't require perfect conditions. It requires only that we keep showing up—even when we're barely holding on.</p>
-                                <div class="audiomack-embed" style="margin: 2rem auto; max-width: 600px;">
-                                    <iframe src="https://audiomack.com//embed/soulaaniblue/song/678440e0e5629" scrolling="no" width="100%" height="180" frameborder="0" title="Repeat by Soulaani Blue"></iframe>
-                                </div>
-                                <p class="text-center">
-                                    <a href="https://audiomack.com/soulaaniblue/song/678440e0e5629" target="_blank" rel="noopener" aria-label="Stream Repeat by Soulaani Blue on Audiomack">Stream "Repeat" on Audiomack</a>
-                                </p>
-                            </div>
-                        </section>
-                    `;
-                    break;
-                    
-                case 'operator':
-                    postContent = `
-                        <section class="blog-section pt-24">
-                            <div class="blog-post">
-                                <button onclick="goBackToBlogList()" class="mb-8 px-6 py-3 bg-transparent border-2 gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold flex items-center space-x-2">
-                                    <i class="fas fa-arrow-left"></i>
-                                    <span>BACK TO BLOG</span>
-                                </button>
-                                <h1>From Classroom Cover to Healing Anthem</h1>
-                                <h2>The First Note: A Moment of Raw Honesty</h2>
-                                <p>In late August 2024, between teaching elementary music classes, I found myself recording a cover of Anita Baker's "I Apologize" on my phone. I just needed to sing those words—<em>"I apologize, oh believe me I do"</em>—because they'd been living in my chest for months.</p>
-                                <div style="position:relative; width:100%; height:0px; padding-bottom:100.000%">
-                                    <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/w67clk?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;" title="Classroom recording of I Apologize cover"></iframe>
-                                </div>
-                                <p>Anita Baker was one of the first women I remember hearing truly apologize on wax—not out of weakness, but out of strength. Her voice taught me that apologies aren't transactions meant to get something back; they're transformations meant to create something new within ourselves.</p>
-                                <h2>A Year of Holding Space</h2>
-                                <p>After that classroom recording, I tried to make the track into something more. I produced my own beat for it—a decent effort, but something was missing. For months, I couldn't finish it. I had the first verse and hook sitting on an unfinished canvas while I worked through my own healing.</p>
-                                <p>This period taught me patience. Sometimes the words we need to say aren't ready to be heard—not by others, and especially not by ourselves. I was learning to see my own worth when I felt like I had nothing to offer. I was learning that love isn't about "fixing" someone—it's about showing up for them when they can't show up for themselves.</p>
-                                <h2>The Moment Everything Shifted</h2>
-                                <p>A day after I released "I love you, still," PLXY sent me the beat that would become "Operator." I fell in love with it immediately. When I listened to that old classroom recording of "I Apologize," the rest of the song poured out of me. I finished the second verse that same night. Recorded it the next day. Sent it to PLXY the day after that.</p>
-                                <p>Like a flower breaking through concrete, the right art finds you when you're ready to receive it.</p>
-                                <div style="position:relative; width:100%; height:0px; padding-bottom:100.000%">
-                                    <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/53oef6?loop=0" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;" title="Operator music visualizer"></iframe>
-                                </div>
-                                <h2>The Meaning in the Words</h2>
-                                <p>I intentionally used the "Re" prefix throughout "Operator" because when I started writing it, "Repeat" had just been re-released on Audiomack. This wasn't just wordplay—it was the sound of a man relearning how to be human:</p>
-                                <ul class="space-y-2 pl-4">
-                                    <li><strong>Regretful, Remorseful, Reflecting</strong> → The emotional state I was in</li>
-                                    <li><strong>Rewrite, Recite, Recital</strong> → The performer trying to find the right words</li>
-                                    <li><strong>Reguided missile, React, Regulated</strong> → The transformation through force</li>
-                                    <li><strong>Recognized, Realize, Recreate, Reconsider</strong> → The desire to rebuild what was lost</li>
-                                </ul>
-                                <p>I say "Sous Chef" because of my name, Soulaani [Soo-Lah-knee] Blue. I sometimes refer to myself as Big Sou(an homage to my late grandmother, Susan Bynum, the REAL Big Sue). As a writer, when I get going, it's like a chef in the zone—creating something new from the ingredients life has given me.</p>
-                                <p>When I say "I ain't get this out no book," I mean I learned my lessons the hard way through many trials and a whole lot of error. I didn't read about healing in a manual. I lived it. I burned my hands on the stove of my own mistakes. I tasted the bitterness of my own pride. I measured the ingredients of growth in tears and time.</p>
-                                <p>For those who truly know Anita's catalog: yes, I wove references to more than just "I Apologize" throughout the second verse. "Sweet lovin', sweet nothings" is a direct echo of "Sweet Love," and "from beginning to the end and on repeat" reimagines "Same Ole Love (365 Days a Year)" where she sings "from beginning to end 365 days of the year I want the same ole love."</p>
-                                <p>But there's the heartbreaking twist: Anita's songs are about love that endures—mine is about love that ended, even though I now <em>understand</em> what enduring love requires.</p>
-                                <h2>The Lesson in the Song</h2>
-                                <p>"Operator" isn't just asking for a second chance with someone else. It's about becoming the person who deserves that chance in the first place. It's about the painful realization that sometimes we become who we needed to be only after losing what made us need to change.</p>
-                                <p>The growth has happened. But the person who mattered most is gone.</p>
-                                <p>I sing "I apologize" now not to get back what I lost, but because I finally understand why I needed to say it. I finally understand that an apology isn't about fixing the past—it's about becoming the person who can face it.</p>
-                                <h2>Why This Song Matters</h2>
-                                <p>If you're holding onto words you don't know what to do with—keep them.</p>
-                                <p>If you're working through something that feels too heavy to carry—keep going.</p>
-                                <p>The right canvas will find you. The right beat will come. And when it does, you'll finally understand why you had to wait.</p>
-                                <p>The most transformative art is born from the most unexpected places—from classrooms between teaching duties, from unfinished songs that sit in your notes for a year, from the moments when we're not sure if we can ever say the right words.</p>
-                                <p>I'm still learning to apologize to myself. I'm still learning to love from a distance while I work on becoming who I need to be.</p>
-                                <p>Thank you for listening to the journey.</p>
-                                <p class="italic mt-1"><em>P.S. If you've ever felt like you had the words but not the right place to put them, this song is for you.</em></p>
-                                <div class="audiomack-embed mt-8">
-                                    <iframe src="https://audiomack.com//embed/soulaaniblue/song/operator-two-master" scrolling="no" width="100%" height="180" frameborder="0" title="Operator by Soulaani Blue"></iframe>
-                                </div>
-                                <p class="text-center mt-4">
-                                    <a href="https://audiomack.com/soulaaniblue/song/operator-two-master?share-user-id=151992693" target="_blank" rel="noopener" aria-label="Stream Operator by Soulaani Blue on Audiomack">Stream "Operator" on Audiomack</a>
-                                </p>
-                            </div>
-                        </section>
-                    `;
-                    break;
-                    
-                case 'rather-be':
-                    postContent = `
-                        <section class="blog-section pt-24">
-                            <div class="blog-post">
-                                <button onclick="goBackToBlogList()" class="mb-8 px-6 py-3 bg-transparent border-2 gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full font-bold flex items-center space-x-2">
-                                    <i class="fas fa-arrow-left"></i>
-                                    <span>BACK TO BLOG</span>
-                                </button>
-                                <h1>The Song That Chose Me</h1>
-                                <p>There are songs we write. And then there are songs that write us.</p>
-                                <p>This song didn't start as a plan. It emerged when my reality became too heavy to carry silently. Between surviving housing instability, advocating for my students in an underfunded and exploitative system, and watching my country shift in ways that felt increasingly unfamiliar, I found myself with little energy left for new relationships. When people asked, "Are you going to find yourself a girl from Asia?" I'd smile politely and say nah. They didn't know I was still processing the ghost of someone who felt more real to me in my dreams than anyone I might meet in waking life.</p>
-                                <!-- FIRST PHOTO - BEDROOM SETUP -->
-                                <div class="blog-image">
-                                    <!-- 🔍 SEO: Added alt text to blog images -->
-                                    <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/main/IMG_5537.jpeg" 
-                                         alt="Soulaani Blue's recording setup at Ms. Caldwell's house - bedroom studio where Rather Be was recorded" 
-                                         loading="lazy">
-                                    <p>The recording set up for "Rather Be" at Ms. Caldwell's house.</p>
-                                </div>
-                                <p>The first verse of "Rather Be" was born in a rented room at Ms. Caldwell's house after I was forced to move out of my previous apartment because of an unresolved rat infestation. I'd spend nights staring at the ceiling, wondering if the only place I'd ever truly connect with her again was in my sleep. Writing became my therapy when traditional healing felt financially and logistically impossible.</p>
-                                <p>The outro—"Hey Bunnie"—remained unfinished for months. I carried those lyrics with me across oceans. I finally completed them sitting alone in a hotel room in a foreign country, the words flowing as if they'd been waiting for this moment of displacement to reveal themselves. That's when I realized something: sometimes our most honest art comes not when we're comfortable, but when we're in transition—when we're between worlds, between homes, between versions of ourselves.</p>
-                                <!-- SECOND PHOTO - THE BEDROOM -->
-                                <div class="blog-image">
-                                    <!-- 🔍 SEO: Added alt text to blog images -->
-                                    <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/main/IMG_4054.jpeg" 
-                                         alt="Bedroom where Soulaani Blue wrote and recorded Rather Be - personal creative space" 
-                                         loading="lazy">
-                                    <p>The bedroom I rented at Ms Caldwell's house</p>
-                                </div>
-                                <p>When I say "I ain't know that I was so unsafe" echoes beyond my relationship—it speaks to the political climate, to the broken family dynamics I grew up in, to educational systems that value compliance over care, to the invisible threats that follow us even when we try to build something beautiful.</p>
-                                <p>When I recorded "Rather Be," I had a small room, a mirror on the wall, and the conviction that my truth deserved to be heard—even if only by the four walls around me.</p>
-                                <p>I don't know if I'll ever meet someone who sees me as clearly as I see myself now. But I do know this: I'd rather be alone than compromise the vision I'm fighting so hard to build. And if I can't be with who I want—meaning the version of myself that's free from inherited trauma and systemic constraints—I'll stay faithful to my solitude until the world catches up to what I'm creating.</p>
-                                <div class="audiomack-embed">
-                                    <iframe src="https://audiomack.com//embed/soulaaniblue/song/rather-be-master" scrolling="no" width="100%" height="180" frameborder="0" title="Rather Be by Soulaani Blue"></iframe>
-                                </div>
-                                <p class="text-center">
-                                    <a href="https://audiomack.com/soulaaniblue/song/rather-be-master?share-user-id=151992693" target="_blank" rel="noopener" aria-label="Stream Rather Be by Soulaani Blue on Audiomack">Stream "Rather Be" on Audiomack</a>
-                                </p>
-                            </div>
-                        </section>
-                    `;
-                    break;
+        });
+
+        // Blog post data
+        const postContents = {
+            1: {
+                title: "Operator: The Room of Regret",
+                date: "January 20, 2025",
+                image: "https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Caldwell%20House%20Bedroom.jpeg",
+                content: `
+                    <div class="blog-full-post">
+                        <p>"Operator" started as an Anita Baker cover, then became a DIY version, and finally PLXY produced it into what you hear now. The "Re" prefix—rethink, rewind, redo—is the architectural blueprint of the song. It's about the room you enter when you can't undo what's been done.</p>
+                        <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Caldwell%20House%20Bedroom.jpeg" alt="Caldwell House bedroom where music was made">
+                        <p class="image-caption">The room where it started - Caldwell House bedroom</p>
+                    </div>
+                `
+            },
+            2: {
+                title: "Rather Be: Ethical Boundaries",
+                date: "January 25, 2025",
+                image: "https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Caldwell%20House%20Recording%20Set%20Up.jpeg",
+                content: `
+                    <div class="blog-full-post">
+                        <p>Sometimes love is about knowing where you won't go. "Rather Be" is about the boundary condition—the line you won't cross, even for someone you love. It's a different kind of devotion.</p>
+                        <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Caldwell%20House%20Recording%20Set%20Up.jpeg" alt="Recording setup at Caldwell House">
+                        <p class="image-caption">The setup that captured these songs</p>
+                    </div>
+                `
+            },
+            3: {
+                title: "Same (Ole Lady): Mathematical Certainty",
+                date: "January 30, 2025",
+                image: "https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/C.A.R.E%20Headshot.png",
+                content: `
+                    <div class="blog-full-post">
+                        <p>This song insists on one specific love with the force of a mathematical proof. No alternatives, no substitutions. Just her.</p>
+                    </div>
+                `
+            },
+            4: {
+                title: "Repeat: Recursive Need",
+                date: "February 5, 2025",
+                image: "https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/IMG_1286.jpeg",
+                content: `
+                    <div class="blog-full-post">
+                        <p>"Repeat" is the loop you can't break—the persistent need that keeps coming back, proving itself over and over. It's the recursive function of longing.</p>
+                        <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/IMG_1286.jpeg" alt="Repeat cover art">
+                        <p class="image-caption">Cover art for "Repeat"</p>
+                    </div>
+                `
+            },
+            5: {
+                title: "Why I Left YouTube",
+                date: "February 10, 2025",
+                image: "https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/C.A.R.E%20Headshot.png",
+                content: `
+                    <div class="blog-full-post">
+                        <p>I moved my videos to Odysee because I couldn't keep feeding a platform that profits from harm. YouTube's parent company has its hands in too much that goes against my values. Odysee isn't perfect, but it's creator-friendly and respects the audience. That matters.</p>
+                    </div>
+                `
+            },
+            6: {
+                title: "February: First Sales, First Donations, and 'Dead Man Walkin''",
+                date: "March 3, 2026",
+                image: "https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Dead%20Man%20Walkin%20Cover%20Art.jpeg",
+                content: `
+                    <div class="blog-full-post">
+                        <p class="lead">February was heavy. The world kept spinning in its same cruel way. Bombs dropping. Fascists getting paid. ICE murdering people in the streets. The US invading Venezuela and threatening half the planet. Same machine, different day.</p>
+                        
+                        <p>But here's what else happened in February.</p>
+                        
+                        <p><strong>We made our first sale.</strong></p>
+                        
+                        <p>Someone out there heard what I'm building and said "I'll put my money behind that." That sale went straight into the Feed Every Body jar. And on February 11th, I made the first donation from that jar to RVA Community Fridges.</p>
+                        
+                        <p>Let me say that again. <em>Music from this artist funded food for someone in Richmond.</em> Directly. No corporate filter nor capitalist middleman. Sound becoming sustenance. Just us feeding us.</p>
+                        
+                        <p>Then on February 22nd, I released "Dead Man Walkin'."</p>
+                        
+                        <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Dead%20Man%20Walkin%20Cover%20Art.jpeg" alt="Dead Man Walkin' cover art">
+                        <p class="image-caption">Cover art for "Dead Man Walkin'"</p>
+                        
+                        <p>The song is exactly where I'm at. It's for the nights when sleep won't come because your people are hurting and you can't reach them. It's for the rage you feel watching the news and realizing the news won't show you half of what's really happening. It's for the moments when "keeping it peaceful" feels like a betrayal of everyone they're killing.</p>
+                        
+                        <p>This is God's work. Not in a holy book way. In a "I was put here to do this specific thing" way. Feed Every Body is that thing. The music is the tool. The food is the proof.</p>
+                        
+                        <p>So here's where we stand.</p>
+                        
+                        <p><strong>One sale. One donation. One song that tells the truth about how it feels to be alive right now.</strong></p>
+                        
+                        <p>I don't know when the next sale will come. I don't know when this jar will be full enough to make another donation. But I know the work continues. The music keeps coming. The link to RVA Community Fridges stays on my site for anyone who wants to feed somebody directly.</p>
+                        
+                        <p>February showed me this model can work. One sale became one meal. Imagine what a hundred sales could do. A thousand.</p>
+                        
+                        <p>The machine wants us tired. Wants us hopeless. Wants us believing our little actions don't matter.</p>
+                        
+                        <p>February proved otherwise.</p>
+                        
+                        <div class="blog-links mt-8 space-y-4">
+                            <a href="https://audiomack.com/soulaaniblue/song/deadmanwalkin" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition duration-300">
+                                <i class="fas fa-headphones mr-2"></i> Listen to "Dead Man Walkin'" on Audiomack
+                            </a>
+                            
+                            <a href="https://www.rvacommunityfridges.com/donate?fbclid=PAQ0xDSwMLTgRleHRuA2FlbQIxMQABp56X1KuhBv5F-un1zK59V2EAhn8y7qrYHp7LDT3cxY9BuiQ18UvN4Oq-hcMq_aem_FlWyxfX_vMKVAFlEdUNqjQ" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition duration-300">
+                                <i class="fas fa-hand-holding-heart mr-2"></i> Donate directly to RVA Community Fridges
+                            </a>
+                        </div>
+                        
+                        <p class="mt-8 text-xl gold-text">Us feeding us. That's the work.</p>
+                    </div>
+                `
             }
-            
-            blogContent.innerHTML = postContent;
-            
-            // Scroll to the top of the blog content
-            blogContent.scrollIntoView({ behavior: 'smooth' });
+        };
+
+        // Render blog grid
+        const blogGrid = document.getElementById('blog-grid');
+        for (let id in postContents) {
+            const post = postContents[id];
+            const card = document.createElement('div');
+            card.className = 'blog-card';
+            card.onclick = () => showBlogPost(id);
+            card.innerHTML = `
+                <div class="blog-image" style="background-image: url('${post.image}');"></div>
+                <div class="blog-content">
+                    <h3 class="blog-title gold-text">${post.title}</h3>
+                    <p class="blog-meta pixel-font">${post.date}</p>
+                    <p class="blog-excerpt">${post.content.replace(/<[^>]*>/g, '').substring(0, 120)}...</p>
+                    <span class="read-more">Read more →</span>
+                </div>
+            `;
+            blogGrid.appendChild(card);
         }
 
-        function goBackToBlogList() {
-            // Hide the blog content
-            const blogContent = document.getElementById('blog-content');
-            blogContent.classList.add('hidden');
-            blogContent.innerHTML = '';
-            
-            // Show all blog cards
-            document.querySelectorAll('.ep-card').forEach(card => {
-                card.style.display = 'block';
-            });
-            
-            // Scroll back to the blog section
-            document.querySelector('section.py-16').scrollIntoView({ behavior: 'smooth' });
+        // Show modal with full post
+        function showBlogPost(id) {
+            const post = postContents[id];
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+                <h2 class="text-3xl md:text-4xl font-bold gold-text mb-2">${post.title}</h2>
+                <p class="blog-meta pixel-font mb-6">${post.date}</p>
+                ${post.content}
+            `;
+            document.getElementById('postModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('postModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            const modal = document.getElementById('postModal');
+            if (event.target == modal) {
+                closeModal();
+            }
         }
     </script>
 </body>
