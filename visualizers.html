@@ -8,15 +8,14 @@
     <!-- SEO and Social Meta Tags -->
     <meta name="description" content="Music visualizers and videos for Soulaani Blue's tracks - Operator, Rather Be, Repeat, and Hey Bunnie.">
     
-    <!-- Include all the same CSS and fonts -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&family=Raleway:wght@800&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <!-- Fonts: Bebas Neue + Roboto Condensed + Press Start 2P -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
     
-    <!-- Include the same CSS styles from index.html -->
+    <!-- Tailwind & Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* COPY ALL THE SAME CSS STYLES FROM YOUR INDEX.HTML FILE */
         :root {
             --gold: #D4AF37;
             --deep-red: #8B0000;
@@ -28,14 +27,149 @@
             --color-gold: #D4AF37;
             --color-black: #000;
         }
+
+        /* ===== NEW TYPOGRAPHY ===== */
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Roboto Condensed', 'Lato', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
             background-color: var(--rich-black);
             color: #fff;
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
-        /* ... include ALL your existing CSS styles ... */
+
+        /* Headings, nav, buttons – Bebas Neue for impact */
+        h1, h2, h3, h4, h5, h6,
+        .impact-font,
+        .nav-link,
+        button,
+        .gold-text {
+            font-family: 'Bebas Neue', 'Montserrat', sans-serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        /* Adjust heading sizes */
+        h1 { font-size: 5rem; }
+        h2 { font-size: 3.5rem; }
+        h3 { font-size: 2.5rem; }
+        h4 { font-size: 1.8rem; }
+
+        /* Pixel font for accents */
+        .pixel-font,
+        .release-badge,
+        .new-badge,
+        .blog-meta {
+            font-family: 'Press Start 2P', cursive;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 0.7rem;
+            line-height: 1.4;
+        }
+
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--gold), var(--deep-red));
+            transition: width 0.4s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .bg-rich-black {
+            background-color: var(--rich-black);
+        }
+        .gold-text {
+            color: var(--gold);
+        }
+        .gold-border {
+            border-color: var(--gold);
+        }
+        .bg-deep-red {
+            background-color: var(--deep-red);
+        }
+
+        /* Social icons */
+        .social-icon {
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+        }
+        .social-icon:hover {
+            transform: scale(1.1) translateY(-5px);
+            background: var(--gold);
+            color: black;
+        }
+
+        /* Video sections */
+        .video-section {
+            border-bottom: 1px solid #222;
+        }
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        /* Button styles */
+        .bmac-button {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            font-weight: 600;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .bmac-button:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Animations */
+        .slide-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 0.8s ease forwards;
+        }
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -60,7 +194,7 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu (Updated - Added THE WORK) -->
+        <!-- Mobile Menu (Updated with Odysee) -->
         <div class="md:hidden bg-rich-black bg-opacity-95 border-t border-gray-800 hidden" id="mobile-menu">
             <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
                 <a href="index.html" class="nav-link gold-text hover:text-white">HOME</a>
@@ -75,6 +209,9 @@
                     </a>
                     <a href="https://rednote.com/Soulaaniblue" target="_blank" class="social-icon gold-text" aria-label="Find Soulaani Blue on Rednote">
                         <i class="fas fa-record-vinyl"></i>
+                    </a>
+                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" class="social-icon gold-text" aria-label="Find Soulaani Blue on Odysee">
+                        <i class="fas fa-video"></i>
                     </a>
                 </div>
             </div>
