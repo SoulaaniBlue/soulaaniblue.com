@@ -24,7 +24,7 @@
     <!-- Fonts: Bebas Neue + Roboto Condensed + Press Start 2P -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
     
-    <!-- Tailwind & Font Awesome (only one, correct version) -->
+    <!-- Tailwind & Font Awesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -356,6 +356,15 @@
             40% { transform: translateY(-20px); }
             60% { transform: translateY(-10px); }
         }
+
+        /* Additional gradient classes for Tailwind */
+        .from-gold-500 {
+            --tw-gradient-from: #D4AF37;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(212, 175, 55, 0));
+        }
+        .to-yellow-600 {
+            --tw-gradient-to: #ca8a04;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -415,6 +424,9 @@
             <div class="mb-10 slide-up delay-100">
                 <h3 class="text-xl md:text-2xl gold-text mb-4 tracking-wider">OUT NOW</h3>
                 <h1 class="text-5xl md:text-8xl font-bold mb-6 text-white impact-font tracking-tight">I LOVE YOU, STILL</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 mt-6">
+                    Soulaani Blue's most vulnerable work yet - a soulful journey through love's complexities
+                </p>
             </div>
             <div class="flex flex-col md:flex-row justify-center gap-4 slide-up delay-300 mt-16">
                 <div class="flex flex-col space-y-4 w-full max-w-xs mx-auto">
@@ -591,6 +603,35 @@
         </div>
     </section>
 
+    <!-- NEW: Donation Tracker Section -->
+    <section class="py-16 bg-gradient-to-b from-rich-black to-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gold-text">FEED EVERY BODY TRACKER</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+                Direct donations from music sales to RVA Community Fridges. <br> Us feeding us.
+            </p>
+            
+            <div class="max-w-2xl mx-auto">
+                <!-- Current Total / Goal -->
+                <div class="flex justify-between mb-2 text-sm text-gray-400">
+                    <span class="font-bold gold-text">$<span id="current-donations">12.22</span></span>
+                    <span>Goal: $<span id="goal-donations">100</span></span>
+                </div>
+                
+                <!-- Progress Bar Container -->
+                <div class="w-full h-6 bg-gray-800 rounded-full overflow-hidden shadow-inner">
+                    <!-- Animated Fill Bar -->
+                    <div id="progress-fill" class="h-full bg-gradient-to-r from-gold-500 to-yellow-600 rounded-full transition-all duration-1000 ease-out" style="width: 0%;"></div>
+                </div>
+                
+                <!-- Note -->
+                <p class="text-xs text-gray-500 mt-4">
+                    Updated manually as donations are made. <br> 55% of music proceeds go here.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- People Over Papers Section -->
     <section id="people-over-papers" class="py-20 bg-deep-red" aria-labelledby="people-over-papers-heading">
         <div class="container mx-auto px-4 text-center">
@@ -716,6 +757,25 @@
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
             }
+        });
+
+        // Donation Tracker - Update these numbers as needed
+        const currentDonations = 12.22;  // <-- CHANGE THIS TO CURRENT TOTAL
+        const goalDonations = 100;        // <-- CHANGE THIS TO YOUR GOAL
+
+        // Calculate percentage (cap at 100%)
+        let percentage = (currentDonations / goalDonations) * 100;
+        if (percentage > 100) percentage = 100;
+
+        // Update the displayed numbers
+        document.getElementById('current-donations').textContent = currentDonations.toFixed(2);
+        document.getElementById('goal-donations').textContent = goalDonations;
+
+        // Animate the progress bar on page load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('progress-fill').style.width = percentage + '%';
+            }, 300); // slight delay for smooth entrance
         });
     </script>
 </body>
