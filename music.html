@@ -360,33 +360,36 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95">
+       <!-- Footer - UPDATED with RSS icon -->
+    <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95" aria-label="Site footer">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0 text-center md:text-left">
                     <p class="text-gray-500 mb-2">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
-                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank"
-                       class="inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300">
+                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300" aria-label="Support Soulaani Blue's art on Buy Me a Coffee">
                         <i class="fas fa-coffee mr-2"></i>
                         <span>SUPPORT MY ART</span>
                     </a>
                 </div>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Listen to Soulaani Blue on Audiomack">
                         <i class="fas fa-music"></i>
                     </a>
-                    <a href="https://rednote.com/Soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
+                    <a href="https://rednote.com/Soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Find Soulaani Blue on Rednote">
                         <i class="fas fa-record-vinyl"></i>
                     </a>
-                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
+                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Find Soulaani Blue on Odysee">
                         <i class="fas fa-video"></i>
+                    </a>
+                    <!-- NEW: RSS Feed Icon -->
+                    <a href="/rss.xml" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Subscribe to the blog RSS feed">
+                        <i class="fas fa-rss"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
-
     <script>
         // Mobile menu toggle
         document.getElementById('menu-toggle').addEventListener('click', function() {
