@@ -11,6 +11,9 @@
     <!-- RSS Feed Link -->
     <link rel="alternate" type="application/rss+xml" title="Soulaani Blue Blog RSS" href="/rss.xml" />
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
     <!-- Fonts: Bebas Neue + Roboto Condensed + Press Start 2P -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
     
@@ -151,6 +154,16 @@
         .btn-hover:hover {
             transform: translateY(-3px) scale(1.02);
             box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer icons */
+        footer .flex a {
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        footer .flex a:hover {
+            transform: scale(1.2);
+            color: var(--gold) !important;
         }
 
         /* Animations */
@@ -326,7 +339,7 @@
                 <div class="mb-4 md:mb-0 text-center md:text-left">
                     <p class="text-gray-500 mb-2">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
                     <a href="https://buymeacoffee.com/soulaaniblue" target="_blank"
-                       class="inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300 btn-hover">
+                       class="btn-hover inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300">
                         <i class="fas fa-coffee mr-2"></i>
                         <span>SUPPORT MY ART</span>
                     </a>
