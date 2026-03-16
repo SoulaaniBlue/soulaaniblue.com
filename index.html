@@ -30,7 +30,7 @@
     <!-- Fonts: Bebas Neue + Roboto Condensed + Press Start 2P -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
     
-    <!-- Tailwind & Font Awesome -->
+    <!-- Tailwind & Font Awesome (only one version) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -532,9 +532,10 @@
                 </div>
             </div>
         </div>
+        <!-- Fixed scroll arrow (using HTML entity) -->
         <div class="absolute bottom-10 left-0 right-0 text-center">
-            <a href="#new-single" class="inline-block animate-bounce hover:animate-pulse" aria-label="Scroll down to new single">
-                <i class="fas fa-chevron-down text-2xl gold-text" style="color: #D4AF37; display: inline-block;"></i>
+            <a href="#new-single" class="inline-block animate-bounce hover:animate-pulse text-2xl gold-text" aria-label="Scroll down to new single">
+                ↓
             </a>
         </div>
     </section>
