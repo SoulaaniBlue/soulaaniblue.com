@@ -8,6 +8,9 @@
     <!-- SEO and Social Meta Tags -->
     <meta name="description" content="I Love You, Still EP by Soulaani Blue - A soulful journey through love's complexities. Stream exclusively on Audiomack.">
     
+    <!-- RSS Feed Link -->
+    <link rel="alternate" type="application/rss+xml" title="Soulaani Blue Blog RSS" href="/rss.xml" />
+    
     <!-- Fonts: Bebas Neue + Roboto Condensed + Press Start 2P -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
     
@@ -73,6 +76,7 @@
         .nav-link {
             font-size: 1.2rem;
             position: relative;
+            transition: color 0.3s ease;
         }
         .nav-link::after {
             content: '';
@@ -110,6 +114,45 @@
             color: var(--gold);
         }
 
+        /* Social icons */
+        .social-icon {
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+        }
+        .social-icon:hover {
+            transform: scale(1.1) translateY(-5px);
+            background: var(--gold);
+            color: black;
+        }
+
+        /* Music card style (reuse for consistency) */
+        .music-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(20, 20, 20, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .music-card:hover {
+            transform: translateY(-8px);
+            background: rgba(30, 30, 30, 0.9);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        /* Button hover effects (unified) */
+        .btn-hover {
+            transition: all 0.3s ease !important;
+        }
+        .btn-hover:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
         /* Animations */
         .slide-up {
             opacity: 0;
@@ -131,13 +174,22 @@
             h1 { font-size: 3rem; }
             h2 { font-size: 2.5rem; }
         }
+
+        /* Additional gradient classes for Tailwind */
+        .from-gold-500 {
+            --tw-gradient-from: #D4AF37;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(212, 175, 55, 0));
+        }
+        .to-yellow-600 {
+            --tw-gradient-to: #ca8a04;
+        }
     </style>
 </head>
 <body class="min-h-screen">
-    <!-- Navigation (Updated - Added THE WORK) -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-rich-black bg-opacity-95 border-b border-gray-800" aria-label="Main navigation">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold gold-text impact-font" aria-label="Soulaani Blue - Home">SOULAANI BLUE&trade;</a>
+            <a href="index.html" class="text-2xl font-bold gold-text impact-font">SOULAANI BLUE&trade;</a>
             <div class="hidden md:flex space-x-8">
                 <a href="index.html" class="nav-link text-white hover:text-gold-500">HOME</a>
                 <a href="ep.html" class="nav-link text-white hover:text-gold-500">NEW EP</a>
@@ -155,7 +207,7 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu (Updated - Added THE WORK) -->
+        <!-- Mobile Menu -->
         <div class="md:hidden bg-rich-black bg-opacity-95 border-t border-gray-800 hidden" id="mobile-menu">
             <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
                 <a href="index.html" class="nav-link gold-text hover:text-white">HOME</a>
@@ -185,8 +237,8 @@
                     <div class="mb-8 text-center max-w-3xl mx-auto">
                         <h3 class="text-2xl font-bold gold-text mb-4">The Story</h3>
                         <p class="text-gray-300 mb-4 mx-auto">
-                            These tracks navigate the space between 
-                            what was and what remains, honoring love that endures beyond circumstance.
+                            "I love you, still" is my rawest exploration of love's persistence. These tracks navigate the space between 
+                            what was and what remains, honoring love that endurs beyond circumstance.
                         </p>
                         <p class="text-gray-300">
                             Recorded, mixed, and mastered entirely by me, this EP represents complete artistic control and vision. 
@@ -229,13 +281,17 @@
                                 <i class="fas fa-circle text-xs gold-text mt-2 mr-2"></i>
                                 <span>55% of my proceeds support RVACommunityFridges & People over Papers</span>
                             </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-xs gold-text mt-2 mr-2"></i>
+                                <span>Digital booklet included with order (lyric sheets + behind-the-scenes photos)</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="mt-12">
                         <iframe src="https://audiomack.com//embed/soulaaniblue/album/i-love-you-still-ep" scrolling="no" width="100%" height="400" frameborder="0" title="I love you, still - EP by Soulaani Blue"></iframe>
                         <div class="mt-6 text-center">
                             <a href="https://audiomack.com/soulaaniblue" target="_blank"
-                               class="px-6 py-3 bg-transparent border-2 border-orange-500 text-orange-300 font-bold rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/30 inline-flex items-center space-x-2">
+                               class="btn-hover inline-block px-6 py-3 bg-transparent border-2 border-orange-500 text-orange-300 font-bold rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/30">
                                 <i class="fas fa-user-plus"></i>
                                 <span>FOLLOW SOULAANI BLUE ON AUDIOMACK</span>
                             </a>
@@ -246,16 +302,16 @@
         </div>
     </section>
 
-    <!-- Purchase Links (Gumroad removed) -->
+    <!-- Purchase Links -->
     <section class="py-16 bg-gray-900">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">GET THE EP</h2>
             <div class="flex flex-col md:flex-row justify-center gap-4 max-w-2xl mx-auto">
-                <a href="https://soulaaniblue.bandcamp.com/" target="_blank" class="px-6 py-4 bg-transparent border-2 gold-border text-white hover:bg-yellow-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold flex items-center justify-center space-x-2">
+                <a href="https://soulaaniblue.bandcamp.com/" target="_blank" class="btn-hover px-6 py-4 bg-transparent border-2 gold-border text-white hover:bg-yellow-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold flex items-center justify-center space-x-2">
                     <i class="fab fa-bandcamp"></i>
                     <span>BANDCAMP</span>
                 </a>
-                <a href="https://www.even.biz/r/i-love-you-still-0bd194c2-5d75,4747,95b3,02a71223f704" target="_blank" class="px-6 py-4 bg-transparent border-2 border-purple-500 text-white hover:bg-purple-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold flex items-center justify-center space-x-2">
+                <a href="https://www.even.biz/r/i-love-you-still-0bd194c2-5d75,4747,95b3,02a71223f704" target="_blank" class="btn-hover px-6 py-4 bg-transparent border-2 border-purple-500 text-white hover:bg-purple-900 hover:bg-opacity-20 transition-all duration-300 rounded-full font-bold flex items-center justify-center space-x-2">
                     <i class="fas fa-store"></i>
                     <span>EVEN</span>
                 </a>
@@ -263,36 +319,82 @@
         </div>
     </section>
 
-       <!-- Footer - UPDATED with RSS icon -->
-    <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95" aria-label="Site footer">
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0 text-center md:text-left">
                     <p class="text-gray-500 mb-2">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
-                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300" aria-label="Support Soulaani Blue's art on Buy Me a Coffee">
+                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300 btn-hover">
                         <i class="fas fa-coffee mr-2"></i>
                         <span>SUPPORT MY ART</span>
                     </a>
                 </div>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="https://audiomack.com/soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Listen to Soulaani Blue on Audiomack">
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-music"></i>
                     </a>
-                    <a href="https://rednote.com/Soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Find Soulaani Blue on Rednote">
+                    <a href="https://rednote.com/Soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-record-vinyl"></i>
                     </a>
-                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Find Soulaani Blue on Odysee">
+                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-video"></i>
                     </a>
-                    <!-- NEW: RSS Feed Icon -->
-                    <a href="/rss.xml" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Subscribe to the blog RSS feed">
+                    <a href="/rss.xml" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Subscribe to the blog RSS feed">
                         <i class="fas fa-rss"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Newsletter Pop-up -->
+    <div id="newsletter-popup" class="fixed inset-0 flex items-center justify-center z-50 hidden transition-opacity duration-300 bg-black bg-opacity-70">
+        <div class="bg-rich-black border border-gold-500 rounded-lg p-8 max-w-md mx-4 relative shadow-2xl">
+            <button id="close-popup" class="absolute top-2 right-2 text-gray-400 hover:text-gold-500 text-2xl">&times;</button>
+            <h3 class="text-2xl font-bold gold-text mb-3">Stay Connected</h3>
+            <p class="text-gray-300 mb-6">Get new music, stories, and mutual aid updates straight to your inbox.</p>
+            <form action="https://formspree.io/f/xvgaqgjb" method="POST" class="space-y-4">
+                <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:-translate-y-1 btn-hover">
+                    SUBSCRIBE
+                </button>
+            </form>
+            <p class="text-xs text-gray-500 mt-4 text-center">
+                No spam, only real updates. Unsubscribe anytime.
+            </p>
+        </div>
+    </div>
+
+    <style>
+        #newsletter-popup {
+            backdrop-filter: blur(3px);
+        }
+        .bg-rich-black {
+            background-color: #0A0A0A;
+        }
+        .border-gold-500 {
+            border-color: #D4AF37;
+        }
+        .text-gold-500 {
+            color: #D4AF37;
+        }
+        .hover\:text-gold-500:hover {
+            color: #D4AF37;
+        }
+        .focus\:ring-gold-500:focus {
+            --tw-ring-color: #D4AF37;
+        }
+        .from-yellow-500 {
+            --tw-gradient-from: #eab308;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(234, 179, 8, 0));
+        }
+        .to-yellow-600 {
+            --tw-gradient-to: #ca8a04;
+        }
+    </style>
 
     <script>
         // Mobile menu toggle
@@ -320,129 +422,74 @@
                 toggle.querySelector('i').className = 'fas fa-bars text-2xl';
             });
         });
-    </script>
 
-    <!-- Newsletter Pop-up -->
-<div id="newsletter-popup" class="fixed inset-0 flex items-center justify-center z-50 hidden transition-opacity duration-300 bg-black bg-opacity-70">
-    <div class="bg-rich-black border border-gold-500 rounded-lg p-8 max-w-md mx-4 relative shadow-2xl">
-        <button id="close-popup" class="absolute top-2 right-2 text-gray-400 hover:text-gold-500 text-2xl">&times;</button>
-        <h3 class="text-2xl font-bold gold-text mb-3">Stay Connected</h3>
-        <p class="text-gray-300 mb-6">Get new music, stories, and mutual aid updates straight to your inbox.</p>
-        <form action="https://formspree.io/f/xvgaqgjb" method="POST" class="space-y-4">
-            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
-            <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
-            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:-translate-y-1">
-                SUBSCRIBE
-            </button>
-        </form>
-        <p class="text-xs text-gray-500 mt-4 text-center">
-            No spam, only real updates. Unsubscribe anytime.
-        </p>
-    </div>
-</div>
+        // Newsletter Pop-up
+        (function() {
+            const POPUP_STORAGE_KEY = 'soulaaniNewsletterPopup';
+            const POPUP_DELAY = 5000;
+            const POPUP_EXPIRY_DAYS = 30;
 
-<style>
-    #newsletter-popup {
-        backdrop-filter: blur(3px);
-    }
-    .bg-rich-black {
-        background-color: #0A0A0A;
-    }
-    .border-gold-500 {
-        border-color: #D4AF37;
-    }
-    .text-gold-500 {
-        color: #D4AF37;
-    }
-    .hover\:text-gold-500:hover {
-        color: #D4AF37;
-    }
-    .focus\:ring-gold-500:focus {
-        --tw-ring-color: #D4AF37;
-    }
-    .from-yellow-500 {
-        --tw-gradient-from: #eab308;
-        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(234, 179, 8, 0));
-    }
-    .to-yellow-600 {
-        --tw-gradient-to: #ca8a04;
-    }
-</style>
+            function getPopupStatus() {
+                const stored = localStorage.getItem(POPUP_STORAGE_KEY);
+                if (!stored) return null;
+                try {
+                    return JSON.parse(stored);
+                } catch (e) {
+                    return null;
+                }
+            }
 
-<script>
-(function() {
-    // Check if popup has been shown before
-    const POPUP_STORAGE_KEY = 'soulaaniNewsletterPopup';
-    const POPUP_DELAY = 5000; // 5 seconds
-    const POPUP_EXPIRY_DAYS = 30; // days before showing again
+            function setPopupShown() {
+                const expiry = Date.now() + POPUP_EXPIRY_DAYS * 24 * 60 * 60 * 1000;
+                localStorage.setItem(POPUP_STORAGE_KEY, JSON.stringify({ shown: true, expires: expiry }));
+            }
 
-    function getPopupStatus() {
-        const stored = localStorage.getItem(POPUP_STORAGE_KEY);
-        if (!stored) return null;
-        try {
-            return JSON.parse(stored);
-        } catch (e) {
-            return null;
-        }
-    }
+            function shouldShowPopup() {
+                const status = getPopupStatus();
+                if (!status) return true;
+                if (!status.shown) return true;
+                if (Date.now() > status.expires) return true;
+                return false;
+            }
 
-    function setPopupShown() {
-        const expiry = Date.now() + POPUP_EXPIRY_DAYS * 24 * 60 * 60 * 1000;
-        localStorage.setItem(POPUP_STORAGE_KEY, JSON.stringify({ shown: true, expires: expiry }));
-    }
+            if (shouldShowPopup()) {
+                setTimeout(function() {
+                    const popup = document.getElementById('newsletter-popup');
+                    if (popup) {
+                        popup.classList.remove('hidden');
+                    }
+                }, POPUP_DELAY);
+            }
 
-    function shouldShowPopup() {
-        const status = getPopupStatus();
-        if (!status) return true; // never shown
-        if (!status.shown) return true;
-        if (Date.now() > status.expires) return true; // expired
-        return false;
-    }
-
-    // Show popup after delay if conditions met
-    if (shouldShowPopup()) {
-        setTimeout(function() {
+            const closeBtn = document.getElementById('close-popup');
             const popup = document.getElementById('newsletter-popup');
+
+            function closePopup() {
+                if (popup) {
+                    popup.classList.add('hidden');
+                    setPopupShown();
+                }
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closePopup);
+            }
+
             if (popup) {
-                popup.classList.remove('hidden');
+                popup.addEventListener('click', function(e) {
+                    if (e.target === popup) {
+                        closePopup();
+                    }
+                });
             }
-        }, POPUP_DELAY);
-    }
 
-    // Close popup handlers
-    const closeBtn = document.getElementById('close-popup');
-    const popup = document.getElementById('newsletter-popup');
-
-    function closePopup() {
-        if (popup) {
-            popup.classList.add('hidden');
-            setPopupShown();
-        }
-    }
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closePopup);
-    }
-
-    // Close if clicking outside the modal content (on the overlay)
-    if (popup) {
-        popup.addEventListener('click', function(e) {
-            if (e.target === popup) {
-                closePopup();
+            const form = popup ? popup.querySelector('form') : null;
+            if (form) {
+                form.addEventListener('submit', function() {
+                    setPopupShown();
+                });
             }
-        });
-    }
-
-    // If user submits the form successfully, we can also close and mark shown
-    const form = popup ? popup.querySelector('form') : null;
-    if (form) {
-        form.addEventListener('submit', function() {
-            // Mark as shown immediately (though the page may reload)
-            setPopupShown();
-            // The form will submit to Formspree and reload the page, so it's fine
-        });
-    }
-})();
-</script>
+        })();
+    </script>
 </body>
 </html>
