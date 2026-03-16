@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>Soulaani Blue Blog</title>
+    <link>https://www.soulaaniblue.com/blog.html</link>
+    <description>Stories, updates, and reflections from Soulaani Blue's journey.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Mar 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://www.soulaaniblue.com/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <!-- Post 1: Operator -->
+    <item>
+        <title><![CDATA[From Classroom Cover to Healing Anthem: The Story of "Operator"]]></title>
+        <link>https://www.soulaaniblue.com/blog.html#post-1</link>
+        <guid>https://www.soulaaniblue.com/blog.html#post-1</guid>
+        <pubDate>Thu, 20 Nov 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[I found a video on my phone the other day. August 2024. I was in my classroom recording myself singing Anita Baker's "I Apologize." ...]]></description>
+    </item>
+
+    <!-- Post 2: Rather Be -->
+    <item>
+        <title><![CDATA[The Song That Chose Me: The Story of "Rather Be"]]></title>
+        <link>https://www.soulaaniblue.com/blog.html#post-2</link>
+        <guid>https://www.soulaaniblue.com/blog.html#post-2</guid>
+        <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[There are songs you write. And then there are songs that write you. "Rather Be" is the second kind. I wrote the first verse in a rented room at Ms. Caldwell's house. ...]]></description>
+    </item>
+
+    <!-- Post 3: Same (Ole Lady) -->
+    <item>
+        <title><![CDATA[Same (Ole Lady)]]></title>
+        <link>https://www.soulaaniblue.com/blog.html#post-3</link>
+        <guid>https://www.soulaaniblue.com/blog.html#post-3</guid>
+        <pubDate>Sun, 30 Nov 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[I wrote this because I got tired of lying to myself. "This what I get for not having the words." ...]]></description>
+    </item>
+
+    <!-- Post 4: Repeat -->
+    <item>
+        <title><![CDATA[The Flower That Grew Into a Song (Repeat)]]></title>
+        <link>https://www.soulaaniblue.com/blog.html#post-4</link>
+        <guid>https://www.soulaaniblue.com/blog.html#post-4</guid>
+        <pubDate>Fri, 05 Dec 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[I wrote the first lines of "Repeat" in 2023, sitting on a friend's couch with nowhere else to go. ...]]></description>
+    </item>
+
+    <!-- Post 5: Why I Left YouTube -->
+    <item>
+        <title><![CDATA[Why I Left YouTube]]></title>
+        <link>https://www.soulaaniblue.com/blog.html#post-5</link>
+        <guid>https://www.soulaaniblue.com/blog.html#post-5</guid>
+        <pubDate>Sat, 10 Jan 2026 00:00:00 GMT</pubDate>
+        <description><![CDATA[I moved my videos to Odysee because I couldn't keep feeding a platform that profits from harm. ...]]></description>
+    </item>
+
+    <!-- Post 6: February -->
+    <item>
+        <title><![CDATA[February: First Sales, First Donations, and 'Dead Man Walkin']]></title>
+        <link>https://www.soulaaniblue.com/blog.html#post-6</link>
+        <guid>https://www.soulaaniblue.com/blog.html#post-6</guid>
+        <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+        <description><![CDATA[February was heavy. The world kept spinning in its same cruel way. ...]]></description>
+    </item>
+</channel>
+</rss>
