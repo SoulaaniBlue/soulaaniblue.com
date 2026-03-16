@@ -8,6 +8,9 @@
     <!-- SEO and Social Meta Tags -->
     <meta name="description" content="Discover Soulaani Blue's music - previous work, collaborations, and musical journey.">
     
+    <!-- RSS Feed Link -->
+    <link rel="alternate" type="application/rss+xml" title="Soulaani Blue Blog RSS" href="/rss.xml" />
+    
     <!-- Fonts: Bebas Neue + Roboto Condensed + Press Start 2P -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
     
@@ -79,7 +82,8 @@
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
-            font-weight: 400; /* Bebas is heavy enough */
+            font-weight: 400;
+            font-size: 1.2rem;
         }
 
         .nav-link::after {
@@ -121,6 +125,23 @@
             color: var(--gold);
         }
 
+        /* Social icons */
+        .social-icon {
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+        }
+        .social-icon:hover {
+            transform: scale(1.1) translateY(-5px);
+            background: var(--gold);
+            color: black;
+        }
+
         /* Buttons & Cards */
         .music-card {
             background: rgba(10, 10, 10, 0.8);
@@ -154,6 +175,8 @@
 
         .button.audiomack:hover {
             background-color: #e65c00;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(255, 105, 0, 0.3);
         }
 
         .button.bandcamp {
@@ -163,6 +186,8 @@
 
         .button.bandcamp:hover {
             background-color: #4f7e8a;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(98, 154, 169, 0.3);
         }
 
         .new-badge {
@@ -181,6 +206,44 @@
             height: auto;
             border-radius: 8px;
             margin-bottom: 1rem;
+        }
+
+        /* Previous work buttons */
+        .previous-work-btn {
+            transition: all 0.3s ease !important;
+        }
+        .previous-work-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            background-color: rgba(212, 175, 55, 0.15) !important;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Streaming platform buttons */
+        .stream-btn {
+            transition: all 0.3s ease !important;
+        }
+        .stream-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Button hover effects (unified) */
+        .btn-hover {
+            transition: all 0.3s ease !important;
+        }
+        .btn-hover:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer icons */
+        footer .flex a {
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        footer .flex a:hover {
+            transform: scale(1.2);
+            color: var(--gold) !important;
         }
 
         /* Animations */
@@ -214,10 +277,19 @@
             h1 { font-size: 3rem; }
             h2 { font-size: 2.5rem; }
         }
+
+        /* Additional gradient classes for Tailwind */
+        .from-gold-500 {
+            --tw-gradient-from: #D4AF37;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(212, 175, 55, 0));
+        }
+        .to-yellow-600 {
+            --tw-gradient-to: #ca8a04;
+        }
     </style>
 </head>
 <body class="min-h-screen">
-    <!-- Navigation (Updated with THE WORK) -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-rich-black bg-opacity-95 border-b border-gray-800" aria-label="Main navigation">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold gold-text impact-font">SOULAANI BLUE&trade;</a>
@@ -238,7 +310,7 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu (Updated with THE WORK) -->
+        <!-- Mobile Menu -->
         <div class="md:hidden bg-rich-black bg-opacity-95 border-t border-gray-800 hidden" id="mobile-menu">
             <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
                 <a href="index.html" class="nav-link gold-text hover:text-white">HOME</a>
@@ -253,7 +325,7 @@
 
     <!-- Main Content -->
     <main class="pt-24">
-        <!-- New Single Section (updated cover art) -->
+        <!-- New Single Section -->
         <section class="py-16 bg-gradient-to-b from-rich-black to-gray-900">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-12">
@@ -304,7 +376,7 @@
                             </div>
                             <p class="text-sm text-gray-400 mb-4">N'Shai Iman (co-written by Soulaani Blue)</p>
                             <div class="flex flex-col space-y-2">
-                                <a href="https://audiomack.com/lnmgllc/song/cant-take-it" target="_blank" class="block w-full px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm text-center">
+                                <a href="https://audiomack.com/lnmgllc/song/cant-take-it" target="_blank" class="block w-full px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm text-center previous-work-btn">
                                     PLAY ON AUDIOMACK
                                 </a>
                             </div>
@@ -317,7 +389,7 @@
                                 <div class="h-1 bg-red-500 w-1/2"></div>
                             </div>
                             <p class="text-sm text-gray-400 mb-4">N'Shai Iman feat. Jaye Locke (feat. Soulaani Blue)</p>
-                            <a href="https://audiomack.com/nshai-iman-1/song/dl" target="_blank" class="block w-full px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm text-center">
+                            <a href="https://audiomack.com/nshai-iman-1/song/dl" target="_blank" class="block w-full px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm text-center previous-work-btn">
                                 PLAY ON AUDIOMACK
                             </a>
                         </div>
@@ -329,7 +401,7 @@
                                 <div class="h-1 bg-red-500 w-3/4"></div>
                             </div>
                             <p class="text-sm text-gray-400 mb-4">2AM Ricky ft. Soulaani Blue</p>
-                            <a href="https://audiomack.com/2amricky/song/the-get-down" target="_blank" class="block w-full px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm text-center">
+                            <a href="https://audiomack.com/2amricky/song/the-get-down" target="_blank" class="block w-full px-4 py-2 bg-transparent border gold-border gold-text hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300 rounded-full text-sm text-center previous-work-btn">
                                 PLAY ON AUDIOMACK
                             </a>
                         </div>
@@ -343,15 +415,15 @@
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">STREAM EVERYWHERE</h2>
                 <div class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="flex items-center space-x-3 px-6 py-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="flex items-center space-x-3 px-6 py-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300 stream-btn">
                         <i class="fas fa-music text-orange-500 text-2xl"></i>
                         <span class="text-white font-bold">Audiomack</span>
                     </a>
-                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" class="flex items-center space-x-3 px-6 py-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" class="flex items-center space-x-3 px-6 py-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300 stream-btn">
                         <i class="fas fa-video text-purple-500 text-2xl"></i>
                         <span class="text-white font-bold">Odysee</span>
                     </a>
-                    <a href="https://soulaaniblue.bandcamp.com/" target="_blank" class="flex items-center space-x-3 px-6 py-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <a href="https://soulaaniblue.bandcamp.com/" target="_blank" class="flex items-center space-x-3 px-6 py-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300 stream-btn">
                         <i class="fab fa-bandcamp text-teal-500 text-2xl"></i>
                         <span class="text-white font-bold">Bandcamp</span>
                     </a>
@@ -360,36 +432,83 @@
         </section>
     </main>
 
-       <!-- Footer - UPDATED with RSS icon -->
-    <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95" aria-label="Site footer">
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 bg-rich-black bg-opacity-95">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0 text-center md:text-left">
                     <p class="text-gray-500 mb-2">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
-                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300" aria-label="Support Soulaani Blue's art on Buy Me a Coffee">
+                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank"
+                       class="btn-hover inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300">
                         <i class="fas fa-coffee mr-2"></i>
                         <span>SUPPORT MY ART</span>
                     </a>
                 </div>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="https://audiomack.com/soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Listen to Soulaani Blue on Audiomack">
+                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-music"></i>
                     </a>
-                    <a href="https://rednote.com/Soulaaniblue" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Find Soulaani Blue on Rednote">
+                    <a href="https://rednote.com/Soulaaniblue" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-record-vinyl"></i>
                     </a>
-                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Find Soulaani Blue on Odysee">
+                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300">
                         <i class="fas fa-video"></i>
                     </a>
-                    <!-- NEW: RSS Feed Icon -->
-                    <a href="/rss.xml" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Subscribe to the blog RSS feed">
+                    <a href="/rss.xml" target="_blank" class="text-gray-500 hover:text-gold-500 transition duration-300" aria-label="Subscribe to the blog RSS feed">
                         <i class="fas fa-rss"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Newsletter Pop-up -->
+    <div id="newsletter-popup" class="fixed inset-0 flex items-center justify-center z-50 hidden transition-opacity duration-300 bg-black bg-opacity-70">
+        <div class="bg-rich-black border border-gold-500 rounded-lg p-8 max-w-md mx-4 relative shadow-2xl">
+            <button id="close-popup" class="absolute top-2 right-2 text-gray-400 hover:text-gold-500 text-2xl">&times;</button>
+            <h3 class="text-2xl font-bold gold-text mb-3">Stay Connected</h3>
+            <p class="text-gray-300 mb-6">Get new music, stories, and mutual aid updates straight to your inbox.</p>
+            <form action="https://formspree.io/f/xvgaqgjb" method="POST" class="space-y-4">
+                <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:-translate-y-1 btn-hover">
+                    SUBSCRIBE
+                </button>
+            </form>
+            <p class="text-xs text-gray-500 mt-4 text-center">
+                No spam, only real updates. Unsubscribe anytime.
+            </p>
+        </div>
+    </div>
+
+    <style>
+        #newsletter-popup {
+            backdrop-filter: blur(3px);
+        }
+        .bg-rich-black {
+            background-color: #0A0A0A;
+        }
+        .border-gold-500 {
+            border-color: #D4AF37;
+        }
+        .text-gold-500 {
+            color: #D4AF37;
+        }
+        .hover\:text-gold-500:hover {
+            color: #D4AF37;
+        }
+        .focus\:ring-gold-500:focus {
+            --tw-ring-color: #D4AF37;
+        }
+        .from-yellow-500 {
+            --tw-gradient-from: #eab308;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(234, 179, 8, 0));
+        }
+        .to-yellow-600 {
+            --tw-gradient-to: #ca8a04;
+        }
+    </style>
+
     <script>
         // Mobile menu toggle
         document.getElementById('menu-toggle').addEventListener('click', function() {
@@ -416,129 +535,74 @@
                 toggle.querySelector('i').className = 'fas fa-bars text-2xl';
             });
         });
-    </script>
 
-    <!-- Newsletter Pop-up -->
-<div id="newsletter-popup" class="fixed inset-0 flex items-center justify-center z-50 hidden transition-opacity duration-300 bg-black bg-opacity-70">
-    <div class="bg-rich-black border border-gold-500 rounded-lg p-8 max-w-md mx-4 relative shadow-2xl">
-        <button id="close-popup" class="absolute top-2 right-2 text-gray-400 hover:text-gold-500 text-2xl">&times;</button>
-        <h3 class="text-2xl font-bold gold-text mb-3">Stay Connected</h3>
-        <p class="text-gray-300 mb-6">Get new music, stories, and mutual aid updates straight to your inbox.</p>
-        <form action="https://formspree.io/f/xvgaqgjb" method="POST" class="space-y-4">
-            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
-            <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
-            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:-translate-y-1">
-                SUBSCRIBE
-            </button>
-        </form>
-        <p class="text-xs text-gray-500 mt-4 text-center">
-            No spam, only real updates. Unsubscribe anytime.
-        </p>
-    </div>
-</div>
+        // Newsletter Pop-up
+        (function() {
+            const POPUP_STORAGE_KEY = 'soulaaniNewsletterPopup';
+            const POPUP_DELAY = 5000;
+            const POPUP_EXPIRY_DAYS = 30;
 
-<style>
-    #newsletter-popup {
-        backdrop-filter: blur(3px);
-    }
-    .bg-rich-black {
-        background-color: #0A0A0A;
-    }
-    .border-gold-500 {
-        border-color: #D4AF37;
-    }
-    .text-gold-500 {
-        color: #D4AF37;
-    }
-    .hover\:text-gold-500:hover {
-        color: #D4AF37;
-    }
-    .focus\:ring-gold-500:focus {
-        --tw-ring-color: #D4AF37;
-    }
-    .from-yellow-500 {
-        --tw-gradient-from: #eab308;
-        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(234, 179, 8, 0));
-    }
-    .to-yellow-600 {
-        --tw-gradient-to: #ca8a04;
-    }
-</style>
+            function getPopupStatus() {
+                const stored = localStorage.getItem(POPUP_STORAGE_KEY);
+                if (!stored) return null;
+                try {
+                    return JSON.parse(stored);
+                } catch (e) {
+                    return null;
+                }
+            }
 
-<script>
-(function() {
-    // Check if popup has been shown before
-    const POPUP_STORAGE_KEY = 'soulaaniNewsletterPopup';
-    const POPUP_DELAY = 5000; // 5 seconds
-    const POPUP_EXPIRY_DAYS = 30; // days before showing again
+            function setPopupShown() {
+                const expiry = Date.now() + POPUP_EXPIRY_DAYS * 24 * 60 * 60 * 1000;
+                localStorage.setItem(POPUP_STORAGE_KEY, JSON.stringify({ shown: true, expires: expiry }));
+            }
 
-    function getPopupStatus() {
-        const stored = localStorage.getItem(POPUP_STORAGE_KEY);
-        if (!stored) return null;
-        try {
-            return JSON.parse(stored);
-        } catch (e) {
-            return null;
-        }
-    }
+            function shouldShowPopup() {
+                const status = getPopupStatus();
+                if (!status) return true;
+                if (!status.shown) return true;
+                if (Date.now() > status.expires) return true;
+                return false;
+            }
 
-    function setPopupShown() {
-        const expiry = Date.now() + POPUP_EXPIRY_DAYS * 24 * 60 * 60 * 1000;
-        localStorage.setItem(POPUP_STORAGE_KEY, JSON.stringify({ shown: true, expires: expiry }));
-    }
+            if (shouldShowPopup()) {
+                setTimeout(function() {
+                    const popup = document.getElementById('newsletter-popup');
+                    if (popup) {
+                        popup.classList.remove('hidden');
+                    }
+                }, POPUP_DELAY);
+            }
 
-    function shouldShowPopup() {
-        const status = getPopupStatus();
-        if (!status) return true; // never shown
-        if (!status.shown) return true;
-        if (Date.now() > status.expires) return true; // expired
-        return false;
-    }
-
-    // Show popup after delay if conditions met
-    if (shouldShowPopup()) {
-        setTimeout(function() {
+            const closeBtn = document.getElementById('close-popup');
             const popup = document.getElementById('newsletter-popup');
+
+            function closePopup() {
+                if (popup) {
+                    popup.classList.add('hidden');
+                    setPopupShown();
+                }
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closePopup);
+            }
+
             if (popup) {
-                popup.classList.remove('hidden');
+                popup.addEventListener('click', function(e) {
+                    if (e.target === popup) {
+                        closePopup();
+                    }
+                });
             }
-        }, POPUP_DELAY);
-    }
 
-    // Close popup handlers
-    const closeBtn = document.getElementById('close-popup');
-    const popup = document.getElementById('newsletter-popup');
-
-    function closePopup() {
-        if (popup) {
-            popup.classList.add('hidden');
-            setPopupShown();
-        }
-    }
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closePopup);
-    }
-
-    // Close if clicking outside the modal content (on the overlay)
-    if (popup) {
-        popup.addEventListener('click', function(e) {
-            if (e.target === popup) {
-                closePopup();
+            const form = popup ? popup.querySelector('form') : null;
+            if (form) {
+                form.addEventListener('submit', function() {
+                    setPopupShown();
+                });
             }
-        });
-    }
-
-    // If user submits the form successfully, we can also close and mark shown
-    const form = popup ? popup.querySelector('form') : null;
-    if (form) {
-        form.addEventListener('submit', function() {
-            // Mark as shown immediately (though the page may reload)
-            setPopupShown();
-            // The form will submit to Formspree and reload the page, so it's fine
-        });
-    }
-})();
-</script>
+        })();
+    </script>
 </body>
 </html>
