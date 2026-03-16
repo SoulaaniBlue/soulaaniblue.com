@@ -8,6 +8,9 @@
     <!-- SEO -->
     <meta name="description" content="Stories, updates, and insights from Soulaani Blue's journey.">
     
+    <!-- RSS Feed Link -->
+    <link rel="alternate" type="application/rss+xml" title="Soulaani Blue Blog RSS" href="/rss.xml" />
+    
     <!-- Fonts: Bebas Neue + Roboto Condensed + Press Start 2P -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
     
@@ -330,7 +333,7 @@
             });
         });
 
-        // Blog post data
+        // Blog post data (unchanged)
         const postContents = {
             1: {
                 title: "From Classroom Cover to Healing Anthem: The Story of \"Operator\"",
@@ -450,7 +453,6 @@
             3: {
                 title: "Same (Ole Lady)",
                 date: "November 30, 2025",
-                // NEW: Updated cover photo to Caldwell House Bedroom
                 image: "https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Caldwell%20House%20Bedroom.jpeg",
                 content: `
                     <div class="blog-full-post">
@@ -462,7 +464,6 @@
                         
                         <p>She dropped me at the airport. Last time I'd ever see her. Tried to hug me goodbye and I curved her. I was too hurt, too proud, too stupid, and too busy running from guilt and shame to know that that was the last chance I'd ever get to feel her arms around me.</p>
                         
-                        <!-- NEW: Caldwell House Bedroom image added here -->
                         <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Caldwell%20House%20Bedroom.jpeg" alt="The bedroom at Ms. Caldwell's house where I processed all of this">
                         <p class="image-caption">The room at Ms. Caldwell's house where I sat with all of this.</p>
                         
@@ -496,7 +497,6 @@
                         
                         <p>For months, those words lived only in my phone's notes app and in the quiet moments between survival. I carried them with me like seeds waiting for soil.</p>
                         
-                        <!-- Video embed: The single flower bud that grew from a dead bush -->
                         <iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2FRepeat-Cover%3A2?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX&signature=de800bb3c13c8ebef366e9174a1e10b92ac74423d1d204343fdea2c286fbe7ce2a760fb907731734f9a27c03c8adc7b44ac71234b3a372d2ef862fccba09cc5b&signature_ts=1773127206" allowfullscreen></iframe>
                         <p class="image-caption">The single flower bud that grew from a dead bush—the moment that unlocked "Repeat" and taught me beauty persists.</p>
                         
@@ -615,7 +615,7 @@
             blogGrid.appendChild(card);
         }
 
-        // Show modal with full post
+        // Show modal with full post and update URL hash
         function showBlogPost(id) {
             const post = postContents[id];
             const modalContent = document.getElementById('modalContent');
@@ -626,11 +626,15 @@
             `;
             document.getElementById('postModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
+            // Update URL hash without scrolling
+            history.pushState(null, null, `#post-${id}`);
         }
 
         function closeModal() {
             document.getElementById('postModal').style.display = 'none';
             document.body.style.overflow = 'auto';
+            // Remove hash from URL
+            history.pushState(null, null, window.location.pathname);
         }
 
         // Close modal when clicking outside content
@@ -639,7 +643,18 @@
             if (event.target == modal) {
                 closeModal();
             }
-        }
+        };
+
+        // On page load, check if there's a hash and open the corresponding post
+        window.addEventListener('load', function() {
+            const hash = window.location.hash;
+            if (hash && hash.startsWith('#post-')) {
+                const id = hash.replace('#post-', '');
+                if (postContents[id]) {
+                    showBlogPost(id);
+                }
+            }
+        });
     </script>
 </body>
 </html>
