@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soulaani Blue | I love you, still - EP + Dead Man Walkin'</title>
     
-    <!-- SEO -->
+    <!-- 🔍 SEO IMPROVEMENTS -->
     <meta name="description" content="Soulaani Blue: Independent recording artist from Colerain, North Carolina. Stream new single 'Dead Man Walkin'' and 'I Love You, Still' EP exclusively on Audiomack with 55% of proceeds funding community fridges & mutual aid.">
     <link rel="canonical" href="https://www.soulaaniblue.com" />
     
@@ -20,6 +20,12 @@
     <meta name="twitter:description" content="Independent artist creating music that funds mutual aid. New single out now. 55% of proceeds support community fridges.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Dead%20Man%20Walkin%20Cover%20Art.jpeg">
     <meta name="twitter:creator" content="@SoulaaniBlue">
+    
+    <!-- RSS Feed Link -->
+    <link rel="alternate" type="application/rss+xml" title="Soulaani Blue Blog RSS" href="/rss.xml" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- Fonts: Bebas Neue + Roboto Condensed + Press Start 2P -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
@@ -330,6 +336,8 @@
         }
         .button.audiomack:hover {
             background-color: #e65c00;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(255, 105, 0, 0.3);
         }
         .button.bandcamp {
             background-color: #629aa9;
@@ -337,6 +345,8 @@
         }
         .button.bandcamp:hover {
             background-color: #4f7e8a;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(98, 154, 169, 0.3);
         }
         .music-cover {
             width: 100%;
@@ -368,7 +378,7 @@
         }
 
         /* ===== UNIFIED HOVER EFFECTS FOR BUTTONS ===== */
-        /* Hero section buttons (Bandcamp, Even, Audiomack) */
+        /* Hero section buttons */
         .hero-section a[href*="bandcamp"],
         .hero-section a[href*="even"],
         .hero-section a[href*="audiomack"] {
@@ -395,7 +405,7 @@
             box-shadow: 0 8px 20px rgba(98, 154, 169, 0.3);
         }
 
-        /* Support card buttons (Join Mailing List, Buy Me a Coffee) */
+        /* Support card buttons */
         .ep-card a[href="#mailing-list"],
         .ep-card a[href*="buymeacoffee"] {
             transition: all 0.3s ease !important;
@@ -407,7 +417,7 @@
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
         }
 
-        /* General Strike button (already has pulse, but add consistent hover) */
+        /* General Strike button */
         .btn-pulse:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
@@ -720,7 +730,7 @@
             <div class="max-w-2xl mx-auto">
                 <!-- Current Total / Goal -->
                 <div class="flex justify-between mb-2 text-sm text-gray-400">
-                    <span class="font-bold gold-text">$<span id="current-donations">12.22</span></span>
+                    <span class="font-bold gold-text">$<span id="current-donations">24.92</span></span>
                     <span>Goal: $<span id="goal-donations">100</span></span>
                 </div>
                 
@@ -779,7 +789,7 @@
                 <div class="mb-4 md:mb-0 text-center md:text-left">
                     <p class="text-gray-500 mb-2">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
                     <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300" aria-label="Support Soulaani Blue's art on Buy Me a Coffee">
+                       class="btn-hover inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-500 text-orange-300 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300" aria-label="Support Soulaani Blue's art on Buy Me a Coffee">
                         <i class="fas fa-coffee mr-2"></i>
                         <span>SUPPORT MY ART</span>
                     </a>
@@ -811,7 +821,7 @@
             <form action="https://formspree.io/f/xvgaqgjb" method="POST" class="space-y-4">
                 <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
                 <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
-                <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:-translate-y-1">
+                <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:-translate-y-1 btn-hover">
                     SUBSCRIBE
                 </button>
             </form>
@@ -910,7 +920,7 @@
         });
 
         // Donation Tracker
-        const currentDonations = 24.92;  // Updated total
+        const currentDonations = 24.92;
         const goalDonations = 100;
         let percentage = (currentDonations / goalDonations) * 100;
         if (percentage > 100) percentage = 100;
