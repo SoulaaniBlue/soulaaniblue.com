@@ -371,5 +371,128 @@
             });
         });
     </script>
+
+    <!-- Newsletter Pop-up -->
+<div id="newsletter-popup" class="fixed inset-0 flex items-center justify-center z-50 hidden transition-opacity duration-300 bg-black bg-opacity-70">
+    <div class="bg-rich-black border border-gold-500 rounded-lg p-8 max-w-md mx-4 relative shadow-2xl">
+        <button id="close-popup" class="absolute top-2 right-2 text-gray-400 hover:text-gold-500 text-2xl">&times;</button>
+        <h3 class="text-2xl font-bold gold-text mb-3">Stay Connected</h3>
+        <p class="text-gray-300 mb-6">Get new music, stories, and mutual aid updates straight to your inbox.</p>
+        <form action="https://formspree.io/f/xvgaqgjb" method="POST" class="space-y-4">
+            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+            <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:-translate-y-1">
+                SUBSCRIBE
+            </button>
+        </form>
+        <p class="text-xs text-gray-500 mt-4 text-center">
+            No spam, only real updates. Unsubscribe anytime.
+        </p>
+    </div>
+</div>
+
+<style>
+    #newsletter-popup {
+        backdrop-filter: blur(3px);
+    }
+    .bg-rich-black {
+        background-color: #0A0A0A;
+    }
+    .border-gold-500 {
+        border-color: #D4AF37;
+    }
+    .text-gold-500 {
+        color: #D4AF37;
+    }
+    .hover\:text-gold-500:hover {
+        color: #D4AF37;
+    }
+    .focus\:ring-gold-500:focus {
+        --tw-ring-color: #D4AF37;
+    }
+    .from-yellow-500 {
+        --tw-gradient-from: #eab308;
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(234, 179, 8, 0));
+    }
+    .to-yellow-600 {
+        --tw-gradient-to: #ca8a04;
+    }
+</style>
+
+<script>
+(function() {
+    // Check if popup has been shown before
+    const POPUP_STORAGE_KEY = 'soulaaniNewsletterPopup';
+    const POPUP_DELAY = 5000; // 5 seconds
+    const POPUP_EXPIRY_DAYS = 30; // days before showing again
+
+    function getPopupStatus() {
+        const stored = localStorage.getItem(POPUP_STORAGE_KEY);
+        if (!stored) return null;
+        try {
+            return JSON.parse(stored);
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function setPopupShown() {
+        const expiry = Date.now() + POPUP_EXPIRY_DAYS * 24 * 60 * 60 * 1000;
+        localStorage.setItem(POPUP_STORAGE_KEY, JSON.stringify({ shown: true, expires: expiry }));
+    }
+
+    function shouldShowPopup() {
+        const status = getPopupStatus();
+        if (!status) return true; // never shown
+        if (!status.shown) return true;
+        if (Date.now() > status.expires) return true; // expired
+        return false;
+    }
+
+    // Show popup after delay if conditions met
+    if (shouldShowPopup()) {
+        setTimeout(function() {
+            const popup = document.getElementById('newsletter-popup');
+            if (popup) {
+                popup.classList.remove('hidden');
+            }
+        }, POPUP_DELAY);
+    }
+
+    // Close popup handlers
+    const closeBtn = document.getElementById('close-popup');
+    const popup = document.getElementById('newsletter-popup');
+
+    function closePopup() {
+        if (popup) {
+            popup.classList.add('hidden');
+            setPopupShown();
+        }
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closePopup);
+    }
+
+    // Close if clicking outside the modal content (on the overlay)
+    if (popup) {
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                closePopup();
+            }
+        });
+    }
+
+    // If user submits the form successfully, we can also close and mark shown
+    const form = popup ? popup.querySelector('form') : null;
+    if (form) {
+        form.addEventListener('submit', function() {
+            // Mark as shown immediately (though the page may reload)
+            setPopupShown();
+            // The form will submit to Formspree and reload the page, so it's fine
+        });
+    }
+})();
+</script>
 </body>
 </html>
