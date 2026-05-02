@@ -4,421 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Work - Soulaani Blue</title>
-    
-    <!-- SEO and Social Meta Tags -->
     <meta name="description" content="Feed Every Body: A mutual aid project for food sovereignty. Turning music into a direct line to community fridges and local farms.">
-    
-    <!-- RSS Feed Link -->
     <link rel="alternate" type="application/rss+xml" title="Soulaani Blue Blog RSS" href="/rss.xml" />
-    
-    <!-- Favicon -->
+
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="SoulaaniBlue" />
     <link rel="manifest" href="/site.webmanifest" />
-    
-    <!-- Fonts: Bebas Neue + Roboto Condensed + Press Start 2P -->
+
+    <!-- Fonts + Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
-    
-    <!-- Tailwind & Font Awesome -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --deep-red: #8B0000;
-            --soft-blue: #1E90FF;
-            --black: #000;
-            --rich-black: #0A0A0A;
-            --color-white: #fff;
-            --color-red: #8B0000;
-            --color-gold: #D4AF37;
-            --color-black: #000;
-            --earth-brown: #8B7355;
-            --warm-cream: #F5F1E6;
-            --soft-green: #3A5F49;
-        }
-        
-        /* ===== NEW TYPOGRAPHY ===== */
-        body {
-            font-family: 'Roboto Condensed', 'Lato', sans-serif;
-            font-weight: 400;
-            line-height: 1.8;
-            background-color: var(--warm-cream);
-            color: #333;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-        
-        /* Headings, nav – Bebas Neue for impact */
-        h1, h2, h3, h4,
-        .nav-link,
-        button,
-        .gold-text {
-            font-family: 'Bebas Neue', 'Montserrat', sans-serif;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            font-weight: 400;
-        }
 
-        /* Adjust heading sizes (keeping earthy colors) */
-        h1, .page-title {
-            font-size: 3.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--soft-green);
-            line-height: 1.2;
-        }
-        
-        h2, .section-title {
-            font-size: 2rem;
-            margin: 4rem 0 2rem;
-            color: var(--soft-green);
-            border-bottom: 2px solid rgba(139, 115, 85, 0.1);
-            padding-bottom: 0.5rem;
-        }
-
-        h3 { font-size: 1.75rem; }
-        h4 { font-size: 1.25rem; }
-        
-        .nav-link {
-            position: relative;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            color: var(--earth-brown);
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(90deg, var(--earth-brown), var(--soft-green));
-            transition: width 0.4s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link:hover {
-            color: var(--soft-green);
-        }
-        
-        .page-section {
-            padding: 5rem 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .content-block {
-            margin-bottom: 2.5rem;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        
-        .quote {
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--earth-brown);
-            border-left: 3px solid var(--soft-green);
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            font-family: 'Roboto Condensed', sans-serif;
-            text-transform: none;
-        }
-        
-        .action-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-        
-        @media (min-width: 768px) {
-            .action-buttons {
-                flex-direction: row;
-                justify-content: center;
-            }
-        }
-        
-        .btn-music {
-            background: linear-gradient(135deg, var(--earth-brown), #A68A64);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            font-size: 1.1rem;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        
-        .btn-music:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 20px rgba(139, 115, 85, 0.3);
-        }
-        
-        .btn-donate {
-            background: linear-gradient(135deg, var(--soft-green), #4A7D5E);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            font-size: 1.1rem;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        
-        .btn-donate:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 20px rgba(58, 95, 73, 0.3);
-        }
-        
-        .bridge-icon {
-            text-align: center;
-            margin: 3rem 0;
-        }
-        
-        .bridge-icon i {
-            font-size: 3rem;
-            color: var(--earth-brown);
-            opacity: 0.7;
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .value-item {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .value-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(139, 115, 85, 0.15);
-        }
-        
-        .value-item i {
-            font-size: 2.5rem;
-            color: var(--soft-green);
-            margin-bottom: 1rem;
-        }
-        
-        .value-item h4 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--earth-brown);
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.05em;
-        }
-        
-        .value-item p {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1rem;
-        }
-
-        /* Button hover effects (unified) */
-        .btn-hover {
-            transition: all 0.3s ease !important;
-        }
-        .btn-hover:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 20px rgba(139, 115, 85, 0.3);
-        }
-
-        /* Footer icons */
-        footer a {
-            transition: all 0.3s ease;
-        }
-        footer a:hover {
-            transform: scale(1.2);
-            color: var(--soft-green) !important;
-        }
-
-        /* Newsletter pop-up (earthy version) */
-        #newsletter-popup {
-            backdrop-filter: blur(3px);
-        }
-        #newsletter-popup .bg-rich-black {
-            background-color: #2A2A2A; /* darker earthy background */
-        }
-        #newsletter-popup .border-gold-500 {
-            border-color: var(--earth-brown);
-        }
-        #newsletter-popup .text-gold-500 {
-            color: var(--earth-brown);
-        }
-        #newsletter-popup .hover\:text-gold-500:hover {
-            color: var(--soft-green);
-        }
-        #newsletter-popup .focus\:ring-gold-500:focus {
-            --tw-ring-color: var(--earth-brown);
-        }
-        #newsletter-popup .from-yellow-500 {
-            --tw-gradient-from: var(--earth-brown);
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(139, 115, 85, 0));
-        }
-        #newsletter-popup .to-yellow-600 {
-            --tw-gradient-to: var(--soft-green);
-        }
-        #newsletter-popup button[type="submit"] {
-            color: white;
-            background: linear-gradient(135deg, var(--earth-brown), var(--soft-green));
-        }
-        
-        footer {
-            background: var(--earth-brown);
-            color: var(--warm-cream);
-            padding: 3rem 1rem;
-            margin-top: 5rem;
-        }
-
-        footer a, footer p {
-            font-family: 'Roboto Condensed', sans-serif;
-            color: var(--warm-cream);
-        }
-        
-        @media (max-width: 768px) {
-            .page-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.75rem;
-            }
-            
-            .page-section {
-                padding: 3rem 1rem;
-            }
-        }
-
-        /* Additional gradient classes for Tailwind */
-        .from-gold-500 {
-            --tw-gradient-from: #D4AF37;
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(212, 175, 55, 0));
-        }
-        .to-yellow-600 {
-            --tw-gradient-to: #ca8a04;
-        }
-
-        .impact-font {
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.05em;
-        }
-
-        .gold-text {
-            color: var(--earth-brown);
-        }
-    </style>
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="min-h-screen">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-warm-cream bg-opacity-95 border-b border-gray-200" aria-label="Main navigation">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-earth-brown impact-font">SOULAANI BLUE</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="nav-link">HOME</a>
-                <a href="ep.html" class="nav-link">NEW EP</a>
-                <a href="music.html" class="nav-link">MUSIC</a>
-                <a href="blog.html" class="nav-link">BLOG</a>
-                <a href="visualizers.html" class="nav-link">VISUALIZERS</a>
-                <a href="work.html" class="nav-link">THE WORK</a>
+<body class="work-page min-h-screen">
+
+    <!-- Navigation (earthy variant uses work-page scoping from style.css) -->
+    <nav class="navbar" aria-label="Main navigation" style="background-color: rgba(245,241,230,0.95); border-bottom: 1px solid #ddd;">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-brand" style="color: var(--earth-brown);">SOULAANI BLUE</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link" style="color: var(--earth-brown);">HOME</a>
+                <a href="ep.html" class="nav-link" style="color: var(--earth-brown);">NEW EP</a>
+                <a href="music.html" class="nav-link" style="color: var(--earth-brown);">MUSIC</a>
+                <a href="blog.html" class="nav-link" style="color: var(--earth-brown);">BLOG</a>
+                <a href="visualizers.html" class="nav-link" style="color: var(--earth-brown);">VISUALIZERS</a>
+                <a href="work.html" class="nav-link" style="color: var(--earth-brown);">THE WORK</a>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon gold-text hidden md:flex">
-                    <i class="fas fa-music"></i>
-                </a>
-                <button class="md:hidden text-earth-brown focus:outline-none" id="menu-toggle" aria-label="Toggle mobile menu">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+            <div class="nav-social-desktop">
+                <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon" style="border-color: var(--earth-brown); color: var(--earth-brown);" aria-label="Audiomack"><i class="fas fa-music"></i></a>
             </div>
+            <button class="mobile-menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" style="color: var(--earth-brown);">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden bg-warm-cream bg-opacity-95 border-t border-gray-200 hidden" id="mobile-menu">
-            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-                <a href="index.html" class="nav-link">HOME</a>
-                <a href="ep.html" class="nav-link">NEW EP</a>
-                <a href="music.html" class="nav-link">MUSIC</a>
-                <a href="blog.html" class="nav-link">BLOG</a>
-                <a href="visualizers.html" class="nav-link">VISUALIZERS</a>
-                <a href="work.html" class="nav-link">THE WORK</a>
+        <div class="mobile-menu" id="mobile-menu" style="background-color: rgba(245,241,230,0.95); border-top: 1px solid #ddd;">
+            <a href="index.html" class="nav-link" style="color: var(--earth-brown);">HOME</a>
+            <a href="ep.html" class="nav-link" style="color: var(--earth-brown);">NEW EP</a>
+            <a href="music.html" class="nav-link" style="color: var(--earth-brown);">MUSIC</a>
+            <a href="blog.html" class="nav-link" style="color: var(--earth-brown);">BLOG</a>
+            <a href="visualizers.html" class="nav-link" style="color: var(--earth-brown);">VISUALIZERS</a>
+            <a href="work.html" class="nav-link" style="color: var(--earth-brown);">THE WORK</a>
+            <div class="mobile-social">
+                <a href="https://audiomack.com/soulaaniblue" class="social-icon" style="border-color: var(--earth-brown); color: var(--earth-brown);"><i class="fas fa-music"></i></a>
+                <a href="https://rednote.com/Soulaaniblue" class="social-icon" style="border-color: var(--earth-brown); color: var(--earth-brown);"><i class="fas fa-record-vinyl"></i></a>
+                <a href="https://odysee.com/@soulaaniblue:f" class="social-icon" style="border-color: var(--earth-brown); color: var(--earth-brown);"><i class="fas fa-video"></i></a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="pt-24">
-        <!-- Page Title -->
-        <section class="page-section">
-            <h1 class="page-title">The Work</h1>
-            
+        <section class="page-section" style="max-width: 800px; margin: 0 auto; padding: 5rem 1rem;">
+            <h1 class="page-title" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; color: var(--soft-green);">The Work</h1>
+
             <!-- Core Philosophy -->
             <div class="content-block">
                 <p>My name is Soulaani Blue. My art is not just sound. It is a tool for building.</p>
-                
                 <p>I come from a line of sharecroppers. I know that food is where freedom starts. My project, Feed Every Body, turns music into a direct line to community fridges and local farms. This is not charity. It is mutual aid. It is us feeding us.</p>
-                
                 <p>I use platforms that align with my values. The money moves from the music to the people, simply. I am building a system that I hope will one day run without me. A generative, lasting thing.</p>
-                
                 <p class="quote">This work is my reflection of these times. Not just a reflection, but an answer.</p>
             </div>
-            
+
             <!-- How It Works -->
             <h2 class="section-title">How It Works</h2>
-            
             <div class="content-block">
                 <p>I see this as building two bridges to the same place.</p>
-                
                 <p>One bridge is built with my own hands. From my salary as a teacher in Thailand and from the streams of my songs, I set aside money. That money becomes rice, vegetables, fruit for community fridges back home.</p>
-                
                 <p>The other bridge is for you. I don't want your money to pass through my hands. I want it to go straight to the source. So on my site, you'll find a link to give directly to RVA Community Fridges. They are neighbors helping neighbors. That is the purest form.</p>
-                
-                <div class="bridge-icon">
-                    <i class="fas fa-bridge"></i>
+                <div class="text-center my-12">
+                    <i class="fas fa-bridge text-5xl" style="color: var(--earth-brown); opacity: 0.7;"></i>
                 </div>
-                
                 <p class="quote">My bridge and your bridge. They both lead to a place where no one is hungry.</p>
             </div>
-            
+
             <!-- Why This Way -->
             <h2 class="section-title">Why This Way</h2>
-            
             <div class="content-block">
                 <p>I am building a system I hope will outlive me.</p>
-                
                 <p>That means it cannot depend on me. It has to be simple, clear, and rooted in the community itself. That's why the money should go straight to the groups on the ground.</p>
-                
                 <p>My role is to use my art to point to them. To tell their story. To feed their work with my own energy and funds.</p>
-                
                 <p class="quote">This is not a brand. It is a blueprint. For a world where we take care of each other because we understand, deeply, that our freedom is tied together.</p>
             </div>
-            
+
             <!-- Values -->
             <div class="values-grid">
                 <div class="value-item">
@@ -437,24 +110,19 @@
                     <p>Communities determining their own food futures</p>
                 </div>
             </div>
-            
+
             <!-- Final Call to Action -->
             <div class="content-block text-center">
                 <h2 class="section-title">Here is how we build.</h2>
-                
                 <div class="action-buttons">
                     <a href="https://audiomack.com/soulaaniblue" target="_blank" class="btn-music">
-                        <i class="fas fa-music mr-2"></i>
-                        Listen to the Music
+                        <i class="fas fa-music mr-2"></i> Listen to the Music
                     </a>
-                    
                     <a href="https://www.rvacommunityfridges.com/donate?fbclid=PAQ0xDSwMLTgRleHRuA2FlbQIxMQABp56X1KuhBv5F-un1zK59V2EAhn8y7qrYHp7LDT3cxY9BuiQ18UvN4Oq-hcMq_aem_FlWyxfX_vMKVAFlEdUNqjQ" target="_blank" class="btn-donate">
-                        <i class="fas fa-heart mr-2"></i>
-                        Donate to RVA Community Fridges
+                        <i class="fas fa-heart mr-2"></i> Donate to RVA Community Fridges
                     </a>
                 </div>
-                
-                <p class="mt-4 text-gray-600">
+                <p class="mt-4" style="color: #4b5563;">
                     This is the fuel for my bridge.<br>
                     This is the direct path to feeding people now.
                 </p>
@@ -462,169 +130,76 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0 text-center md:text-left">
-                    <p class="mb-2">&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
-                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank"
-                       class="btn-hover inline-flex items-center px-4 py-2 bg-transparent border-2 border-orange-300 text-orange-200 rounded-full hover:bg-orange-900 hover:bg-opacity-20 transition-all duration-300">
-                        <i class="fas fa-coffee mr-2"></i>
-                        <span>SUPPORT MY ART</span>
-                    </a>
-                </div>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="https://audiomack.com/soulaaniblue" target="_blank" class="text-warm-cream hover:text-white transition duration-300">
-                        <i class="fas fa-music"></i>
-                    </a>
-                    <a href="https://rednote.com/Soulaaniblue" target="_blank" class="text-warm-cream hover:text-white transition duration-300">
-                        <i class="fas fa-record-vinyl"></i>
-                    </a>
-                    <a href="https://odysee.com/@soulaaniblue:f" target="_blank" class="text-warm-cream hover:text-white transition duration-300">
-                        <i class="fas fa-video"></i>
-                    </a>
-                    <a href="/rss.xml" target="_blank" class="text-warm-cream hover:text-white transition duration-300" aria-label="Subscribe to the blog RSS feed">
-                        <i class="fas fa-rss"></i>
-                    </a>
-                </div>
+    <!-- Footer (earthy) -->
+    <footer style="background-color: var(--earth-brown); color: var(--warm-cream); padding: 2rem 0; border-top: none;" aria-label="Site footer">
+        <div class="container footer-inner" style="flex-direction: column; align-items: center; gap: 1rem;">
+            <div class="footer-copyright" style="color: var(--warm-cream);">
+                <p>&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
+                <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" rel="noopener noreferrer" class="btn inline-flex mt-4" style="border-color: var(--warm-cream); color: var(--warm-cream);">
+                    <i class="fas fa-coffee mr-2"></i>SUPPORT MY ART
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="https://audiomack.com/soulaaniblue" target="_blank" rel="noopener noreferrer" style="color: var(--warm-cream);"><i class="fas fa-music"></i></a>
+                <a href="https://rednote.com/Soulaaniblue" target="_blank" rel="noopener noreferrer" style="color: var(--warm-cream);"><i class="fas fa-record-vinyl"></i></a>
+                <a href="https://odysee.com/@soulaaniblue:f" target="_blank" rel="noopener noreferrer" style="color: var(--warm-cream);"><i class="fas fa-video"></i></a>
+                <a href="/rss.xml" target="_blank" rel="noopener noreferrer" style="color: var(--warm-cream);"><i class="fas fa-rss"></i></a>
             </div>
         </div>
     </footer>
 
     <!-- Newsletter Pop-up (earthy version) -->
-    <div id="newsletter-popup" class="fixed inset-0 flex items-center justify-center z-50 hidden transition-opacity duration-300 bg-black bg-opacity-70">
-        <div class="bg-rich-black border border-gold-500 rounded-lg p-8 max-w-md mx-4 relative shadow-2xl" style="background-color: #2A2A2A;">
-            <button id="close-popup" class="absolute top-2 right-2 text-gray-400 hover:text-gold-500 text-2xl">&times;</button>
-            <h3 class="text-2xl font-bold gold-text mb-3" style="color: var(--earth-brown);">Stay Connected</h3>
+    <div id="newsletter-popup" class="newsletter-overlay hidden">
+        <div class="newsletter-box" style="background: #2A2A2A; border-color: var(--earth-brown);">
+            <button id="close-popup" class="newsletter-close" style="color: #9ca3af;">&times;</button>
+            <h3 class="text-2xl font-bold mb-3" style="color: var(--earth-brown);">Stay Connected</h3>
             <p class="text-gray-300 mb-6">Get new music, stories, and mutual aid updates straight to your inbox.</p>
-            <form action="https://formspree.io/f/xvgaqgjb" method="POST" class="space-y-4">
-                <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" style="background-color: #3A3A3A;">
-                <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" style="background-color: #3A3A3A;">
-                <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:-translate-y-1 btn-hover" style="background: linear-gradient(135deg, var(--earth-brown), var(--soft-green)); color: white;">
+            <form class="newsletter-form" action="https://formspree.io/f/xvgaqgjb" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required style="background: #3A3A3A;">
+                <input type="email" name="email" placeholder="Your Email" required style="background: #3A3A3A;">
+                <button type="submit" class="btn--subscribe w-full" style="background: linear-gradient(135deg, var(--earth-brown), var(--soft-green)); color: white;">
                     SUBSCRIBE
                 </button>
             </form>
-            <p class="text-xs text-gray-500 mt-4 text-center">
-                No spam, only real updates. Unsubscribe anytime.
-            </p>
+            <p class="text-xs text-gray-500 mt-4 text-center">No spam, only real updates. Unsubscribe anytime.</p>
         </div>
     </div>
-
-    <style>
-        #newsletter-popup {
-            backdrop-filter: blur(3px);
-        }
-        #newsletter-popup .bg-rich-black {
-            background-color: #2A2A2A;
-        }
-        #newsletter-popup .border-gold-500 {
-            border-color: var(--earth-brown);
-        }
-        #newsletter-popup .text-gold-500 {
-            color: var(--earth-brown);
-        }
-        #newsletter-popup .hover\:text-gold-500:hover {
-            color: var(--soft-green);
-        }
-        #newsletter-popup .focus\:ring-gold-500:focus {
-            --tw-ring-color: var(--earth-brown);
-        }
-    </style>
 
     <script>
         // Mobile menu toggle
         document.getElementById('menu-toggle').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            menu.classList.toggle('hidden');
-            this.setAttribute('aria-expanded', !isExpanded);
-            
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            menu.classList.toggle('open');
+            this.setAttribute('aria-expanded', !expanded);
             const icon = this.querySelector('i');
-            if (menu.classList.contains('hidden')) {
-                icon.className = 'fas fa-bars text-2xl';
-            } else {
-                icon.className = 'fas fa-times text-2xl';
-            }
+            icon.className = menu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
         });
-
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', function() {
-                const menu = document.getElementById('mobile-menu');
-                const toggle = document.getElementById('menu-toggle');
-                menu.classList.add('hidden');
-                toggle.setAttribute('aria-expanded', 'false');
-                toggle.querySelector('i').className = 'fas fa-bars text-2xl';
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.remove('open');
+                document.getElementById('menu-toggle').setAttribute('aria-expanded', 'false');
+                document.getElementById('menu-toggle').querySelector('i').className = 'fas fa-bars';
             });
         });
 
-        // Newsletter Pop-up
+        // Newsletter popup
         (function() {
-            const POPUP_STORAGE_KEY = 'soulaaniNewsletterPopup';
-            const POPUP_DELAY = 5000;
-            const POPUP_EXPIRY_DAYS = 30;
-
-            function getPopupStatus() {
-                const stored = localStorage.getItem(POPUP_STORAGE_KEY);
-                if (!stored) return null;
-                try {
-                    return JSON.parse(stored);
-                } catch (e) {
-                    return null;
-                }
+            const storageKey = 'soulaaniNewsletterPopup',
+                  popupDelay = 5000,
+                  daysToHide = 30;
+            function getSettings() { const s = localStorage.getItem(storageKey); return s ? JSON.parse(s) : null; }
+            function setShown() { localStorage.setItem(storageKey, JSON.stringify({shown: true, expires: Date.now() + daysToHide*24*60*60*1000})); }
+            function shouldShow() { const s = getSettings(); return !s || !s.shown || Date.now() > s.expires; }
+            if (shouldShow()) {
+                setTimeout(() => { const popup = document.getElementById('newsletter-popup'); if (popup) popup.classList.remove('hidden'); }, popupDelay);
             }
-
-            function setPopupShown() {
-                const expiry = Date.now() + POPUP_EXPIRY_DAYS * 24 * 60 * 60 * 1000;
-                localStorage.setItem(POPUP_STORAGE_KEY, JSON.stringify({ shown: true, expires: expiry }));
-            }
-
-            function shouldShowPopup() {
-                const status = getPopupStatus();
-                if (!status) return true;
-                if (!status.shown) return true;
-                if (Date.now() > status.expires) return true;
-                return false;
-            }
-
-            if (shouldShowPopup()) {
-                setTimeout(function() {
-                    const popup = document.getElementById('newsletter-popup');
-                    if (popup) {
-                        popup.classList.remove('hidden');
-                    }
-                }, POPUP_DELAY);
-            }
-
-            const closeBtn = document.getElementById('close-popup');
-            const popup = document.getElementById('newsletter-popup');
-
-            function closePopup() {
-                if (popup) {
-                    popup.classList.add('hidden');
-                    setPopupShown();
-                }
-            }
-
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closePopup);
-            }
-
-            if (popup) {
-                popup.addEventListener('click', function(e) {
-                    if (e.target === popup) {
-                        closePopup();
-                    }
-                });
-            }
-
+            const closeBtn = document.getElementById('close-popup'), popup = document.getElementById('newsletter-popup');
+            function hide() { if (popup) { popup.classList.add('hidden'); setShown(); } }
+            closeBtn && closeBtn.addEventListener('click', hide);
+            popup && popup.addEventListener('click', e => { if (e.target === popup) hide(); });
             const form = popup ? popup.querySelector('form') : null;
-            if (form) {
-                form.addEventListener('submit', function() {
-                    setPopupShown();
-                });
-            }
+            form && form.addEventListener('submit', () => setShown());
         })();
     </script>
 </body>
