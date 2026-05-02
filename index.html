@@ -399,18 +399,43 @@
             }
         });
 
-        // Donation Tracker
-        const currentDonations = 36.92;
-        const goalDonations = 100;
-        let percentage = (currentDonations / goalDonations) * 100;
-        if (percentage > 100) percentage = 100;
-        document.getElementById('current-donations').textContent = currentDonations.toFixed(2);
-        document.getElementById('goal-donations').textContent = goalDonations;
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('progress-fill').style.width = percentage + '%';
-            }, 300);
-        });
+        // Dynamic Donation Tracker
+        (async function() {
+            const currentEl = document.getElementById('current-donations');
+            const goalEl = document.getElementById('goal-donations');
+            const progressFill = document.getElementById('progress-fill');
+
+            // Fallback values in case JSON fetch fails
+            let current = 36.92;
+            let goal = 100;
+
+            try {
+                const response = await fetch('/donations.json', { cache: 'no-store' });
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.current != null && data.goal != null) {
+                        current = Number(data.current);
+                        goal = Number(data.goal);
+                    }
+                }
+            } catch (err) {
+                // Silently fall back to hardcoded values
+                console.warn('Could not load donations.json, using fallback values.');
+            }
+
+            // Update the DOM
+            currentEl.textContent = current.toFixed(2);
+            goalEl.textContent = goal;
+
+            let percentage = (current / goal) * 100;
+            if (percentage > 100) percentage = 100;
+
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    progressFill.style.width = percentage + '%';
+                }, 300);
+            });
+        })();
     </script>
 </body>
 </html>
