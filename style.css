@@ -813,6 +813,10 @@ body.work-page {
 .max-w-2xl { max-width: 42rem; } /* already defined but keep */
 .max-w-6xl { max-width: 72rem; }
 
+/* Height helper (for progress bar) */
+.h-6 { height: 1.5rem; }
+.shadow-inner { box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
+
 /* Animation */
 .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
 @keyframes pulse {
