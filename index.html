@@ -360,25 +360,11 @@
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script>
-        // Mobile menu (uses .open)
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            const expanded = this.getAttribute('aria-expanded') === 'true';
-            menu.classList.toggle('open');
-            this.setAttribute('aria-expanded', !expanded);
-            const icon = this.querySelector('i');
-            icon.className = menu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
-        });
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.remove('open');
-                document.getElementById('menu-toggle').setAttribute('aria-expanded', 'false');
-                document.getElementById('menu-toggle').querySelector('i').className = 'fas fa-bars';
-            });
-        });
+    <!-- Shared site scripts (mobile menu + newsletter popup) -->
+    <script src="site.js" defer></script>
 
+    <!-- Page-specific scripts -->
+    <script>
         // Smooth scrolling for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -395,7 +381,7 @@
             });
         });
 
-        // Intersection Observer for slide-up
+        // Intersection Observer for slide-up animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -425,25 +411,6 @@
                 document.getElementById('progress-fill').style.width = percentage + '%';
             }, 300);
         });
-
-        // Newsletter Pop-up
-        (function() {
-            const storageKey = 'soulaaniNewsletterPopup',
-                  popupDelay = 5000,
-                  daysToHide = 30;
-            function getSettings() { const s = localStorage.getItem(storageKey); return s ? JSON.parse(s) : null; }
-            function setShown() { localStorage.setItem(storageKey, JSON.stringify({shown: true, expires: Date.now() + daysToHide*24*60*60*1000})); }
-            function shouldShow() { const s = getSettings(); return !s || !s.shown || Date.now() > s.expires; }
-            if (shouldShow()) {
-                setTimeout(() => { const popup = document.getElementById('newsletter-popup'); if (popup) popup.classList.remove('hidden'); }, popupDelay);
-            }
-            const closeBtn = document.getElementById('close-popup'), popup = document.getElementById('newsletter-popup');
-            function hide() { if (popup) { popup.classList.add('hidden'); setShown(); } }
-            closeBtn && closeBtn.addEventListener('click', hide);
-            popup && popup.addEventListener('click', e => { if (e.target === popup) hide(); });
-            const form = popup ? popup.querySelector('form') : null;
-            form && form.addEventListener('submit', () => setShown());
-        })();
     </script>
 </body>
 </html>
