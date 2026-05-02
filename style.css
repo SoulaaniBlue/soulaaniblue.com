@@ -1,853 +1,450 @@
-/* ===== CSS Custom Properties ===== */
-:root {
-    --gold: #D4AF37;
-    --deep-red: #8B0000;
-    --soft-blue: #1E90FF;
-    --black: #000;
-    --rich-black: #0A0A0A;
-    --color-white: #fff;
-    --color-red: #8B0000;
-    --color-gold: #D4AF37;
-    --color-black: #000;
-    --earth-brown: #8B7355;
-    --warm-cream: #F5F1E6;
-    --soft-green: #3A5F49;
-    --gray-800: #1F2937;
-    --gray-900: #111827;
-    --orange-500: #F97316;
-    --orange-600: #EA580C;
-    --purple-600: #9333EA;
-    --teal-500: #14B8A6;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soulaani Blue | I love you, still - EP + Dead Man Walkin'</title>
 
-/* ===== Reset & Base ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-    font-family: 'Roboto Condensed', 'Lato', sans-serif;
-    font-weight: 400;
-    line-height: 1.6;
-    background-color: var(--rich-black);
-    color: #fff;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
-a { text-decoration: none; color: inherit; }
+    <!-- SEO -->
+    <meta name="description" content="Soulaani Blue: Independent recording artist from Colerain, North Carolina. Stream new single 'Dead Man Walkin'' and 'I Love You, Still' EP exclusively on Audiomack with 55% of proceeds funding community fridges & mutual aid.">
+    <link rel="canonical" href="https://www.soulaaniblue.com" />
 
-/* ===== Typography ===== */
-h1, h2, h3, h4, h5, h6,
-.impact-font,
-.nav-link,
-button,
-.gold-text {
-    font-family: 'Bebas Neue', 'Montserrat', sans-serif;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-h1 { font-size: 5rem; }
-h2 { font-size: 3.5rem; }
-h3 { font-size: 2.5rem; }
-h4 { font-size: 1.8rem; }
+    <!-- Social Media Meta -->
+    <meta property="og:title" content="Soulaani Blue | Dead Man Walkin' + I Love You, Still EP">
+    <meta property="og:description" content="Independent recording artist from Colerain, North Carolina. New single out now. 55% of proceeds fund community fridges & mutual aid.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Dead%20Man%20Walkin%20Cover%20Art.jpeg">
+    <meta property="og:url" content="https://www.soulaaniblue.com">
+    <meta property="og:type" content="music.musician">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Soulaani Blue | Dead Man Walkin' + I Love You, Still EP">
+    <meta name="twitter:description" content="Independent artist creating music that funds mutual aid. New single out now. 55% of proceeds support community fridges.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Dead%20Man%20Walkin%20Cover%20Art.jpeg">
+    <meta name="twitter:creator" content="@SoulaaniBlue">
 
-.pixel-font,
-.release-badge,
-.new-badge,
-.blog-meta {
-    font-family: 'Press Start 2P', cursive;
-    text-transform: none;
-    letter-spacing: 0;
-    font-size: 0.7rem;
-    line-height: 1.4;
-}
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Soulaani Blue Blog RSS" href="/rss.xml" />
 
-/* ===== Utility Helpers (kept minimal) ===== */
-.text-gold { color: var(--gold); }
-.text-white { color: #fff; }
-.text-gray-300 { color: #d1d5db; }
-.text-gray-400 { color: #9ca3af; }
-.text-gray-500 { color: #6b7280; }
-.text-black { color: #000; }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.text-sm { font-size: 0.875rem; }
-.text-xs { font-size: 0.75rem; }
-.mb-2 { margin-bottom: 0.5rem; }
-.mb-4 { margin-bottom: 1rem; }
-.mb-6 { margin-bottom: 1.5rem; }
-.mb-8 { margin-bottom: 2rem; }
-.mb-12 { margin-bottom: 3rem; }
-.mb-16 { margin-bottom: 4rem; }
-.mt-4 { margin-top: 1rem; }
-.mt-6 { margin-top: 1.5rem; }
-.mt-8 { margin-top: 2rem; }
-.mt-12 { margin-top: 3rem; }
-.mr-2 { margin-right: 0.5rem; }
-.mr-3 { margin-right: 0.75rem; }
-.font-bold { font-weight: 700; }
-.rounded-full { border-radius: 9999px; }
-.rounded-lg { border-radius: 0.5rem; }
-.rounded-xl { border-radius: 0.75rem; }
-.shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
-.w-full { width: 100%; }
-.h-full { height: 100%; }
-.max-w-2xl { max-width: 42rem; }
-.max-w-3xl { max-width: 48rem; }
-.max-w-4xl { max-width: 56rem; }
-.max-w-5xl { max-width: 64rem; }
-.max-w-md { max-width: 28rem; }
-.max-w-lg { max-width: 32rem; }
-.relative { position: relative; }
-.absolute { position: absolute; }
-.fixed { position: fixed; }
-.hidden { display: none; }
-.block { display: block; }
-.inline-block { display: inline-block; }
-.inline-flex { display: inline-flex; }
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.gap-4 { gap: 1rem; }
-.gap-6 { gap: 1.5rem; }
-.gap-8 { gap: 2rem; }
-.gap-12 { gap: 3rem; }
-.space-x-4 > * + * { margin-left: 1rem; }
-.space-x-6 > * + * { margin-left: 1.5rem; }
-.space-x-8 > * + * { margin-left: 2rem; }
-.space-y-4 > * + * { margin-top: 1rem; }
-.space-y-2 > * + * { margin-top: 0.5rem; }
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="SoulaaniBlue" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-/* ===== Layout Containers ===== */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
+    <!-- Fonts + Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-/* ===== Skip Navigation ===== */
-.skip-nav {
-    position: absolute;
-    top: -40px;
-    left: 6px;
-    background: var(--gold);
-    color: var(--black);
-    padding: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    z-index: 10000;
-    border-radius: 0 0 4px 4px;
-    transition: top 0.3s ease;
-}
-.skip-nav:focus { top: 0; }
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
-/* ===== Navigation ===== */
-.navbar {
-    position: fixed;
-    width: 100%;
-    z-index: 50;
-    background-color: rgba(10,10,10,0.95);
-    border-bottom: 1px solid #1F2937;
-}
-.nav-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-.nav-brand {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 700;
-    color: var(--gold);
-}
-.nav-links {
-    display: none; /* hidden on mobile */
-    gap: 2rem;
-}
-@media (min-width: 768px) {
-    .nav-links { display: flex; }
-}
-.nav-link {
-    font-size: 1.2rem;
-    color: #fff;
-    position: relative;
-    transition: color 0.3s ease;
-}
-.nav-link:hover { color: var(--gold); }
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -5px;
-    left: 0;
-    background: linear-gradient(90deg, var(--gold), var(--deep-red));
-    transition: width 0.4s ease;
-}
-.nav-link:hover::after { width: 100%; }
-
-.nav-social-desktop {
-    display: none; /* hidden on mobile */
-    align-items: center;
-    gap: 1rem;
-}
-@media (min-width: 768px) {
-    .nav-social-desktop { display: flex; }
-}
-
-.mobile-menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: var(--gold);
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-@media (min-width: 768px) {
-    .mobile-menu-toggle { display: none; }
-}
-
-/* Mobile dropdown */
-.mobile-menu {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: rgba(10,10,10,0.95);
-    border-top: 1px solid #1F2937;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu .nav-link { color: var(--gold); }
-.mobile-menu .nav-link:hover { color: #fff; }
-.mobile-social {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding-top: 1rem;
-}
-
-/* Social icons (reusable) */
-.social-icon {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 2px solid var(--gold);
-    color: var(--gold);
-    transition: all 0.3s ease;
-}
-.social-icon:hover {
-    transform: scale(1.1) translateY(-5px);
-    background: var(--gold);
-    color: black;
-}
-
-/* ===== Hero Section ===== */
-.hero-section {
-    background: linear-gradient(rgba(10,10,10,0.65), rgba(10,10,10,0.85)), url('https://i.imgur.com/peJmzb5.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-    position: relative;
-    padding-top: 6rem; /* compensate for fixed nav */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* ===== Buttons ===== */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    font-weight: 700;
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
-.btn--gold {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: transparent;
-}
-.btn--gold:hover {
-    background: rgba(212,175,55,0.1);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(212,175,55,0.3);
-}
-.btn--orange {
-    border-color: var(--orange-500);
-    color: var(--orange-500);
-    background: transparent;
-}
-.btn--orange:hover {
-    background: rgba(249,115,22,0.1);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(249,115,22,0.3);
-}
-.btn--audiomack {
-    background-color: #ff6900;
-    color: white;
-}
-.btn--audiomack:hover {
-    background-color: #e65c00;
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(255,105,0,0.3);
-}
-.btn--bandcamp {
-    background-color: #629aa9;
-    color: white;
-}
-.btn--bandcamp:hover {
-    background-color: #4f7e8a;
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(98,154,169,0.3);
-}
-.btn--purple {
-    border-color: var(--purple-600);
-    color: white;
-    background: transparent;
-}
-.btn--purple:hover {
-    background: rgba(147,51,234,0.1);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(147,51,234,0.3);
-}
-.btn--subscribe {
-    background: linear-gradient(to right, #D4AF37, #ca8a04);
-    color: black;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-.btn--subscribe:hover {
-    background: linear-gradient(to right, #e5c158, #dba108);
-    transform: translateY(-2px);
-}
-
-/* ===== Music Cards ===== */
-.music-card {
-    background: rgba(20,20,20,0.7);
-    border: 1px solid rgba(212,175,55,0.1);
-    padding: 2rem;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.5rem;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-@media (min-width: 768px) {
-    .music-card {
-        flex-direction: row;
-        text-align: left;
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Soulaani Blue",
+      "url": "https://www.soulaaniblue.com",
+      "sameAs": [
+        "https://audiomack.com/soulaaniblue",
+        "https://rednote.com/Soulaaniblue",
+        "https://soulaaniblue.bandcamp.com",
+        "https://www.even.biz/r/i-love-you-still-0bd194c2-5d75,4747,95b3,02a71223f704"
+      ],
+      "description": "Independent recording artist and engineer from Colerain, North Carolina. Creator of the single 'Dead Man Walkin'' and EP 'I Love You, Still.' Music streams exclusively on Audiomack. Official site: www.soulaaniblue.com",
+      "genre": ["R&B", "Soul", "Alternative", "Hip-Hop"]
     }
-}
-.music-card:hover {
-    transform: translateY(-8px);
-    background: rgba(30,30,30,0.9);
-    box-shadow: 0 15px 30px rgba(212,175,55,0.15);
-    border-color: rgba(212,175,55,0.3);
-}
-.music-card__image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-    flex-shrink: 0;
-}
-.music-card__content {
-    flex: 1;
-}
+    </script>
+</head>
+<body class="min-h-screen">
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
 
-/* ===== EP Card ===== */
-.ep-card {
-    display: block;
-    text-align: center;
-    background: rgba(15,15,15,0.9);
-    border-top: 4px solid var(--deep-red);
-    padding: 2rem;
-    border-radius: 8px;
-    transition: all 0.4s ease;
-}
-.ep-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(139,0,0,0.2);
-    border-top: 4px solid var(--gold);
-}
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-brand">SOULAANI BLUE&trade;</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="ep.html" class="nav-link">NEW EP</a>
+                <a href="music.html" class="nav-link">MUSIC</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="visualizers.html" class="nav-link">VISUALIZERS</a>
+                <a href="work.html" class="nav-link">THE WORK</a>
+            </div>
+            <div class="nav-social-desktop">
+                <a href="https://audiomack.com/soulaaniblue" target="_blank" class="social-icon" aria-label="Audiomack"><i class="fas fa-music"></i></a>
+            </div>
+            <button class="mobile-menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html" class="nav-link">HOME</a>
+            <a href="ep.html" class="nav-link">NEW EP</a>
+            <a href="music.html" class="nav-link">MUSIC</a>
+            <a href="blog.html" class="nav-link">BLOG</a>
+            <a href="visualizers.html" class="nav-link">VISUALIZERS</a>
+            <a href="work.html" class="nav-link">THE WORK</a>
+            <div class="mobile-social">
+                <a href="https://audiomack.com/soulaaniblue" class="social-icon"><i class="fas fa-music"></i></a>
+                <a href="https://rednote.com/Soulaaniblue" class="social-icon"><i class="fas fa-record-vinyl"></i></a>
+                <a href="https://odysee.com/@soulaaniblue:f" class="social-icon"><i class="fas fa-video"></i></a>
+            </div>
+        </div>
+    </nav>
 
-/* ===== Blog Card ===== */
-.blog-card {
-    background: rgba(20,20,20,0.8);
-    border: 1px solid #333;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(212,175,55,0.2);
-    border-color: var(--gold);
-}
-.blog-card__image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-}
-.blog-card__body {
-    padding: 1.5rem;
-}
-.read-more {
-    color: var(--gold);
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-.read-more:hover {
-    color: #fff;
-    transform: translateX(5px);
-    display: inline-block;
-}
+    <!-- Hero Section -->
+    <section id="main-content" class="hero-section min-h-screen flex items-center justify-center relative pt-24 pb-20">
+        <div class="container text-center fade-in">
+            <div class="mb-10 slide-up delay-100">
+                <h3 class="text-xl md:text-2xl text-gold mb-4 tracking-wider">OUT NOW</h3>
+                <h1 class="text-5xl md:text-8xl font-bold mb-6 text-white impact-font tracking-tight">I LOVE YOU, STILL</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 mt-6"></p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center gap-4 slide-up delay-300 mt-16">
+                <div class="flex flex-col space-y-4 w-full max-w-xs mx-auto">
+                    <a href="https://soulaaniblue.bandcamp.com/" target="_blank" class="btn btn--gold w-full">
+                        <i class="fab fa-bandcamp mr-2"></i>ORDER ON BANDCAMP
+                    </a>
+                    <a href="https://www.even.biz/r/i-love-you-still-0bd194c2-5d75,4747,95b3,02a71223f704" target="_blank" class="btn btn--purple w-full">
+                        <i class="fas fa-store mr-2"></i>PURCHASE ON EVEN
+                    </a>
+                    <a href="https://audiomack.com/soulaaniblue/album/i-love-you-still-ep" target="_blank" class="btn btn--orange w-full">
+                        <i class="fas fa-headphones mr-2"></i>STREAM ON AUDIOMACK
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 text-center">
+            <a href="#new-single" class="inline-block animate-bounce text-2xl text-gold">↓</a>
+        </div>
+    </section>
 
-/* ===== Modal ===== */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.95);
-    z-index: 1000;
-    overflow-y: auto;
-}
-.modal.active { display: block; }
-.modal-content {
-    max-width: 800px;
-    margin: 80px auto;
-    padding: 2rem;
-    background: var(--rich-black);
-    border: 1px solid var(--gold);
-    border-radius: 8px;
-    position: relative;
-}
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 2rem;
-    color: var(--gold);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.close-modal:hover { transform: scale(1.2); }
+    <!-- Dead Man Walkin' Section -->
+    <section id="new-single" class="py-20 bg-rich-black" style="background-image: linear-gradient(to bottom, var(--rich-black), var(--gray-900));">
+        <div class="container">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1 text-black text-sm font-bold rounded-full mb-4" style="background-color: var(--gold);">JUST RELEASED</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Dead Man Walkin'</h2>
+                <p class="text-xl text-gold">Out Now</p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="music-card p-8 flex flex-col md:flex-row gap-8 items-center">
+                    <div class="md:w-1/3">
+                        <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Dead%20Man%20Walkin%20Cover%20Art.jpeg" alt="Dead Man Walkin' cover art" class="w-full rounded-lg shadow-2xl">
+                    </div>
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <p class="text-gray-300 text-lg mb-4 leading-relaxed">"When you're at war, you use whatever the hell you can."</p>
+                        <p class="text-gray-400 mb-6">Released February 22, 2026 • 55% of proceeds go to mutual aid</p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                            <a href="https://audiomack.com/soulaaniblue/song/deadmanwalkin" target="_blank" rel="noopener" class="btn btn--audiomack">
+                                <i class="fas fa-headphones mr-2"></i>Stream on Audiomack
+                            </a>
+                            <a href="https://soulaaniblue.bandcamp.com/track/dead-man-walkin" target="_blank" rel="noopener" class="btn btn--bandcamp">
+                                <i class="fab fa-bandcamp mr-2"></i>Buy on Bandcamp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-/* ===== Footer ===== */
-.footer {
-    border-top: 1px solid #1F2937;
-    background-color: rgba(10,10,10,0.95);
-    padding: 2rem 0;
-}
-.footer-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-@media (min-width: 768px) {
-    .footer-inner { flex-direction: row; justify-content: space-between; }
-}
-.footer-copyright {
-    text-align: center;
-    color: #6b7280;
-    margin-bottom: 1rem;
-}
-@media (min-width: 768px) {
-    .footer-copyright { text-align: left; margin-bottom: 0; }
-}
-.footer-links {
-    display: flex;
-    gap: 1.5rem;
-}
-.footer-links a {
-    color: #6b7280;
-    font-size: 1.25rem;
-    transition: color 0.3s ease;
-}
-.footer-links a:hover { color: var(--gold); }
+    <!-- Quick Links Section -->
+    <section id="quick-links" class="py-20 bg-rich-black">
+        <div class="container">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center text-white">EXPLORE</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- EP Card -->
+                <a href="ep.html" class="ep-card rounded-lg p-8 text-center hover:no-underline group">
+                    <div class="text-5xl text-gold mb-4 group-hover:scale-110 transition-transform duration-300"><i class="fas fa-compact-disc"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-4">THE EP</h3>
+                    <p class="text-gray-300 mb-6">Discover the story behind "I Love You, Still" - track listings, production notes, and exclusive content.</p>
+                    <span class="text-gold font-bold group-hover:underline">Explore EP →</span>
+                </a>
+                <!-- Music Card -->
+                <a href="music.html" class="ep-card rounded-lg p-8 text-center hover:no-underline group">
+                    <div class="text-5xl text-gold mb-4 group-hover:scale-110 transition-transform duration-300"><i class="fas fa-music"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-4">MUSIC</h3>
+                    <p class="text-gray-300 mb-6">Listen to previous work, collaborations, and discover Soulaani Blue's musical journey.</p>
+                    <span class="text-gold font-bold group-hover:underline">Explore Music →</span>
+                </a>
+                <!-- Blog Card -->
+                <a href="blog.html" class="ep-card rounded-lg p-8 text-center hover:no-underline group">
+                    <div class="text-5xl text-gold mb-4 group-hover:scale-110 transition-transform duration-300"><i class="fas fa-pen-fancy"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-4">BLOG</h3>
+                    <p class="text-gray-300 mb-6">Read behind-the-scenes stories, inspiration, and personal insights from the artist.</p>
+                    <span class="text-gold font-bold group-hover:underline">Read Blog →</span>
+                </a>
+                <!-- Visualizers Card -->
+                <a href="visualizers.html" class="ep-card rounded-lg p-8 text-center hover:no-underline group">
+                    <div class="text-5xl text-gold mb-4 group-hover:scale-110 transition-transform duration-300"><i class="fas fa-film"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-4">VISUALIZERS</h3>
+                    <p class="text-gray-300 mb-6">Experience the visual journey with music videos and visualizers for each track.</p>
+                    <span class="text-gold font-bold group-hover:underline">Watch Visualizers →</span>
+                </a>
+                <!-- The Work Card -->
+                <a href="work.html" class="ep-card rounded-lg p-8 text-center hover:no-underline group">
+                    <div class="text-5xl text-gold mb-4 group-hover:scale-110 transition-transform duration-300"><i class="fas fa-seedling"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-4">THE WORK</h3>
+                    <p class="text-gray-300 mb-6">Discover how music fuels mutual aid, food sovereignty, and community building through Feed Every Body.</p>
+                    <span class="text-gold font-bold group-hover:underline">Learn More →</span>
+                </a>
+                <!-- Support Card -->
+                <div class="ep-card rounded-lg p-8 text-center">
+                    <div class="text-5xl text-gold mb-4"><i class="fas fa-heart"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-4">SUPPORT</h3>
+                    <p class="text-gray-300 mb-6">Join the mailing list and support independent art that gives back to the community.</p>
+                    <a href="#mailing-list" class="btn btn--gold mb-3">Join Mailing List</a>
+                    <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" class="btn btn--gold">Buy Me a Coffee</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-/* ===== Newsletter Popup ===== */
-.newsletter-overlay {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 50;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(3px);
-    transition: opacity 0.3s ease;
-}
-.newsletter-overlay.hidden { display: none; }
-.newsletter-box {
-    background: var(--rich-black);
-    border: 1px solid var(--gold);
-    border-radius: 0.5rem;
-    padding: 2rem;
-    max-width: 28rem;
-    width: 90%;
-    position: relative;
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-}
-.newsletter-close {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background: none;
-    border: none;
-    color: #9ca3af;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-.newsletter-close:hover { color: var(--gold); }
-.newsletter-form input {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    background: #1F2937;
-    border: none;
-    border-radius: 0.5rem;
-    color: white;
-    margin-bottom: 1rem;
-}
-.newsletter-form input:focus {
-    outline: 2px solid var(--gold);
-}
+    <!-- Latest from the Blog -->
+    <section class="py-16 bg-gray-900" style="border-top: 1px solid #1F2937; border-bottom: 1px solid #1F2937;">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gold">LATEST FROM THE BLOG</h2>
+                <p class="text-lg text-gray-300 mt-2">New stories, straight from the journey</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="music-card p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center">
+                    <div class="md:w-1/3">
+                        <img src="https://raw.githubusercontent.com/SoulaaniBlue/soulaaniblue.com/refs/heads/main/Dead%20Man%20Walkin%20Cover%20Art.jpeg" alt="Latest blog post cover" class="rounded-lg shadow-lg w-full">
+                    </div>
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <p class="text-sm text-gold mb-2">February 28, 2026</p>
+                        <h3 class="text-2xl font-bold text-white mb-3">February: First Sales, First Donations, and 'Dead Man Walkin'</h3>
+                        <p class="text-gray-300 mb-4">February was heavy. The world kept spinning in its same cruel way. But here's what else happened in February. We made our first sale...</p>
+                        <a href="blog.html#post-6" class="inline-flex items-center text-gold-500 font-bold transition-colors duration-300">
+                            Read Full Story <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-/* ===== Work Page Overrides (scoped) ===== */
-body.work-page {
-    background-color: var(--warm-cream);
-    color: #333;
-}
-.work-page h1,
-.work-page h2,
-.work-page h3,
-.work-page .nav-link {
-    color: var(--earth-brown);
-}
-.work-page .nav-link::after {
-    background: linear-gradient(90deg, var(--earth-brown), var(--soft-green));
-}
-.work-page .section-title {
-    font-size: 2rem;
-    margin: 4rem 0 2rem;
-    color: var(--soft-green);
-    border-bottom: 2px solid rgba(139,115,85,0.1);
-    padding-bottom: 0.5rem;
-}
-.work-page .content-block {
-    margin-bottom: 2.5rem;
-    padding: 2rem;
-    background: rgba(255,255,255,0.9);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-.work-page .quote {
-    font-size: 1.25rem;
-    font-style: italic;
-    color: var(--earth-brown);
-    border-left: 3px solid var(--soft-green);
-    padding-left: 1.5rem;
-    margin: 2rem 0;
-}
-.work-page .action-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin: 3rem 0;
-}
-@media (min-width: 768px) {
-    .work-page .action-buttons { flex-direction: row; justify-content: center; }
-}
-.work-page .btn-music {
-    background: linear-gradient(135deg, var(--earth-brown), #A68A64);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-align: center;
-}
-.work-page .btn-donate {
-    background: linear-gradient(135deg, var(--soft-green), #4A7D5E);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-align: center;
-}
-.work-page .values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-}
-.work-page .value-item {
-    text-align: center;
-    padding: 2rem;
-    background: rgba(255,255,255,0.9);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
+    <!-- The General Strike Section -->
+    <section id="general-strike" class="py-20 bg-deep-red" aria-labelledby="general-strike-heading">
+        <div class="container text-center">
+            <h2 id="general-strike-heading" class="text-4xl md:text-5xl font-bold mb-6 text-white slide-up">JOIN THE GENERAL STRIKE</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8 slide-up delay-100">
+                A nationwide movement for collective action and community solidarity. Learn how to participate and leverage your power.
+            </p>
+            <div class="slide-up delay-200">
+                <a href="http://generalstrikeus.com" target="_blank" class="btn-pulse inline-block px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-800 text-white font-bold rounded-full hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/30 active:scale-95 animate-pulse">
+                    LEARN MORE & JOIN
+                </a>
+            </div>
+        </div>
+    </section>
 
-/* ===== Animations & Effects ===== */
-.fade-in { animation: fadeIn 1.2s ease-out forwards; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-.slide-up {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideUp 1s cubic-bezier(0.22,0.61,0.36,1) forwards;
-}
-@keyframes slideUp {
-    from { transform: translateY(30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
+    <!-- Feed Every Body Section -->
+    <section id="feed-every-body" class="py-20 relative" style="background: linear-gradient(rgba(0, 100, 0, 0.85), rgba(0, 80, 0, 0.9)), url('https://i.imgur.com/YGugHoT.png') center/contain no-repeat;" aria-labelledby="feed-every-body-heading">
+        <div class="container text-center relative z-10">
+            <h2 id="feed-every-body-heading" class="text-4xl md:text-5xl font-bold mb-6 text-white slide-up delay-100">FEED EVERY BODY</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8 slide-up delay-100">
+                Food sovereignty through mutual aid networks. We're building generative, community-controlled food systems 
+                that operate on principles of solidarity, not charity—where communities determine their own food futures.
+            </p>
+            <div class="max-w-2xl mx-auto mb-8 slide-up delay-150">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div class="bg-black bg-opacity-50 p-4 rounded-lg">
+                        <i class="fas fa-seedling text-green-400 text-2xl mb-2"></i>
+                        <p class="text-sm">Community Control</p>
+                    </div>
+                    <div class="bg-black bg-opacity-50 p-4 rounded-lg">
+                        <i class="fas fa-handshake text-green-400 text-2xl mb-2"></i>
+                        <p class="text-sm">Mutual Aid Networks</p>
+                    </div>
+                    <div class="bg-black bg-opacity-50 p-4 rounded-lg">
+                        <i class="fas fa-people-carry text-green-400 text-2xl mb-2"></i>
+                        <p class="text-sm">Food Sovereignty</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-up delay-200">
+                <a href="https://www.rvacommunityfridges.com/donate?fbclid=PAQ0xDSwMLTgRleHRuA2FlbQIxMQABp56X1KuhBv5F-un1zK59V2EAhn8y7qrYHp7LDT3cxY9BuiQ18UvN4Oq-hcMq_aem_FlWyxfX_vMKVAFlEdUNqjQ" target="_blank" class="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-green-800 text-white font-bold rounded-full hover:from-green-500 hover:to-green-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/30 active:translate-y-0">
+                    SUPPORT FOOD SOVEREIGNTY
+                </a>
+            </div>
+        </div>
+    </section>
 
-.btn-pulse {
-    animation: pulse 2s infinite;
-    position: relative;
-    overflow: hidden;
-}
-.btn-pulse::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    animation: shine 3s infinite;
-}
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(212,175,55,0); }
-    100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
-}
-@keyframes shine {
-    100% { transform: translateX(100%); }
-}
+    <!-- Donation Tracker -->
+    <section class="py-16 bg-rich-black" style="border-top: 1px solid #1F2937; background-image: linear-gradient(to top, var(--rich-black), var(--gray-900));">
+        <div class="container text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gold">FEED EVERY BODY TRACKER</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">Direct donations from music sales to RVA Community Fridges. <br> Us feeding us.</p>
+            <div class="max-w-2xl mx-auto">
+                <div class="flex justify-between mb-2 text-sm text-gray-400">
+                    <span class="font-bold text-gold">$<span id="current-donations">36.92</span></span>
+                    <span>Goal: $<span id="goal-donations">100</span></span>
+                </div>
+                <!-- FIXED PROGRESS BAR: inline height ensures visibility -->
+                <div class="w-full rounded-full overflow-hidden" style="height: 1.5rem; background-color: #1F2937; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);">
+                    <div id="progress-fill" class="h-full rounded-full transition-all duration-1000 ease-out" style="width: 0%; background: linear-gradient(to right, #D4AF37, #ca8a04);"></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-4">Updated manually as donations are made. <br> 55% of music proceeds go here.</p>
+            </div>
+        </div>
+    </section>
 
-@keyframes bounce {
-    0%,20%,50%,80%,100% { transform: translateY(0); }
-    40% { transform: translateY(-20px); }
-    60% { transform: translateY(-10px); }
-}
-.animate-bounce { animation: bounce 2s infinite; }
+    <!-- People Over Papers Section -->
+    <section id="people-over-papers" class="py-20 bg-deep-red" aria-labelledby="people-over-papers-heading">
+        <div class="container text-center">
+            <h2 id="people-over-papers-heading" class="text-4xl md:text-5xl font-bold mb-6 text-gold slide-up">PEOPLE OVER PAPERS</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8 slide-up delay-100">
+                Dedicated to abolishing systems that criminalize poverty. Your support helps provide relief from court fines and fees for our community members, in partnership with The Pueblo Project.
+            </p>
+            <div class="slide-up delay-200">
+                <a href="https://www.zeffy.com/en-US/donation-form/50-states-50-days-dollar50k-for-the-people-a-pueblo-project-campaign-by-people-over-papers" target="_blank" class="inline-block px-8 py-4 bg-gradient-to-r from-red-800 to-red-900 text-white font-bold rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-red-500/30 active:translate-y-0">
+                    SUPPORT THE CAUSE
+                </a>
+            </div>
+        </div>
+    </section>
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--rich-black); }
-::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #c9a227; }
+    <!-- Mailing List Section -->
+    <section id="mailing-list" class="py-16 bg-gray-900" style="border-top: 1px solid #1F2937;" aria-labelledby="mailing-list-heading">
+        <div class="container text-center">
+            <h2 id="mailing-list-heading" class="text-3xl md:text-4xl font-bold mb-6 text-white slide-up">JOIN THE MAILING LIST</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8 slide-up delay-100">Stay updated on new releases, shows, and exclusive content.</p>
+            <form action="https://formspree.io/f/xvgaqgjb" method="POST" class="max-w-md mx-auto slide-up delay-200">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="text" name="name" placeholder="Your Name" class="flex-grow px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" aria-label="Your Name">
+                    <input type="email" name="email" placeholder="Your Email" required class="flex-grow px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500" aria-label="Your Email">
+                </div>
+                <button type="submit" class="mt-4 w-full md:w-auto px-8 py-3 font-bold rounded-lg btn--subscribe" style="background: linear-gradient(to right, #D4AF37, #ca8a04); color: black;">
+                    SUBSCRIBE
+                </button>
+            </form>
+        </div>
+    </section>
 
-/* ===== Additional utility classes used by index.html and others ===== */
-.bg-deep-red { background-color: var(--deep-red); }
-.bg-rich-black { background-color: var(--rich-black); }
-.bg-gray-900 { background-color: var(--gray-900); }
-.gold-border { border-color: var(--gold); }
-.border-gold-500 { border-color: var(--gold); }
-.hover\:text-gold-500:hover { color: var(--gold); }
-.text-gold-500 { color: var(--gold); }
+    <!-- Footer -->
+    <footer class="footer" aria-label="Site footer">
+        <div class="container footer-inner">
+            <div class="footer-copyright">
+                <p>&copy; 2024 Bobby Maxon Music Group LLC. All rights reserved.</p>
+                <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" rel="noopener noreferrer" class="btn btn--orange inline-flex mt-4">
+                    <i class="fas fa-coffee mr-2"></i>SUPPORT MY ART
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="https://audiomack.com/soulaaniblue" target="_blank" rel="noopener noreferrer"><i class="fas fa-music"></i></a>
+                <a href="https://rednote.com/Soulaaniblue" target="_blank" rel="noopener noreferrer"><i class="fas fa-record-vinyl"></i></a>
+                <a href="https://odysee.com/@soulaaniblue:f" target="_blank" rel="noopener noreferrer"><i class="fas fa-video"></i></a>
+                <a href="/rss.xml" target="_blank" rel="noopener noreferrer"><i class="fas fa-rss"></i></a>
+            </div>
+        </div>
+    </footer>
 
-/* ===== Missing utility classes (commonly used in the site) ===== */
+    <!-- Newsletter Pop-up -->
+    <div id="newsletter-popup" class="newsletter-overlay hidden">
+        <div class="newsletter-box">
+            <button id="close-popup" class="newsletter-close">&times;</button>
+            <h3 class="text-2xl font-bold text-gold mb-3">Stay Connected</h3>
+            <p class="text-gray-300 mb-6">Get new music, stories, and mutual aid updates straight to your inbox.</p>
+            <form class="newsletter-form" action="https://formspree.io/f/xvgaqgjb" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <button type="submit" class="btn--subscribe w-full">SUBSCRIBE</button>
+            </form>
+            <p class="text-xs text-gray-500 mt-4 text-center">No spam, only real updates. Unsubscribe anytime.</p>
+        </div>
+    </div>
 
-/* Font Sizes */
-.text-xl   { font-size: 1.25rem; }
-.text-2xl  { font-size: 1.5rem; }
-.text-3xl  { font-size: 1.875rem; }
-.text-4xl  { font-size: 2.25rem; }
-.text-5xl  { font-size: 3rem; }
-.text-7xl  { font-size: 4.5rem; }
-.text-8xl  { font-size: 6rem; }
+    <!-- Scripts -->
+    <script>
+        // Mobile menu (uses .open)
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            menu.classList.toggle('open');
+            this.setAttribute('aria-expanded', !expanded);
+            const icon = this.querySelector('i');
+            icon.className = menu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.remove('open');
+                document.getElementById('menu-toggle').setAttribute('aria-expanded', 'false');
+                document.getElementById('menu-toggle').querySelector('i').className = 'fas fa-bars';
+            });
+        });
 
-@media (min-width: 768px) {
-    .md\:text-2xl  { font-size: 1.5rem; }
-    .md\:text-4xl  { font-size: 2.25rem; }
-    .md\:text-5xl  { font-size: 3rem; }
-    .md\:text-7xl  { font-size: 4.5rem; }
-    .md\:text-8xl  { font-size: 6rem; }
-}
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
 
-/* Letter Spacing */
-.tracking-wider { letter-spacing: 0.05em; }
-.tracking-tight { letter-spacing: -0.025em; }
+        // Intersection Observer for slide-up
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-up');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.slide-up').forEach(el => observer.observe(el));
 
-/* Line Height */
-.leading-relaxed { line-height: 1.625; }
+        // External links security
+        document.querySelectorAll('a').forEach(link => {
+            if (link.href && !link.href.startsWith(window.location.origin) && !link.href.startsWith('#') && !link.href.includes('index.html')) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
 
-/* Grid helpers (used in index, blog, music) */
-.grid {
-    display: grid;
-}
-.grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-@media (min-width: 768px) {
-    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (min-width: 1024px) {
-    .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
+        // Donation Tracker
+        const currentDonations = 36.92;
+        const goalDonations = 100;
+        let percentage = (currentDonations / goalDonations) * 100;
+        if (percentage > 100) percentage = 100;
+        document.getElementById('current-donations').textContent = currentDonations.toFixed(2);
+        document.getElementById('goal-donations').textContent = goalDonations;
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('progress-fill').style.width = percentage + '%';
+            }, 300);
+        });
 
-/* Additional margin/padding helpers */
-.mx-auto { margin-left: auto; margin-right: auto; }
-.my-12 { margin-top: 3rem; margin-bottom: 3rem; }
-.pt-24 { padding-top: 6rem; }
-.pb-20 { padding-bottom: 5rem; }
-.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
-.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-.px-4 { padding-left: 1rem; padding-right: 1rem; }
-.p-4 { padding: 1rem; }
-.p-6 { padding: 1.5rem; }
-.p-8 { padding: 2rem; }
-.space-y-4 > * + * { margin-top: 1rem; }  /* already exists but keep consistent */
-
-/* Background opacity helpers */
-.bg-opacity-50 { background-color: rgba(0,0,0,0.5); }
-.bg-opacity-95 { background-color: rgba(10,10,10,0.95); } /* fallback for old nav */
-
-/* Hover transform helpers */
-.hover\:scale-105:hover { transform: scale(1.05); }
-.hover\:shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
-.hover\:shadow-yellow-500\/30:hover { box-shadow: 0 10px 15px -3px rgba(212,175,55,0.3); }
-.hover\:shadow-purple-500\/30:hover { box-shadow: 0 10px 15px -3px rgba(147,51,234,0.3); }
-.hover\:shadow-orange-500\/30:hover { box-shadow: 0 10px 15px -3px rgba(249,115,22,0.3); }
-.hover\:shadow-green-500\/30:hover { box-shadow: 0 10px 15px -3px rgba(34,197,94,0.3); }
-.hover\:shadow-red-500\/30:hover { box-shadow: 0 10px 15px -3px rgba(239,68,68,0.3); }
-
-/* More hover colors */
-.hover\:bg-yellow-900:hover { background-color: rgba(120,53,15,0.2); }
-.hover\:bg-purple-900:hover { background-color: rgba(88,28,135,0.2); }
-.hover\:bg-orange-900:hover { background-color: rgba(124,45,18,0.2); }
-.hover\:bg-gray-700:hover { background-color: #374151; }
-
-/* Transform helpers */
-.rotate-0 { transform: rotate(0deg); }
-.hover\:rotate-1:hover { transform: rotate(1deg); }
-.active\:scale-95:active { transform: scale(0.95); }
-.active\:translate-y-0:active { transform: translateY(0); }
-
-/* Gradient backgrounds */
-.bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to)); }
-.bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--tw-gradient-from), var(--tw-gradient-to)); }
-.from-yellow-500 { --tw-gradient-from: #eab308; }
-.from-yellow-600 { --tw-gradient-from: #ca8a04; }
-.to-yellow-600 { --tw-gradient-to: #ca8a04; }
-.to-yellow-800 { --tw-gradient-to: #854d0e; }
-.from-green-600 { --tw-gradient-from: #16a34a; }
-.to-green-800 { --tw-gradient-to: #166534; }
-.from-red-800 { --tw-gradient-from: #991b1b; }
-.to-red-900 { --tw-gradient-to: #7f1d1d; }
-.from-rich-black { --tw-gradient-from: var(--rich-black); }
-.to-gray-900 { --tw-gradient-to: var(--gray-900); }
-
-/* General transition */
-.transition { transition: all 0.3s ease; }
-.transition-all { transition: all 0.3s ease; }
-.duration-300 { transition-duration: 0.3s; }
-.duration-500 { transition-duration: 0.5s; }
-
-/* Border helpers */
-.border-2 { border-width: 2px; }
-.border-4 { border-width: 4px; }
-.border-b { border-bottom-width: 1px; }
-.border-t { border-top-width: 1px; }
-.border-gray-800 { border-color: #1F2937; }
-.border-gray-200 { border-color: #e5e7eb; }
-.border-white { border-color: #fff; }
-.border-orange-500 { border-color: var(--orange-500); }
-.border-purple-500 { border-color: #8b5cf6; }
-.border-orange-300 { border-color: #fdba74; }
-
-/* Ring for focus */
-.focus\:ring-2:focus { outline: 2px solid var(--tw-ring-color); }
-.focus\:ring-gold-500:focus { --tw-ring-color: var(--gold); }
-
-/* Text colors */
-.text-orange-500 { color: #f97316; }
-.text-purple-500 { color: #8b5cf6; }
-.text-teal-500 { color: #14b8a6; }
-.text-green-400 { color: #4ade80; }
-.text-orange-300 { color: #fdba74; }
-.text-orange-200 { color: #fed7aa; }
-.text-warm-cream { color: var(--warm-cream); }
-.text-earth-brown { color: var(--earth-brown); }
-
-/* Width helpers */
-.max-w-xs { max-width: 20rem; }
-.max-w-2xl { max-width: 42rem; } /* already defined but keep */
-.max-w-6xl { max-width: 72rem; }
-
-/* Height helper (for progress bar) */
-.h-6 { height: 1.5rem; }
-.shadow-inner { box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
-
-/* Animation */
-.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .5; }
-}
-
-/* Group hover (for track listing ep page) */
-.group:hover .group-hover\:text-gold-500 { color: var(--gold); }
-.group:hover .group-hover\:scale-110 { transform: scale(1.1); }
-.group:hover .group-hover\:underline { text-decoration: underline; }
-
-/* Additional margin top */
-.mt-2 { margin-top: 0.5rem; }
-.mt-16 { margin-top: 4rem; }
-.mt-24 { margin-top: 6rem; }
-.mb-10 { margin-bottom: 2.5rem; }
-.mb-3 { margin-bottom: 0.75rem; }
-.ml-2 { margin-left: 0.5rem; }
-
-/* Padding helpers */
-.pt-32 { padding-top: 8rem; }
-.pt-4 { padding-top: 1rem; }
-.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-.px-8 { padding-left: 2rem; padding-right: 2rem; }
-.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-
-/* Override some default heading sizes for smaller screens */
-@media (max-width: 768px) {
-    h1 { font-size: 3rem; }
-    h2 { font-size: 2.5rem; }
-}
+        // Newsletter Pop-up
+        (function() {
+            const storageKey = 'soulaaniNewsletterPopup',
+                  popupDelay = 5000,
+                  daysToHide = 30;
+            function getSettings() { const s = localStorage.getItem(storageKey); return s ? JSON.parse(s) : null; }
+            function setShown() { localStorage.setItem(storageKey, JSON.stringify({shown: true, expires: Date.now() + daysToHide*24*60*60*1000})); }
+            function shouldShow() { const s = getSettings(); return !s || !s.shown || Date.now() > s.expires; }
+            if (shouldShow()) {
+                setTimeout(() => { const popup = document.getElementById('newsletter-popup'); if (popup) popup.classList.remove('hidden'); }, popupDelay);
+            }
+            const closeBtn = document.getElementById('close-popup'), popup = document.getElementById('newsletter-popup');
+            function hide() { if (popup) { popup.classList.add('hidden'); setShown(); } }
+            closeBtn && closeBtn.addEventListener('click', hide);
+            popup && popup.addEventListener('click', e => { if (e.target === popup) hide(); });
+            const form = popup ? popup.querySelector('form') : null;
+            form && form.addEventListener('submit', () => setShown());
+        })();
+    </script>
+</body>
+</html>
