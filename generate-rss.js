@@ -1,29 +1,44 @@
-// Run this script after updating blog.js to regenerate rss.xml
+// ==========================================
+// generate-rss.js – Run in Node.js to create rss.xml from blog.js
 // Usage: node generate-rss.js > rss.xml
+// ==========================================
 
-const postContents = require('./blog.js');
+const fs = require('fs');
+const path = require('path');
+
+// Read blog.js and extract the postContents object (safe because we wrote it)
+const blogJs = fs.readFileSync(path.join(__dirname, 'blog.js'), 'utf8');
+// Extract the object literal assigned to const postContents = { ... };
+const match = blogJs.match(/const postContents = (\{[\s\S]*?\n\};)/);
+if (!match) {
+    console.error('Could not extract postContents from blog.js');
+    process.exit(1);
+}
+let postContents;
+eval('postContents = ' + match[1]);
 
 const escapeXML = (str) =>
-  str.replace(/&/g, '&amp;')
-     .replace(/</g, '&lt;')
-     .replace(/>/g, '&gt;')
-     .replace(/"/g, '&quot;')
-     .replace(/'/g, '&apos;');
+    str.replace(/&/g, '&amp;')
+       .replace(/</g, '&lt;')
+       .replace(/>/g, '&gt;')
+       .replace(/"/g, '&quot;')
+       .replace(/'/g, '&apos;');
 
 const formatDate = (dateStr) => {
-  const d = new Date(dateStr + ' 00:00:00 GMT');
-  return d.toUTCString();
+    const d = new Date(dateStr + ' 00:00:00 GMT');
+    return d.toUTCString();
 };
 
 let items = '';
-for (let i = 1; i <= Object.keys(postContents).length; i++) {
-  const post = postContents[i];
-  const desc = escapeXML(post.content.replace(/<[^>]*>/g, '').substring(0, 250)) + '...';
-  items += `
+const ids = Object.keys(postContents).sort((a, b) => a - b);
+for (const id of ids) {
+    const post = postContents[id];
+    const desc = escapeXML(post.content.replace(/<[^>]*>/g, '').substring(0, 250)) + '...';
+    items += `
     <item>
       <title><![CDATA[${post.title}]]></title>
-      <link>https://www.soulaaniblue.com/blog.html#post-${i}</link>
-      <guid>https://www.soulaaniblue.com/blog.html#post-${i}</guid>
+      <link>https://www.soulaaniblue.com/blog.html#post-${id}</link>
+      <guid>https://www.soulaaniblue.com/blog.html#post-${id}</guid>
       <pubDate>${formatDate(post.date)}</pubDate>
       <description><![CDATA[${desc}]]></description>
     </item>`;
@@ -42,4 +57,5 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
 </channel>
 </rss>`;
 
-console.log(rss);
+fs.writeFileSync(path.join(__dirname, 'rss.xml'), rss);
+console.log('rss.xml updated');
