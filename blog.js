@@ -133,6 +133,11 @@ const postContents = {
     }
 };
 
+// ---------- Get sorted post IDs ----------
+function getSortedIds() {
+    return Object.keys(postContents).map(Number).sort((a, b) => a - b);
+}
+
 // ---------- Render blog grid ----------
 let lastFocusedCard = null;
 
@@ -193,8 +198,38 @@ function showBlogPost(id, cardElement) {
     if (!post) return;
     const modalContent = document.getElementById('modalContent');
     if (!modalContent) return;
+
+    // Build the post content with prev/next navigation
+    const sortedIds = getSortedIds();
+    const currentIndex = sortedIds.indexOf(Number(id));
+    const prevId = currentIndex > 0 ? sortedIds[currentIndex - 1] : null;
+    const nextId = currentIndex < sortedIds.length - 1 ? sortedIds[currentIndex + 1] : null;
+
+    let navHtml = '';
+    if (prevId || nextId) {
+        navHtml = '<div class="mt-12 pt-8 border-t border-gray-800 flex justify-between items-center blog-links">';
+        if (prevId) {
+            const prevPost = postContents[prevId];
+            navHtml += `<button class="previous-post inline-flex items-center px-4 py-2 bg-transparent border gold-border text-gold rounded-full hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300" data-post-id="${prevId}" aria-label="Previous post: ${prevPost.title}">
+                <i class="fas fa-arrow-left mr-2"></i> Previous
+            </button>`;
+        } else {
+            navHtml += '<span></span>'; // placeholder to keep space-between
+        }
+        if (nextId) {
+            const nextPost = postContents[nextId];
+            navHtml += `<button class="next-post inline-flex items-center px-4 py-2 bg-transparent border gold-border text-gold rounded-full hover:bg-yellow-900 hover:bg-opacity-20 transition duration-300" data-post-id="${nextId}" aria-label="Next post: ${nextPost.title}">
+                Next <i class="fas fa-arrow-right ml-2"></i>
+            </button>`;
+        } else {
+            navHtml += '<span></span>';
+        }
+        navHtml += '</div>';
+    }
+
     modalContent.innerHTML = `<h2 class="text-3xl md:text-4xl font-bold text-gold mb-2" tabindex="-1">${post.title}</h2>
-        <p class="blog-meta pixel-font mb-6">${post.date}</p>${post.content}`;
+        <p class="blog-meta pixel-font mb-6">${post.date}</p>${post.content}${navHtml}`;
+
     const modal = document.getElementById('postModal');
     if (modal) {
         modal.classList.add('active');
@@ -208,6 +243,14 @@ function showBlogPost(id, cardElement) {
 
     // Remember which card was clicked (for focus restoration)
     lastFocusedCard = cardElement;
+
+    // Attach event listeners for prev/next buttons
+    modalContent.querySelectorAll('.previous-post, .next-post').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const newId = this.getAttribute('data-post-id');
+            if (newId) showBlogPost(newId, null);
+        });
+    });
 }
 
 function closeModal() {
