@@ -64,7 +64,7 @@ const postContents = {
     3: {
         title: "Same (Ole Lady)",
         date: "November 30, 2025",
-        image: "/images/Caldwell%20House%20Bedroom.JPEG",
+        image: "/images/Caldwell%20House%20Bedroom.jpeg",
         content: `<div class="blog-full-post">
             <p>I wrote this because I got tired of lying to myself.</p>
             <p>"This what I get for not having the words."</p>
