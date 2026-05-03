@@ -2,7 +2,7 @@
 // Soulaani Blue – Blog data, rendering, modal
 // ==========================================
 
-// ---------- Blog post data ----------
+// ---------- Blog post data ---------- 
 const postContents = {
     1: {
         title: "From Classroom Cover to Healing Anthem: The Story of \"Operator\"",
