@@ -5,40 +5,43 @@ on:
     paths:
       - 'blog.js'
 
+# Cancel any previous run that is still in progress on the same branch
+concurrency:
+  group: rss‑update
+  cancel‑in‑progress: true
+
 jobs:
   update‑rss:
     runs‑on: ubuntu‑latest
     permissions:
       contents: write
     steps:
-      # 1. Check out the repo with full history
       - uses: actions/checkout@v4
         with:
           ref: main
-          fetch-depth: 0
+          fetch‑depth: 0
 
-      # 2. Force the local main to match the remote exactly
-      - name: Sync with remote
+      # Make sure we are on the latest remote commit
+      - name: Sync with latest remote
         run: |
           git fetch origin main
           git reset --hard origin/main
 
-      # 3. Generate the new RSS
       - uses: actions/setup‑node@v4
         with:
-          node-version: '18'
+          node‑version: '18'
       - run: node generate-rss.js
 
-      # 4. Commit and push if rss.xml changed
       - name: Commit & push
         run: |
           git config user.name  "github‑actions[bot]"
           git config user.email "github‑actions[bot]@users.noreply.github.com"
           git add rss.xml
-
           if git diff --staged --quiet; then
             echo "No changes to RSS"
-          else
-            git commit -m "Auto‑update RSS"
-            git push origin main
+            exit 0
           fi
+          git commit -m "Auto‑update RSS"
+          # Try to rebase & push – if it fails, log and exit gracefully
+          git pull --rebase origin main || { echo "⚠️ Could not rebase, will not push."; exit 1; }
+          git push origin main
