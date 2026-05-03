@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.className = 'blog-card';
         card.onclick = () => showBlogPost(id);
         card.innerHTML = `
-            <div class="blog-card__image" style="background-image: url('${post.image}');"></div>
+            <img class="blog-card__image" src="${post.image}" alt="${post.title} cover image" loading="lazy">
             <div class="blog-card__body">
                 <h3 class="blog-title text-gold">${post.title}</h3>
                 <p class="blog-meta pixel-font text-gold">${post.date}</p>
