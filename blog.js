@@ -2,7 +2,7 @@
 // Soulaani Blue – Blog data, rendering, modal
 // ==========================================
 
-// ---------- Blog post data ---------- 
+// ---------- Blog post data ----------
 const postContents = {
     1: {
         title: "From Classroom Cover to Healing Anthem: The Story of \"Operator\"",
@@ -134,6 +134,8 @@ const postContents = {
 };
 
 // ---------- Render blog grid ----------
+let lastFocusedCard = null;
+
 document.addEventListener('DOMContentLoaded', function() {
     const blogGrid = document.getElementById('blog-grid');
     if (!blogGrid) return;
@@ -142,7 +144,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const post = postContents[id];
         const card = document.createElement('div');
         card.className = 'blog-card';
-        card.onclick = () => showBlogPost(id);
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Read full post: ${post.title}`);
+        card.addEventListener('click', () => showBlogPost(id, card));
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                showBlogPost(id, card);
+            }
+        });
         card.innerHTML = `
             <img class="blog-card__image" src="${post.image}" alt="${post.title} cover image" loading="lazy">
             <div class="blog-card__body">
@@ -169,24 +180,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const hash = window.location.hash;
     if (hash && hash.startsWith('#post-')) {
         const id = hash.replace('#post-', '');
-        if (postContents[id]) showBlogPost(id);
+        if (postContents[id]) showBlogPost(id, null);
     }
+
+    // Global Escape key listener
+    document.addEventListener('keydown', handleEscapeKey);
 });
 
 // ---------- Modal logic ----------
-function showBlogPost(id) {
+function showBlogPost(id, cardElement) {
     const post = postContents[id];
     if (!post) return;
     const modalContent = document.getElementById('modalContent');
     if (!modalContent) return;
-    modalContent.innerHTML = `<h2 class="text-3xl md:text-4xl font-bold text-gold mb-2">${post.title}</h2>
+    modalContent.innerHTML = `<h2 class="text-3xl md:text-4xl font-bold text-gold mb-2" tabindex="-1">${post.title}</h2>
         <p class="blog-meta pixel-font mb-6">${post.date}</p>${post.content}`;
     const modal = document.getElementById('postModal');
     if (modal) {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        trapFocus(modal);
+        // Focus the title inside the modal
+        const firstFocusable = modal.querySelector('h2');
+        if (firstFocusable) firstFocusable.focus();
     }
     history.pushState(null, null, `#post-${id}`);
+
+    // Remember which card was clicked (for focus restoration)
+    lastFocusedCard = cardElement;
 }
 
 function closeModal() {
@@ -194,6 +215,54 @@ function closeModal() {
     if (modal) {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
+        releaseFocus(modal);
+        // Return focus to the card that opened the modal
+        if (lastFocusedCard) {
+            lastFocusedCard.focus();
+            lastFocusedCard = null;
+        }
     }
     history.pushState(null, null, window.location.pathname);
+}
+
+// ---------- Focus trapping ----------
+function trapFocus(modal) {
+    const focusableElements = modal.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    modal._handleTabKey = function(e) {
+        if (e.key === 'Tab') {
+            if (e.shiftKey) {
+                if (document.activeElement === firstFocusable) {
+                    e.preventDefault();
+                    lastFocusable.focus();
+                }
+            } else {
+                if (document.activeElement === lastFocusable) {
+                    e.preventDefault();
+                    firstFocusable.focus();
+                }
+            }
+        }
+    };
+
+    document.addEventListener('keydown', modal._handleTabKey);
+}
+
+function releaseFocus(modal) {
+    if (modal._handleTabKey) {
+        document.removeEventListener('keydown', modal._handleTabKey);
+        delete modal._handleTabKey;
+    }
+}
+
+// ---------- Escape key handler ----------
+function handleEscapeKey(e) {
+    const modal = document.getElementById('postModal');
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+        closeModal();
+    }
 }
