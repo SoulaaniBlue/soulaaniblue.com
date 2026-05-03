@@ -29,12 +29,36 @@
         .video-section {
             border-bottom: 1px solid #222;
         }
-        .video-container {
+        .video-placeholder {
             max-width: 1000px;
             margin: 0 auto;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
+            background: #111;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .video-placeholder:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 40px -10px rgba(212,175,55,0.2);
+        }
+        .video-placeholder-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        iframe.odysee-player {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -90,8 +114,8 @@
             <div class="max-w-4xl mx-auto text-center mb-12">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gold">Operator Visualizer</h2>
             </div>
-            <div class="video-container">
-                <iframe style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2F%E2%80%9COperator%E2%80%9D-Visualizer%3Ae?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX" allowfullscreen></iframe>
+            <div class="video-placeholder" data-odysee-src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2F%E2%80%9COperator%E2%80%9D-Visualizer%3Ae?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX">
+                <span class="video-placeholder-text">▶ Click to Watch</span>
             </div>
             <div class="text-center mt-8">
                 <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" class="btn btn--gold">
@@ -107,8 +131,8 @@
             <div class="max-w-4xl mx-auto text-center mb-12">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gold">Rather Be Visualizer</h2>
             </div>
-            <div class="video-container">
-                <iframe style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2F%E2%80%9CRather-Be%E2%80%9D-Visualizer-%3A3?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX" allowfullscreen></iframe>
+            <div class="video-placeholder" data-odysee-src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2F%E2%80%9CRather-Be%E2%80%9D-Visualizer-%3A3?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX">
+                <span class="video-placeholder-text">▶ Click to Watch</span>
             </div>
             <div class="text-center mt-8">
                 <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" class="btn btn--gold">
@@ -124,8 +148,8 @@
             <div class="max-w-4xl mx-auto text-center mb-12">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gold">Repeat Visualizer</h2>
             </div>
-            <div class="video-container">
-                <iframe style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2FRepeat%E2%80%9D%3A6?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX" allowfullscreen></iframe>
+            <div class="video-placeholder" data-odysee-src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2FRepeat%E2%80%9D%3A6?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX">
+                <span class="video-placeholder-text">▶ Click to Watch</span>
             </div>
             <div class="text-center mt-8">
                 <a href="https://audiomack.com/soulaaniblue/song/678440e0e5629" target="_blank" class="btn btn--gold">
@@ -141,8 +165,8 @@
             <div class="max-w-4xl mx-auto text-center mb-12">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gold">Hey Bunnie Visualizer</h2>
             </div>
-            <div class="video-container">
-                <iframe style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2F%E2%80%9CHey-Bunnie%E2%80%9D-Visualizer-%3A4?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX" allowfullscreen></iframe>
+            <div class="video-placeholder" data-odysee-src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2F%E2%80%9CHey-Bunnie%E2%80%9D-Visualizer-%3A4?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX">
+                <span class="video-placeholder-text">▶ Click to Watch</span>
             </div>
             <div class="text-center mt-8">
                 <a href="https://buymeacoffee.com/soulaaniblue" target="_blank" class="btn btn--gold">
@@ -202,6 +226,24 @@
     <!-- Shared site scripts (mobile menu + newsletter popup) -->
     <script src="site.js" defer></script>
 
-    <!-- No page-specific scripts needed on this page -->
+    <!-- Lazy-load Odysee iframes on click -->
+    <script>
+        document.querySelectorAll('.video-placeholder').forEach(placeholder => {
+            placeholder.addEventListener('click', function() {
+                const src = this.getAttribute('data-odysee-src');
+                if (!src) return;
+
+                // Create the real iframe
+                const iframe = document.createElement('iframe');
+                iframe.className = 'odysee-player';
+                iframe.src = src;
+                iframe.allowFullscreen = true;
+                iframe.title = 'Odysee video player';
+
+                // Replace placeholder with the iframe
+                this.replaceWith(iframe);
+            });
+        });
+    </script>
 </body>
 </html>
