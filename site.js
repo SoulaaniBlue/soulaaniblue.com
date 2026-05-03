@@ -98,3 +98,60 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 })();
+
+// ---------- Inline newsletter forms (keep visitors on‑site) ----------
+(function () {
+    // Matches every form pointing to Formspree (pop‑up + inline mailing‑list)
+    document.addEventListener('submit', function (e) {
+        const form = e.target;
+        if (!form || form.tagName !== 'FORM') return;
+        const action = form.getAttribute('action') || '';
+        if (!action.startsWith('https://formspree.io/')) return;
+
+        // Already handled by Formspree's own AJAX? If so, don't double‑handle.
+        if (form.dataset.ajax === 'true') return;
+
+        e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn ? submitBtn.textContent : '';
+        if (submitBtn) {
+            submitBtn.textContent = 'SENDING…';
+            submitBtn.disabled = true;
+        }
+
+        const formData = new FormData(form);
+
+        fetch(action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(function (response) {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(function () {
+            const successMsg = document.createElement('div');
+            successMsg.className = 'text-center text-gold font-bold mt-4';
+            successMsg.textContent = '✓ Thanks for subscribing!';
+
+            // Replace the form with a success message
+            form.parentNode.insertBefore(successMsg, form.nextSibling);
+            form.style.display = 'none';
+
+            // Also close the newsletter popup if it was the popup form
+            const popup = document.getElementById('newsletter-popup');
+            if (popup && form.closest('#newsletter-popup')) {
+                popup.classList.add('hidden');
+            }
+        })
+        .catch(function () {
+            if (submitBtn) {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
+            alert('Oops! Something went wrong. Please try again, or email us directly.');
+        });
+    });
+})();
