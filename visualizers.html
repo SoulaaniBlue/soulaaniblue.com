@@ -89,6 +89,19 @@
             border-radius: 8px;
             border: 1px solid #333;
         }
+
+        /* VISUALIZERS heading animation */
+        @keyframes glowPulse {
+            0%, 100% {
+                text-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold);
+            }
+            50% {
+                text-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold), 0 0 60px var(--gold);
+            }
+        }
+        .visualizers-title {
+            animation: glowPulse 2s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -132,25 +145,19 @@
     <!-- Visualizers Header -->
     <section class="pt-32 pb-20" style="background: linear-gradient(to bottom, var(--rich-black), var(--gray-900));">
         <div class="container text-center">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">VISUALIZERS</h1>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                Experience the visual journey behind each track from "I Love You, Still"
-            </p>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white visualizers-title">VISUALIZERS</h1>
         </div>
     </section>
 
-    <!-- Mending Heart Freestyle (NEW - placed first) -->
+    <!-- Mending Heart Freestyle -->
     <section class="video-section py-16">
         <div class="container">
             <div class="max-w-4xl mx-auto text-center mb-12">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gold">Mending Heart Freestyle</h2>
             </div>
-            <!-- Direct embed (not lazy) as requested -->
             <div class="video-container">
                 <iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2FMending-Heart-Freestyle%3A9?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX" allowfullscreen></iframe>
             </div>
-
-            <!-- Get the Audio section -->
             <div class="mt-12 text-center">
                 <div class="get-audio-section">
                     <h3 class="text-2xl font-bold text-gold mb-4">Get the Audio</h3>
@@ -294,7 +301,7 @@
     <!-- Shared site scripts (mobile menu + newsletter popup) -->
     <script src="site.js" defer></script>
 
-    <!-- Lazy-load Odysee iframes on click (for existing placeholders) -->
+    <!-- Lazy-load Odysee iframes on click -->
     <script>
         document.querySelectorAll('.video-placeholder').forEach(placeholder => {
             placeholder.addEventListener('click', function() {
