@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // ---------- Newsletter popup ----------
 (function () {
     const STORAGE_KEY = 'soulaaniNewsletterPopup';
-    const POPUP_DELAY = 5000;        // 5 seconds
+    const POPUP_DELAY = 30000;        // 30 seconds
     const POPUP_EXPIRY_DAYS = 30;    // show again after 30 days
 
     function getPopupStatus() {
