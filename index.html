@@ -56,6 +56,17 @@
     <!-- Shared stylesheet -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Homepage-specific styles for video embed -->
+    <style>
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
+        }
+    </style>
+
     <!-- Schema -->
     <script type="application/ld+json">
     {
@@ -170,14 +181,16 @@
         </div>
     </section>
 
-    <!-- Mending Heart Freestyle Section (simplified) -->
+    <!-- Mending Heart Freestyle Section (embedded video) -->
     <section id="mending-heart" class="py-20 bg-rich-black" style="background-image: linear-gradient(to bottom, var(--rich-black), var(--gray-900));">
-        <div class="container text-center">
-            <span class="inline-block px-4 py-1 text-black text-sm font-bold rounded-full mb-4" style="background-color: var(--gold);">NEW VISUALIZER</span>
-            <h2 class="text-4xl md:text-5xl font-bold mb-8 text-white">Mending Heart Freestyle</h2>
-            <a href="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2FMending-Heart-Freestyle%3A9?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX" target="_blank" class="btn btn--gold">
-                <i class="fas fa-play mr-2"></i>Watch on Odysee
-            </a>
+        <div class="container">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1 text-black text-sm font-bold rounded-full mb-4" style="background-color: var(--gold);">NEW VISUALIZER</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-white">Mending Heart Freestyle</h2>
+            </div>
+            <div class="video-container max-w-4xl mx-auto">
+                <iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2FMending-Heart-Freestyle%3A9?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
 
