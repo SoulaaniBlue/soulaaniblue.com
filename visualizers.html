@@ -15,7 +15,7 @@
   connect-src 'self' https://cloud.umami.is https://formspree.io;
 ">
     <title>Visualizers - Soulaani Blue</title>
-    <meta name="description" content="Music visualizers and videos for Soulaani Blue's tracks - Operator, Rather Be, Repeat, and Hey Bunnie.">
+    <meta name="description" content="Music visualizers and videos for Soulaani Blue's tracks - Operator, Rather Be, Repeat, Hey Bunnie, and Mending Heart Freestyle.">
     <link rel="alternate" type="application/rss+xml" title="Soulaani Blue Blog RSS" href="/rss.xml" />
 
     <!-- Favicons -->
@@ -29,7 +29,6 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
     <!-- Fonts + Icons -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Press+Start+2P&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -43,6 +42,13 @@
     <style>
         .video-section {
             border-bottom: 1px solid #222;
+        }
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
         }
         .video-placeholder {
             max-width: 1000px;
@@ -74,6 +80,14 @@
             aspect-ratio: 16 / 9;
             border: none;
             border-radius: 8px;
+        }
+        .get-audio-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(20,20,20,0.8);
+            border-radius: 8px;
+            border: 1px solid #333;
         }
     </style>
 </head>
@@ -122,6 +136,42 @@
             <p class="text-xl text-gray-300 max-w-3xl mx-auto">
                 Experience the visual journey behind each track from "I Love You, Still"
             </p>
+        </div>
+    </section>
+
+    <!-- Mending Heart Freestyle (NEW - placed first) -->
+    <section class="video-section py-16">
+        <div class="container">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gold">Mending Heart Freestyle</h2>
+            </div>
+            <!-- Direct embed (not lazy) as requested -->
+            <div class="video-container">
+                <iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40soulaaniblue%3Af%2FMending-Heart-Freestyle%3A9?r=7Bg8W9w2rQrxPFkW2RYoZNePFGS9WHyX" allowfullscreen></iframe>
+            </div>
+
+            <!-- Get the Audio section -->
+            <div class="mt-12 text-center">
+                <div class="get-audio-section">
+                    <h3 class="text-2xl font-bold text-gold mb-4">Get the Audio</h3>
+                    <p class="text-gray-300 text-lg mb-6">
+                        The audio for "Mending Heart Freestyle" is not streaming publicly. To access it, either:
+                    </p>
+                    <ul class="text-gray-300 text-left space-y-3 mb-6" style="list-style-type: none; padding-left: 0;">
+                        <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                            <span class="text-gold" style="font-size: 1.25rem; line-height: 1.4;">·</span>
+                            <span>Make a donation to RVA Community Fridges and email the receipt to <a href="mailto:mgmt@soulaaniblue.com" class="text-gold underline">mgmt@soulaaniblue.com</a></span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                            <span class="text-gold" style="font-size: 1.25rem; line-height: 1.4;">·</span>
+                            <span>Or purchase any track from my <a href="https://soulaaniblue.bandcamp.com/" target="_blank" class="text-gold underline">Bandcamp</a> (55% of proceeds go to RVA Community Fridges) and email the receipt.</span>
+                        </li>
+                    </ul>
+                    <p class="text-gray-300 text-lg">
+                        You'll receive a private link to the untitled audio file.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -244,7 +294,7 @@
     <!-- Shared site scripts (mobile menu + newsletter popup) -->
     <script src="site.js" defer></script>
 
-    <!-- Lazy-load Odysee iframes on click -->
+    <!-- Lazy-load Odysee iframes on click (for existing placeholders) -->
     <script>
         document.querySelectorAll('.video-placeholder').forEach(placeholder => {
             placeholder.addEventListener('click', function() {
